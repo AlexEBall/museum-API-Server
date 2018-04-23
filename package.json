@@ -21,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/AlexEBall/museum-API-Server/issues"
   },
-  "homepage": "https://github.com/AlexEBall/museum-API-Server#readme",
+  "homepage": "https://stormy-shelf-62092.herokuapp.com",
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.2",
