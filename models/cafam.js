@@ -12,6 +12,9 @@ const floorSchema = new Schema({
 const cafamSchema = new Schema({
     tourAudience: String,
     floors: [floorSchema]
+},
+{
+    collection: "cafam"
 });
 
 const cafam = mongoose.model("cafam", cafamSchema);
