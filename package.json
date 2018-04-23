@@ -27,9 +27,7 @@
     "body-parser": "^1.18.2",
     "concurrently": "^3.5.1",
     "express": "^4.16.3",
-    "mongoose": "^5.0.15"
-  },
-  "devDependencies": {
+    "mongoose": "^5.0.15",
     "morgan": "^1.9.0",
     "nodemon": "^1.17.3"
   }
