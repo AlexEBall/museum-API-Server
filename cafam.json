@@ -4,24 +4,62 @@
         "floors": [
             {
             "floor": 1,
-            "coverPic": "picture.jpg",
-            "floorGallery": ["pic1.jpg", "pic2.jpg", "pic3.jpg"],
+            "coverPic": "k-12floor1cover.jpg",
+            "floorGallery": ["clay.jpg", "angel.jpg", "wonderwoman.jpg"],
             "audioLink": "https...",
-            "floorText": "lorema dkfjsd fjsadflaksdjfkdfuewofajdskfjdsfk weuoifwiejfdskfaspoifgsdkgdskglajdkfagsdf;j"
+            "floorText": "Testing floor text 1"
             },
             {
             "floor": 2,
-            "coverPic": "picture22.jpg",
-            "floorGallery": ["pic1342.jpg", "pic234.jpg", "234pic3.jpg"],
+            "coverPic": "k12floor2cover.jpg",
+            "floorGallery": ["clay.jpg", "angel.jpg", "wonderwoman.jpg"],
             "audioLink": "https...",
-            "floorText": "lorema dkfjsd fjsadflaksdjfkdfuewofajdskfjdsfk weuoifwiejfdskfaspoifgsdkgdskglajdkfagsdf;j"
+            "floorText": "testing k12 floor text 2"
             },
             {
             "floor": 3,
-            "coverPic": "picture33.jpg",
-            "floorGallery": ["pic14324.jpg", "pic4232.jpg", "pi42c33.jpg"],
+            "coverPic": "k12floor3cover.jpg",
+            "floorGallery": ["clay.jpg", "angel.jpg", "wonderwoman.jpg"],
             "audioLink": "https...",
-            "floorText": "lorema dkfjsd fjsadflaksdjfkdfuewofajdskfjdsfk weuoifwiejfdskfaspoifgsdkgdskglajdkfagsdf;j"
+            "floorText": "k12 floor 3 text: lorema dkfjsd fjsadflaksdjfkdfuewofajdskfjdsfk weuoifwiejfdskfaspoifgsdkgdskglajdkfagsdf;j"
+            }
+        ]
+    },
+    {
+        "tourAudience": "University",
+        "floors": [
+            {
+                "floor": 1,
+                "coverPic": "unifloor1cover.jpg",
+                "floorGallery": [
+                    "blueorange.jpg",
+                    "wonderwoman.jpg",
+                    "clay.jpg"
+                ],
+                "audioLink": "https...",
+                "floorText": "luni1 test: orema dkfjsd fjsadflaksdjfkdfuewofajdskfjdsfk weuoifwiejfdskfaspoifgsdkgdskglajdkfagsdf;j"
+            },
+            {
+                "floor": 2,
+                "coverPic": "unifloor2cover.jpg",
+                "floorGallery": [
+                    "blueorange.jpg",
+                    "wonderwoman.jpg",
+                    "clay.jpg"
+                ],
+                "audioLink": "https...",
+                "floorText": "uni floor 2 text: lorema dkfjsd fjsadflaksdjfkdfuewofajdskfjdsfk weuoifwiejfdskfaspoifgsdkgdskglajdkfagsdf;j"
+            },
+            {
+                "floor": 3,
+                "coverPic": "unifloor3cover.jpg",
+                "floorGallery": [
+                    "blueorange.jpg",
+                    "wonderwoman.jpg",
+                    "clay.jpg"
+                ],
+                "audioLink": "https...",
+                "floorText": "uni 3 text: lorema dkfjsd fjsadflaksdjfkdfuewofajdskfjdsfk weuoifwiejfdskfaspoifgsdkgdskglajdkfagsdf;j"
             }
         ]
     }
