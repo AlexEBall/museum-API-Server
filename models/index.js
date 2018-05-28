@@ -1,3 +1,4 @@
 module.exports = {
-    cafam: require("./cafam")
+    cafam: require("./cafam"),
+    programs: require("./programs")
 };
