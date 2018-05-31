@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 
 export default class Home extends Component {
     render() {
@@ -22,12 +23,16 @@ export default class Home extends Component {
                 <section className="content">
                     <h1 className="content__title">What would you like to do?</h1>
                     <div className="content__choices">
-                        <button className="content__btn">
-                            Edit Exhibitions
-                        </button>
-                        <button className="content__btn">
-                            Edit Programs
-                        </button>
+                        <Link to="/exhibitions">
+                            <button className="content__btn">
+                                Edit Exhibitions
+                            </button>
+                        </Link>
+                        <Link to="/programs">
+                            <button className="content__btn">
+                                Edit Programs
+                            </button>
+                        </Link>
                     </div>
                 </section>
                 <footer className="footer">
