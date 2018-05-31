@@ -11,3 +11,8 @@ html {
 
 body {
   color: blue; }
+
+.wrapper {
+  width: 70rem;
+  border: solid black .1rem;
+  margin: 0 auto; }
