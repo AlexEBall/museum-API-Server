@@ -4,19 +4,21 @@ import {Provider} from 'react-redux';
 import {createStore, applyMiddleware} from 'redux';
 import ReduxThunk from 'redux-thunk';
 import logger from 'redux-logger';
+import Home from './pages/Home';
 
 export default class App extends Component {
   render() {
-    const store = createStore(reducers, applyMiddleware(ReduxThunk, logger));
+    // const store = createStore(reducers, applyMiddleware(ReduxThunk, logger));
+    // pass in provider
     return (
-      <Provider store={store}>
+
         <Router>
           <Switch>
             <Route exact path="/" component={Home}/>
             {/* <Route exact path="/agents" component={AgentsPage}/> */}
           </Switch>
         </Router>
-      </Provider>
+
     );
   }
 }
