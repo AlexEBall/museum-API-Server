@@ -24,7 +24,7 @@ body {
 .wrapper {
     width: 70rem;
     border: solid green .1rem;
-    margin: 0 auto;
+    margin: 4rem auto;
     padding: 3rem;
     display: flex;
     flex-direction: column;
@@ -70,6 +70,12 @@ body {
     &__title {
         text-align: center;
         margin: .5rem 0;
+    }
+
+    &__choices {
+        display: flex;
+        margin: 3rem 1rem;
+        justify-content: space-around;
     }
 
     &__btn {
