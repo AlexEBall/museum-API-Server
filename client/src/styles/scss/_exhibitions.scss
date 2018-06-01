@@ -20,4 +20,21 @@
         flex-direction: column;
         border: dotted 1px peru;
     }
+
+    &__btn-container {
+        display: flex;
+        padding: 2rem;
+        justify-content: space-between;
+    }
+
+    &__btn {
+        border: 1px dotted purple;
+        background-color: #fff;
+        padding: .5rem 1rem;
+
+        &:hover {
+            cursor: pointer;
+            background-color: purple;
+        }
+    }
 }

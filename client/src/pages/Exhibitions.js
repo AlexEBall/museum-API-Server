@@ -18,11 +18,16 @@ class Exhibitions extends Component {
             <div className="exhibitions__content-box">
                 <div className="exhibitions__individual-container">
                     <h3>K-12</h3>
-                    <img src="http://fillmurray.com/200/300" alt="coverImg"/>
+                    <img src="http://fillmurray.com/300/300" alt="coverImg"/>
+                    <div className="exhibitions__btn-container">
+                        <button className="exhibitions__btn">Floor 1</button>
+                        <button className="exhibitions__btn">Floor 2</button>
+                        <button className="exhibitions__btn">Floor 3</button>
+                    </div>
                 </div>
                 <div className="exhibitions__individual-container">
                     <h3>General</h3>
-                    <img src="http://fillmurray.com/200/300" alt="coverImg"/>
+                    <img src="http://fillmurray.com/300/300" alt="coverImg"/>
                 </div>
             </div>
            );
