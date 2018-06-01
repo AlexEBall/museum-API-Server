@@ -12,7 +12,7 @@ import Programs from './pages/Programs';
 export default class App extends Component {
   render() {
     const store = createStore(reducers, applyMiddleware(ReduxThunk, logger));
-    // pass in provider
+
     return (
       <Provider store={store}>
         <Router>

@@ -3,7 +3,27 @@ import {connect} from 'react-redux';
 import {fetchExhibitions} from '../actions';
 
 class Exhibitions extends Component {
+    componentWillMount = () => {
+        this.props.fetchExhibitions();
+    }
+
+    renderContent = () => {
+        let exhibitions = this.props.exhibitions;
+        let loader = this.props.fetching;
+
+        if (loader === true) {
+           return <h2>Loading Exhibitions... please wait</h2>
+        } else {
+           return(
+            <div>
+                <h2>Exhibitions will go here</h2>
+            </div>
+           );
+        }
+    }
+
     render() {
+        console.log(this.props);
         return (
             <div className="wrapper">
                 <header className="header">
@@ -23,7 +43,7 @@ class Exhibitions extends Component {
                 </header>
                 <section className="content">
                     <h1 className="content__title">These are the current exhibitions</h1>
-                    
+                    {this.renderContent()}
                 </section>
                 <footer className="footer">
                 </footer>
