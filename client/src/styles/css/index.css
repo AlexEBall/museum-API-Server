@@ -64,3 +64,21 @@ body {
 .footer {
   flex: 0 1 5.5rem;
   background-color: darkmagenta; }
+
+.exhibitions {
+  flex: 0 1 auto;
+  flex-direction: column;
+  background-color: aquamarine;
+  padding: 3rem 2rem; }
+  .exhibitions__title {
+    text-align: center;
+    margin: .5rem 0; }
+  .exhibitions__content-box {
+    display: flex;
+    justify-content: space-around;
+    border: solid 1px black;
+    padding: 1rem; }
+  .exhibitions__individual-container {
+    display: flex;
+    flex-direction: column;
+    border: dotted 1px peru; }

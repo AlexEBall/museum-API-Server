@@ -1,0 +1,23 @@
+.exhibitions {
+    flex: 0 1 auto;
+    flex-direction: column;
+    background-color: aquamarine;
+    padding: 3rem 2rem;
+    &__title {
+        text-align: center;
+        margin: .5rem 0;
+    }
+
+    &__content-box {
+        display: flex;
+        justify-content: space-around;
+        border: solid 1px black;
+        padding: 1rem;
+    }
+
+    &__individual-container {
+        display: flex;
+        flex-direction: column;
+        border: dotted 1px peru;
+    }
+}

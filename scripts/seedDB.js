@@ -15,24 +15,80 @@ const cafamSeed =  [
         "floors": [
             {
             "floor": 1,
-            "coverPic": "picture.jpg",
-            "floorGallery": ["pic1.jpg", "pic2.jpg", "pic3.jpg"],
-            "audioLink": "https...",
-            "floorText": "lorema dkfjsd fjsadflaksdjfkdfuewofajdskfjdsfk weuoifwiejfdskfaspoifgsdkgdskglajdkfagsdf;j"
+            "coverPic": "https://res.cloudinary.com/dawjvqyvd/image/upload/v1524791443/k-12floor1cover.jpg",
+            "floorGallery": 
+            [
+                "https://res.cloudinary.com/dawjvqyvd/image/upload/c_scale,w_664/v1524791994/blueorange.jpg",
+                "https://res.cloudinary.com/dawjvqyvd/image/upload/c_scale,w_664/v1524791994/wonderwoman.jpg",
+                "https://res.cloudinary.com/dawjvqyvd/image/upload/c_scale,w_664/v1524791994/angel.jpg"
+            ],
+            "audioLink": "https://ia801407.us.archive.org/3/items/FranklynMonkPodcast27/TourGuide.mp3",
+            "floorText": "Testing floor text 1"
             },
             {
             "floor": 2,
-            "coverPic": "picture22.jpg",
-            "floorGallery": ["pic1342.jpg", "pic234.jpg", "234pic3.jpg"],
-            "audioLink": "https...",
-            "floorText": "lorema dkfjsd fjsadflaksdjfkdfuewofajdskfjdsfk weuoifwiejfdskfaspoifgsdkgdskglajdkfagsdf;j"
+            "coverPic": "https://res.cloudinary.com/dawjvqyvd/image/upload/v1524791993/k12floor2cover.jpg",
+            "floorGallery": 
+            [
+                "https://res.cloudinary.com/dawjvqyvd/image/upload/c_scale,w_664/v1524791994/blueorange.jpg",
+                "https://res.cloudinary.com/dawjvqyvd/image/upload/c_scale,w_664/v1524791994/wonderwoman.jpg",
+                "https://res.cloudinary.com/dawjvqyvd/image/upload/c_scale,w_664/v1524791994/angel.jpg"
+            ],
+            "audioLink": "https://ia801407.us.archive.org/3/items/FranklynMonkPodcast27/TourGuide.mp3",
+            "floorText": "testing k12 floor text 2"
             },
             {
             "floor": 3,
-            "coverPic": "picture33.jpg",
-            "floorGallery": ["pic14324.jpg", "pic4232.jpg", "pi42c33.jpg"],
-            "audioLink": "https...",
-            "floorText": "lorema dkfjsd fjsadflaksdjfkdfuewofajdskfjdsfk weuoifwiejfdskfaspoifgsdkgdskglajdkfagsdf;j"
+            "coverPic": "https://res.cloudinary.com/dawjvqyvd/image/upload/v1524791994/k12floor3cover.jpg",
+            "floorGallery": 
+            [
+                "https://res.cloudinary.com/dawjvqyvd/image/upload/c_scale,w_664/v1524791994/blueorange.jpg",
+                "https://res.cloudinary.com/dawjvqyvd/image/upload/c_scale,w_664/v1524791994/wonderwoman.jpg",
+                "https://res.cloudinary.com/dawjvqyvd/image/upload/c_scale,w_664/v1524791994/angel.jpg"
+            ],
+            "audioLink": "https://ia801407.us.archive.org/3/items/FranklynMonkPodcast27/TourGuide.mp3",
+            "floorText": "k12 floor 3 text: lorema dkfjsd fjsadflaksdjfkdfuewofajdskfjdsfk weuoifwiejfdskfaspoifgsdkgdskglajdkfagsdf;j"
+            }
+        ]
+    },
+    {
+        "tourAudience": "University",
+        "floors": [
+            {
+                "floor": 1,
+                "coverPic": "https://res.cloudinary.com/dawjvqyvd/image/upload/v1524791994/unifloor1cover.jpg",
+                "floorGallery": 
+                [
+                    "https://res.cloudinary.com/dawjvqyvd/image/upload/c_scale,w_664/v1524791994/blueorange.jpg",
+                    "https://res.cloudinary.com/dawjvqyvd/image/upload/c_scale,w_664/v1524791994/wonderwoman.jpg",
+                    "https://res.cloudinary.com/dawjvqyvd/image/upload/c_scale,w_664/v1524791994/angel.jpg"
+                ],
+                "audioLink": "https://ia802707.us.archive.org/2/items/ChristopherGauthierHarbinTourGuide/harbintourguide_vbr.mp3",
+                "floorText": "luni1 test: orema dkfjsd fjsadflaksdjfkdfuewofajdskfjdsfk weuoifwiejfdskfaspoifgsdkgdskglajdkfagsdf;j"
+            },
+            {
+                "floor": 2,
+                "coverPic": "https://res.cloudinary.com/dawjvqyvd/image/upload/v1524791994/unifloor2cover.jpg",
+                "floorGallery": 
+                [
+                    "https://res.cloudinary.com/dawjvqyvd/image/upload/c_scale,w_664/v1524791994/blueorange.jpg",
+                    "https://res.cloudinary.com/dawjvqyvd/image/upload/c_scale,w_664/v1524791994/wonderwoman.jpg",
+                    "https://res.cloudinary.com/dawjvqyvd/image/upload/c_scale,w_664/v1524791994/angel.jpg"
+                ],
+                "audioLink": "https://ia802707.us.archive.org/2/items/ChristopherGauthierHarbinTourGuide/harbintourguide_vbr.mp3",
+                "floorText": "uni floor 2 text: lorema dkfjsd fjsadflaksdjfkdfuewofajdskfjdsfk weuoifwiejfdskfaspoifgsdkgdskglajdkfagsdf;j"
+            },
+            {
+                "floor": 3,
+                "coverPic": "https://res.cloudinary.com/dawjvqyvd/image/upload/v1524791994/unifloor3cover.jpg",
+                "floorGallery": 
+                [
+                    "https://res.cloudinary.com/dawjvqyvd/image/upload/c_scale,w_664/v1524791994/blueorange.jpg",
+                    "https://res.cloudinary.com/dawjvqyvd/image/upload/c_scale,w_664/v1524791994/wonderwoman.jpg",
+                    "https://res.cloudinary.com/dawjvqyvd/image/upload/c_scale,w_664/v1524791994/angel.jpg"
+                ],
+                "audioLink": "https://ia802707.us.archive.org/2/items/ChristopherGauthierHarbinTourGuide/harbintourguide_vbr.mp3",
+                "floorText": "uni 3 text: lorema dkfjsd fjsadflaksdjfkdfuewofajdskfjdsfk weuoifwiejfdskfaspoifgsdkgdskglajdkfagsdf;j"
             }
         ]
     }

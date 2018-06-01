@@ -15,8 +15,15 @@ class Exhibitions extends Component {
            return <h2>Loading Exhibitions... please wait</h2>
         } else {
            return(
-            <div>
-                <h2>Exhibitions will go here</h2>
+            <div className="exhibitions__content-box">
+                <div className="exhibitions__individual-container">
+                    <h3>K-12</h3>
+                    <img src="http://fillmurray.com/200/300" alt="coverImg"/>
+                </div>
+                <div className="exhibitions__individual-container">
+                    <h3>General</h3>
+                    <img src="http://fillmurray.com/200/300" alt="coverImg"/>
+                </div>
             </div>
            );
         }
@@ -41,8 +48,8 @@ class Exhibitions extends Component {
                         </div>
                     </nav>
                 </header>
-                <section className="content">
-                    <h1 className="content__title">These are the current exhibitions</h1>
+                <section className="exhibitions">
+                    <h1 className="exhibitions__title">These are the current exhibitions</h1>
                     {this.renderContent()}
                 </section>
                 <footer className="footer">
