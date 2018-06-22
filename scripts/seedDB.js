@@ -11,48 +11,7 @@ mongoose.connect(
 
 const cafamSeed =  [
     {
-        "tourAudience": "K-12",
-        "floors": [
-            {
-            "floor": 1,
-            "coverPic": "https://res.cloudinary.com/dawjvqyvd/image/upload/v1524791443/k-12floor1cover.jpg",
-            "floorGallery": 
-            [
-                "https://res.cloudinary.com/dawjvqyvd/image/upload/c_scale,w_664/v1524791994/blueorange.jpg",
-                "https://res.cloudinary.com/dawjvqyvd/image/upload/c_scale,w_664/v1524791994/wonderwoman.jpg",
-                "https://res.cloudinary.com/dawjvqyvd/image/upload/c_scale,w_664/v1524791994/angel.jpg"
-            ],
-            "audioLink": "https://ia801407.us.archive.org/3/items/FranklynMonkPodcast27/TourGuide.mp3",
-            "floorText": "Testing floor text 1"
-            },
-            {
-            "floor": 2,
-            "coverPic": "https://res.cloudinary.com/dawjvqyvd/image/upload/v1524791993/k12floor2cover.jpg",
-            "floorGallery": 
-            [
-                "https://res.cloudinary.com/dawjvqyvd/image/upload/c_scale,w_664/v1524791994/blueorange.jpg",
-                "https://res.cloudinary.com/dawjvqyvd/image/upload/c_scale,w_664/v1524791994/wonderwoman.jpg",
-                "https://res.cloudinary.com/dawjvqyvd/image/upload/c_scale,w_664/v1524791994/angel.jpg"
-            ],
-            "audioLink": "https://ia801407.us.archive.org/3/items/FranklynMonkPodcast27/TourGuide.mp3",
-            "floorText": "testing k12 floor text 2"
-            },
-            {
-            "floor": 3,
-            "coverPic": "https://res.cloudinary.com/dawjvqyvd/image/upload/v1524791994/k12floor3cover.jpg",
-            "floorGallery": 
-            [
-                "https://res.cloudinary.com/dawjvqyvd/image/upload/c_scale,w_664/v1524791994/blueorange.jpg",
-                "https://res.cloudinary.com/dawjvqyvd/image/upload/c_scale,w_664/v1524791994/wonderwoman.jpg",
-                "https://res.cloudinary.com/dawjvqyvd/image/upload/c_scale,w_664/v1524791994/angel.jpg"
-            ],
-            "audioLink": "https://ia801407.us.archive.org/3/items/FranklynMonkPodcast27/TourGuide.mp3",
-            "floorText": "k12 floor 3 text: lorema dkfjsd fjsadflaksdjfkdfuewofajdskfjdsfk weuoifwiejfdskfaspoifgsdkgdskglajdkfagsdf;j"
-            }
-        ]
-    },
-    {
-        "tourAudience": "University",
+        "tourAudience": "General Tour",
         "floors": [
             {
                 "floor": 1,

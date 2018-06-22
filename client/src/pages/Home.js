@@ -1,25 +1,24 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {fetchExhibitions} from '../actions';
 import {Link} from 'react-router-dom';
+import Header from '../components/Header';
 
-export default class Home extends Component {
+class Home extends Component {
+
+    componentWillMount = () => {
+        this.props.fetchExhibitions();
+    }
+
     render() {
+        let exhibitions = this.props.exhibitions;
+        console.log(exhibitions)
+        if (!exhibitions) {
+            return <h2>Loading</h2>
+        } else {
         return(
             <div className="wrapper">
-                <header className="header">
-                    <nav className="nav">
-                        <h2 className="nav__title">CAFAM Mobile App CMS</h2>
-                        <div className="nav__links-box">
-                            <ul className="nav__links-ul">
-                                <li className="nav__links-li">
-                                    <a className="nav__links" href="#">Something</a>
-                                </li>
-                                <li className="nav__links-li">
-                                    <a className="nav__links" href="#">Something 2</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </header>
+                <Header />
                 <section className="content">
                     <h1 className="content__title">What would you like to do?</h1>
                     <div className="content__choices">
@@ -39,5 +38,17 @@ export default class Home extends Component {
                 </footer>
             </div>
         );
+        }
     }
 };
+
+const mapStateToProps = state => {
+    return { 
+        fetching: state.exhibitions.fetching,
+        fetched: state.exhibitions.fetched, 
+        error: state.exhibitions.error, 
+        exhibitions: state.exhibitions.exhibitions
+    }
+}
+
+export default connect(mapStateToProps, {fetchExhibitions})(Home);

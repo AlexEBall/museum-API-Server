@@ -16,11 +16,12 @@ html {
 
 body {
     // font-family: $font-primary;
-    color: blue;
-    // font-weight: 300;
+    color: blue; // font-weight: 300;
     // line-height: 1.6;
 }
 
-// h1 {
-//     color: green;
-// }
+.wrapper {
+    width: 70rem;
+    border: solid black .1rem;
+    margin: 0 auto;
+}

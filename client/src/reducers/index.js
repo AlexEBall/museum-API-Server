@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux';
-import fetchExhibitions from './fetchExhibitionsReducer';
+import FetchExhibitionsReducer from './fetchExhibitionsReducer';
 
 export default combineReducers({
-    exhibitions: fetchExhibitions
+    exhibitions: FetchExhibitionsReducer
 });
