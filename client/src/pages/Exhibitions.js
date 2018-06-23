@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {fetchExhibitions} from '../actions';
 import {Link} from 'react-router-dom';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 class Exhibitions extends Component {
     componentWillMount = () => {
@@ -35,10 +37,6 @@ class Exhibitions extends Component {
                         })}
                     </div>
                 </div>
-                <div className="exhibitions__individual-container">
-                    <h3>General</h3>
-                    <img src="http://fillmurray.com/300/300" alt="coverImg"/>
-                </div>
             </div>
            );
             }
@@ -49,27 +47,12 @@ class Exhibitions extends Component {
         console.log(this.props);
         return (
             <div className="wrapper">
-                <header className="header">
-                    <nav className="nav">
-                        <h2 className="nav__title">CAFAM Mobile App CMS</h2>
-                        <div className="nav__links-box">
-                            <ul className="nav__links-ul">
-                                <li className="nav__links-li">
-                                    <a className="nav__links" href="#">Something</a>
-                                </li>
-                                <li className="nav__links-li">
-                                    <a className="nav__links" href="#">Something 2</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </header>
+                <Header />
                 <section className="exhibitions">
                     <h1 className="exhibitions__title">These are the current exhibitions</h1>
                     {this.renderContent()}
                 </section>
-                <footer className="footer">
-                </footer>
+                <Footer />
             </div>
         );
     }

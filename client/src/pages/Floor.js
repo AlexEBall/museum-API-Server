@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {fetchFloor} from '../actions';
-import API from "../utils/API";
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 // import {Link} from 'react-router-dom';
 
 class Floor extends Component {
@@ -12,7 +12,22 @@ class Floor extends Component {
     }
 
     renderFloorInformation = () => {
-        
+        const floorInformation = this.props.floor.floor;
+        if (!floorInformation) {
+            return(
+                <div className="exhibitions__content-box">
+                    <div className="exhibitions__individual-container">
+                        <h2></h2>
+                    </div>
+                </div>
+            )
+        } else {
+        <div className="exhibitions__content-box">
+            <div className="exhibitions__individual-container">
+                <h2></h2>
+            </div>
+        </div>
+        }
     }
 
     render() {
@@ -22,8 +37,7 @@ class Floor extends Component {
                 <Header />
                 <section className="exhibitions">
                 </section>
-                <footer className="footer">
-                </footer>
+                <Footer />
             </div>
         );
     }
