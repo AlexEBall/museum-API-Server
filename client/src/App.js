@@ -8,6 +8,7 @@ import reducers from './reducers';
 import Home from './pages/Home';
 import Exhibitions from './pages/Exhibitions';
 import Programs from './pages/Programs';
+import Floor from './pages/Floor';
 
 export default class App extends Component {
   render() {
@@ -20,6 +21,7 @@ export default class App extends Component {
             <Route exact path="/" component={Home}/>
             <Route exact path="/exhibitions" component={Exhibitions}/>
             <Route exact path="/programs" component={Programs}/>
+            <Route exact path="/exhibitionFloor:floor" component={Floor} />
           </Switch>
         </Router>
       </Provider>

@@ -15,7 +15,8 @@ module.exports = {
             .catch(err => res.status(422).json(err));
     },
     findByFloor: (req, res, next) => {
-        // console.log(req);
+        console.log('HEYYYYYYY:::::========', typeof(req.params.floor));
+        const floor = parseInt(req.params.floor);
         db.cafam
             .aggregate([
             {
@@ -24,7 +25,7 @@ module.exports = {
                         $filter: {
                             input: '$floors',
                             as: 'floor',
-                            cond: { $eq: ["$$floor.floor", 1]}
+                            cond: { $eq: ["$$floor.floor", floor]}
                         }
                     }
                 }

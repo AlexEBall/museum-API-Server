@@ -7,7 +7,7 @@ router.route("/")
     // should be at the route they are posting from form
     .post(cafamController.create);
 
-router.route("/exhibitionFloor1")
+router.route("/exhibitionFloor" + ":floor")
     .get(cafamController.findByFloor)
 
 router.route("/:id")

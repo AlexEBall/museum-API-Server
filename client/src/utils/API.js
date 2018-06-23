@@ -6,5 +6,8 @@ export default {
     },
     getExhibitionById : (id) => {
         return axios.get("api/cafam/" + id);
+    },
+    getExhibitionFloor: (floor) => {
+        return axios.get('api/cafam/exhibitionFloor' + floor);
     }
 };
