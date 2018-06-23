@@ -1,21 +1,9 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import {fetchExhibitions} from '../actions';
 import {Link} from 'react-router-dom';
 import Header from '../components/Header';
 
-class Home extends Component {
-
-    componentWillMount = () => {
-        this.props.fetchExhibitions();
-    }
-
+export default class Home extends Component {
     render() {
-        let exhibitions = this.props.exhibitions;
-        console.log(exhibitions)
-        if (!exhibitions) {
-            return <h2>Loading</h2>
-        } else {
         return(
             <div className="wrapper">
                 <Header />
@@ -38,17 +26,6 @@ class Home extends Component {
                 </footer>
             </div>
         );
-        }
     }
+
 };
-
-const mapStateToProps = state => {
-    return { 
-        fetching: state.exhibitions.fetching,
-        fetched: state.exhibitions.fetched, 
-        error: state.exhibitions.error, 
-        exhibitions: state.exhibitions.exhibitions
-    }
-}
-
-export default connect(mapStateToProps, {fetchExhibitions})(Home);
