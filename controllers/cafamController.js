@@ -14,6 +14,25 @@ module.exports = {
             .then(cafamModel => res.json(cafamModel))
             .catch(err => res.status(422).json(err));
     },
+    findByFloor: (req, res, next) => {
+        // console.log(req);
+        db.cafam
+            .aggregate([
+            {
+                $project: {
+                    floors: {
+                        $filter: {
+                            input: '$floors',
+                            as: 'floor',
+                            cond: { $eq: ["$$floor.floor", 1]}
+                        }
+                    }
+                }
+            }
+            ])
+            .then(cafamModel => res.json(cafamModel))
+            .catch(err => res.status[422].json(err));
+    },
     create: function(req, res) {
         db.cafam
             .create(req.body)
