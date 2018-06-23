@@ -11,6 +11,10 @@ class Floor extends Component {
         this.props.fetchFloor(floor);
     }
 
+    toggleInputFields = () => {
+        console.log('clicked');
+    }
+
     renderFloorInformation = () => {
         const floorInformation = this.props.floor;
         if (!floorInformation) {
@@ -31,7 +35,10 @@ class Floor extends Component {
                         <div className="exhibitions__inputBox">
                             <h3 className="heading__3">Audio Link</h3>
                             <h3 className="heading__3">{floorInformation.audioLink}</h3>
-                            <button className="exhibitions__btn">Edit</button>
+                            <button 
+                                className="exhibitions__btn" 
+                                onClick={this.toggleInputFields}
+                                >Edit</button>
                         </div>
                     </div>
                 </div>
