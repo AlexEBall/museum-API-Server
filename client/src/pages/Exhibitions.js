@@ -10,31 +10,29 @@ class Exhibitions extends Component {
 
     renderContent = () => {
         let exhibitions = this.props.exhibitions;
-        // console.log('ooooooo', this.props.exhibitions[0])
         if (!exhibitions) {
            return <h2>Loading Exhibitions... please wait</h2>
         } else {
-            // console.log('hey hey :::', exhibitions[0]);
-            const tourAudience = exhibitions[0];
+            const Exhibition = exhibitions[0];
             console.log('TOUR AUDIENCE', typeof(tourAudience));
-
-            // console.log(tourAudience.floors);
-
-            if (!tourAudience) {
+            if (!Exhibition) {
                 console.log('sorry');
             } else {
-                console.log('THIS RENDERING TIME', tourAudience.tourAudience);
+                console.log('THIS RENDERING TIME', Exhibition.tourAudience);
             return(
             <div className="exhibitions__content-box">
                 <div className="exhibitions__individual-container">
-                    <h3>{tourAudience.tourAudience}</h3>
+                    <h3>{Exhibition.tourAudience}</h3>
                     <img src="http://fillmurray.com/300/300" alt="coverImg"/>
                     <div className="exhibitions__btn-container">
-                        <Link to='/edit_floor1'>
-                            <button className="exhibitions__btn">Floor 1</button>
-                        </Link>
-                        <button className="exhibitions__btn">Floor 2</button>
-                        <button className="exhibitions__btn">Floor 3</button>
+                        {Exhibition.floors.map(exhib => {
+                            console.log('DOGAIUGPAIDVJAS', exhib.floor);
+                            return (
+                                <Link to={'/exhibitionFloor' + exhib.floor} key={exhib.floor}>
+                                    <button className="exhibitions__btn">Floor 1</button>
+                                </Link>
+                            )
+                        })}
                     </div>
                 </div>
                 <div className="exhibitions__individual-container">
