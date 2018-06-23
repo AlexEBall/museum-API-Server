@@ -12,21 +12,30 @@ class Floor extends Component {
     }
 
     renderFloorInformation = () => {
-        const floorInformation = this.props.floor.floor;
+        const floorInformation = this.props.floor;
         if (!floorInformation) {
             return(
                 <div className="exhibitions__content-box">
                     <div className="exhibitions__individual-container">
-                        <h2></h2>
+                        <h2>Loading</h2>
                     </div>
                 </div>
             )
         } else {
-        <div className="exhibitions__content-box">
-            <div className="exhibitions__individual-container">
-                <h2></h2>
-            </div>
-        </div>
+            console.log('flllloooreiausodius', floorInformation);
+            return(
+                <div className="exhibitions__content-box">
+                    <div className="exhibitions__individual-container">
+                        <h2>Floor {floorInformation.floor}</h2>
+                        <img className="exhibitions__coverImg" src={floorInformation.coverPic} alt='floor 1 app pic' />
+                        <div className="exhibitions__inputBox">
+                            <h3 className="heading__3">Audio Link</h3>
+                            <h3 className="heading__3">{floorInformation.audioLink}</h3>
+                            <button className="exhibitions__btn">Edit</button>
+                        </div>
+                    </div>
+                </div>
+            )
         }
     }
 
@@ -36,6 +45,7 @@ class Floor extends Component {
             <div className="wrapper">
                 <Header />
                 <section className="exhibitions">
+                    {this.renderFloorInformation()}
                 </section>
                 <Footer />
             </div>

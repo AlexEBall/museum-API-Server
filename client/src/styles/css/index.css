@@ -94,3 +94,13 @@ body {
     .exhibitions__btn:hover {
       cursor: pointer;
       background-color: purple; }
+  .exhibitions__coverImg {
+    width: 100%;
+    padding: 3rem; }
+  .exhibitions__inputBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+
+.heading__3 {
+  margin: .5rem; }
