@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {fetchFloor, editDisabled} from '../actions';
+import {fetchFloor, editingDisabled} from '../actions';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 // import {Link} from 'react-router-dom';
@@ -13,7 +13,47 @@ class Floor extends Component {
 
     toggleInputFields = () => {
         console.log('clicked');
-        this.props.editDisabled(true);
+        this.props.editingDisabled(true);
+    }
+
+    handleAudioLinkUpdate = event => {
+
+    }
+
+    renderEditingField = () => {
+        if (this.props.editDisabled) {
+
+            return (
+                <div className="exhibitions__inputBox">
+                    <h3 className="heading__3">Audio Link</h3>
+                    <input 
+                        value={this.props.audioLinkValue}
+                        onChange={this.handleAudioLinkUpdate}
+                        name="audioLinkValue"
+                        placeholder="Copy an AWS Link"
+                    />
+                    <button 
+                        className="exhibitions__btn" 
+                        onClick={this.toggleInputFields}
+                        >Submit
+                    </button>
+                </div>
+            )
+
+        } else {
+
+            return (
+            <div className="exhibitions__inputBox">
+                            <h3 className="heading__3">Audio Link</h3>
+                            <h3 className="heading__3">{this.props.floor.audioLink}</h3>
+                            <button 
+                                className="exhibitions__btn" 
+                                onClick={this.toggleInputFields}
+                                >Edit
+                            </button>
+                        </div>
+            )
+        }
     }
 
     renderFloorInformation = () => {
@@ -33,14 +73,11 @@ class Floor extends Component {
                     <div className="exhibitions__individual-container">
                         <h2>Floor {floorInformation.floor}</h2>
                         <img className="exhibitions__coverImg" src={floorInformation.coverPic} alt='floor 1 app pic' />
-                        <div className="exhibitions__inputBox">
-                            <h3 className="heading__3">Audio Link</h3>
-                            <h3 className="heading__3">{floorInformation.audioLink}</h3>
-                            <button 
-                                className="exhibitions__btn" 
-                                onClick={this.toggleInputFields}
-                                >Edit</button>
-                        </div>
+
+    
+                        {this.renderEditingField()}
+
+
                     </div>
                 </div>
             )
@@ -67,8 +104,9 @@ const mapStateToProps = state => {
         fetched: state.floor.fetched,
         error: state.floor.error,
         floor: state.floor.floor,
-        editDisabled: state.input.editDisabled
+        editDisabled: state.input.editDisabled,
+        audioLinkValue: state.input.audioLinkValue
     }
 }
 
-export default connect(mapStateToProps, { fetchFloor, editDisabled })(Floor);
+export default connect(mapStateToProps, { fetchFloor, editingDisabled })(Floor);

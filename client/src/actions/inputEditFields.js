@@ -1,8 +1,8 @@
-import {EDIT_DISABLED} from './inputEditFields';
+import {EDITING_DISABLED, AUDIO_LINK_UPDATE} from './types';
 
-export const editDisabled = (value) => {
+export const editingDisabled = (value) => {
     return {
-        type: 'edit_disabled',
+        type: EDITING_DISABLED,
         payload: value
     }
 }

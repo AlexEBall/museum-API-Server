@@ -6,4 +6,5 @@ export const FETCHING_FLOOR_START = 'fetching_floor_start';
 export const FETCHING_FLOOR_ERROR = 'fetching_floor_error';
 export const RECIEVE_FLOOR = 'recieve_floor';
 
-export const EDIT_DISABLED = 'edit_disabled';
+export const EDITING_DISABLED = 'editing_disabled';
+export const AUDIO_LINK_UPDATE = 'audio_link_update';
