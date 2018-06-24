@@ -1,4 +1,4 @@
-import {EDITING_DISABLED, AUDIO_LINK_UPDATE} from '../actions/types';
+import {EDITING_DISABLED, AUDIO_LINK_UPDATE, AUDIO_LINK_SAVED} from '../actions/types';
 
 const INTIAL_STATE = {
     audioLinkValue: '',
@@ -11,6 +11,8 @@ export default (state = INTIAL_STATE, action) => {
             return { ...state, editDisabled: action.payload }
         case AUDIO_LINK_UPDATE:
             return { ...state, audioLinkValue: action.payload }
+        case AUDIO_LINK_SAVED:
+            return 
         default:
             return state;
     }

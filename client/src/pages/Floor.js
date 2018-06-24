@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {fetchFloor, editingDisabled, audioLinkOnChange} from '../actions';
+import {fetchFloor, editingDisabled, audioLinkOnChange, audioLinkUpdating} from '../actions';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 // import {Link} from 'react-router-dom';
@@ -22,9 +22,12 @@ class Floor extends Component {
     }
 
     submitAudioLinkUpdate = event => {
-
-        
+        console.log('what happens here?', this.props)
+        const floor = parseInt(this.props.match.params.floor);
+        this.props.audioLinkUpdating(this.props.audioLinkValue, floor);
         this.props.editingDisabled(false);
+
+
     }
 
     renderEditingField = () => {
@@ -119,5 +122,6 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps, { 
     fetchFloor, 
     editingDisabled,
-    audioLinkOnChange 
+    audioLinkOnChange,
+    audioLinkUpdating 
 })(Floor);

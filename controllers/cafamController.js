@@ -34,15 +34,21 @@ module.exports = {
             .then(cafamModel => res.json(cafamModel))
             .catch(err => res.status[422].json(err));
     },
+    // post
     create: function(req, res) {
         db.cafam
             .create(req.body)
             .then(cafamModel => res.json(cafamModel))
             .catch(err => res.status(422).json(err));
     },
-    update: function(req, res) {
+    // put
+    updateAudioLink: function(req, res) {
+        console.log('Hey are we hitting this before failing? Not sure also what is the request===', req);
+        const floor = parseInt(req.params.floor);
         db.cafam
-            .findOneAndUpdate({ _id: req.params.id }, req.body)
+            // .findOneAndUpdate({ _id: req.params.id }, req.body)
+            .updateOne({ 'floors.floor': floor},
+            {$set: { 'floors.audioLink': req.body.value}})
             .then(cafamModel => res.json(cafamModel))
             .catch(err => res.status(422).json(err));
     },
@@ -54,3 +60,7 @@ module.exports = {
             .catch(err => res.status(422).json(err));
     }
 }
+// works in the shell but not on robo 3t
+// db.getCollection('cafam').updateOne({ 'floors.floor': 1},
+//             {$set: { 'floors.$[element].audioLink': 'testywoooooo' }},
+//             { arrayFilters: [{ 'element.floor': 1 }]});

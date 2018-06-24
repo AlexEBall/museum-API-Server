@@ -9,10 +9,11 @@ router.route("/")
 
 router.route("/exhibitionFloor" + ":floor")
     .get(cafamController.findByFloor)
+    .put(cafamController.updateAudioLink)
 
 router.route("/:id")
     .get(cafamController.findByID)
-    .put(cafamController.update)
+    // .put(cafamController.update)
     .delete(cafamController.remove);
 
 

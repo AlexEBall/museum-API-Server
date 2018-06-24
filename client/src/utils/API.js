@@ -9,5 +9,8 @@ export default {
     },
     getExhibitionFloor: (floor) => {
         return axios.get('api/cafam/exhibitionFloor' + floor);
+    },
+    updateAudioLink: (input, floor) => {
+        return axios.put('api/cafam/exhibitionFloor' + floor);
     }
 };
