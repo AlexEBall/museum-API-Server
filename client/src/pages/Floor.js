@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {fetchFloor} from '../actions';
+import {fetchFloor, editDisabled} from '../actions';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 // import {Link} from 'react-router-dom';
@@ -13,6 +13,7 @@ class Floor extends Component {
 
     toggleInputFields = () => {
         console.log('clicked');
+        this.props.editDisabled(true);
     }
 
     renderFloorInformation = () => {
@@ -65,8 +66,9 @@ const mapStateToProps = state => {
         fetching: state.floor.fetching,
         fetched: state.floor.fetched,
         error: state.floor.error,
-        floor: state.floor.floor
+        floor: state.floor.floor,
+        editDisabled: state.input.editDisabled
     }
 }
 
-export default connect(mapStateToProps, { fetchFloor })(Floor);
+export default connect(mapStateToProps, { fetchFloor, editDisabled })(Floor);

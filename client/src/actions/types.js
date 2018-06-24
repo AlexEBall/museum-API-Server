@@ -5,3 +5,5 @@ export const RECIEVE_EXHIBITIONS = 'recieve_exhibitions';
 export const FETCHING_FLOOR_START = 'fetching_floor_start';
 export const FETCHING_FLOOR_ERROR = 'fetching_floor_error';
 export const RECIEVE_FLOOR = 'recieve_floor';
+
+export const EDIT_DISABLED = 'edit_disabled';
