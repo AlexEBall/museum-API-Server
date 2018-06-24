@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {fetchFloor, editingDisabled} from '../actions';
+import {fetchFloor, editingDisabled, audioLinkOnChange} from '../actions';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 // import {Link} from 'react-router-dom';
@@ -17,7 +17,14 @@ class Floor extends Component {
     }
 
     handleAudioLinkUpdate = event => {
+        const value = event.target.value;
+        this.props.audioLinkOnChange(value)
+    }
 
+    submitAudioLinkUpdate = event => {
+
+        
+        this.props.editingDisabled(false);
     }
 
     renderEditingField = () => {
@@ -34,7 +41,7 @@ class Floor extends Component {
                     />
                     <button 
                         className="exhibitions__btn" 
-                        onClick={this.toggleInputFields}
+                        onClick={this.submitAudioLinkUpdate}
                         >Submit
                     </button>
                 </div>
@@ -109,4 +116,8 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { fetchFloor, editingDisabled })(Floor);
+export default connect(mapStateToProps, { 
+    fetchFloor, 
+    editingDisabled,
+    audioLinkOnChange 
+})(Floor);

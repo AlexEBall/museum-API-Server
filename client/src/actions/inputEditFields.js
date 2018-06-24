@@ -6,3 +6,10 @@ export const editingDisabled = (value) => {
         payload: value
     }
 }
+
+export const audioLinkOnChange = (value) => {
+    return {
+        type: AUDIO_LINK_UPDATE,
+        payload: value
+    }
+}
