@@ -31,6 +31,7 @@
         border: 1px dotted purple;
         background-color: #fff;
         padding: .5rem 1rem;
+        margin: .8rem;
 
         &:hover {
             cursor: pointer;
@@ -51,20 +52,27 @@
 
     &__galleryArrayImageHolder {
         border: 1px solid purple;
-        height: 30rem;
     }
 
-    &__imgsHolder {
-        // display: flex;
-        // flex-direction: column;
+    &__imageTitleArea {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    &__imageCardArea {
+        display: flex;
+    }
+
+    &__imageCard {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     &__imgs {
-        width: 25%;
+        width: 100%;
+        padding: 2rem;
         margin: 2rem;
     }
 
-    &__imgButtonHolder {
-        background-color: green;
-    }
 }

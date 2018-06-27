@@ -76,11 +76,13 @@ class Floor extends Component {
             return <h2>Loading</h2>
         } else {
         return (
-            <div>
-            <h3 className="heading__3">Image Gallery</h3>
+            <div className="exhibitions__imageCardArea">
             {floorInfoArray.map((img, i) => {
                 return (
+                    <div className="exhibitions__imageCard">
                     <img src={img} key={i} className="exhibitions__imgs"/>
+                    <button className="exhibitions__btn">Edit</button>
+                    </div>
                 )
             })}
             </div>
@@ -107,7 +109,11 @@ class Floor extends Component {
                         <img className="exhibitions__coverImg" src={floorInformation.coverPic} alt='floor 1 app pic' />
                         {this.renderAudioLinkEditingField()}
                         <div className="exhibitions__galleryArrayImageHolder">
-                        {this.renderImgGallery()}
+                            <div className="exhibitions__imageTitleArea">
+                                <h3 className="heading__3">Image Gallery</h3>
+                                <button className="btn">Add an Image</button>
+                            </div>
+                            {this.renderImgGallery()}
                         </div>
                     </div>
                 </div>
