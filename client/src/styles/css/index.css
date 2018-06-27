@@ -104,6 +104,11 @@ body {
   .exhibitions__galleryArrayImageHolder {
     border: 1px solid purple;
     height: 30rem; }
+  .exhibitions__imgs {
+    width: 25%;
+    margin: 2rem; }
+  .exhibitions__imgButtonHolder {
+    background-color: green; }
 
 .heading__3 {
   margin: .5rem; }

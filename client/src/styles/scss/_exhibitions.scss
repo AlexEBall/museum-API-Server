@@ -53,4 +53,18 @@
         border: 1px solid purple;
         height: 30rem;
     }
+
+    &__imgsHolder {
+        // display: flex;
+        // flex-direction: column;
+    }
+
+    &__imgs {
+        width: 25%;
+        margin: 2rem;
+    }
+
+    &__imgButtonHolder {
+        background-color: green;
+    }
 }

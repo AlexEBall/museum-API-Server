@@ -80,7 +80,7 @@ class Floor extends Component {
             <h3 className="heading__3">Image Gallery</h3>
             {floorInfoArray.map((img, i) => {
                 return (
-                    <img src={img} key={i}/>
+                    <img src={img} key={i} className="exhibitions__imgs"/>
                 )
             })}
             </div>
