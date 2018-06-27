@@ -22,15 +22,12 @@ class Floor extends Component {
     }
 
     submitAudioLinkUpdate = event => {
-        console.log('what happens here?', this.props)
-        
         const floor = parseInt(this.props.match.params.floor);
-
 
         this.props.audioLinkUpdating(this.props.audioLinkValue, floor);
         this.props.editingDisabled(false);
-
-
+        // hacky way
+        window.location.reload();
     }
 
     renderEditingField = () => {
@@ -54,7 +51,9 @@ class Floor extends Component {
             )
 
         } else {
-
+            // const floor = parseInt(this.props.match.params.floor);
+            // this.props.fetchFloor(floor);
+            // window.location.reload(); 
             return (
             <div className="exhibitions__inputBox">
                             <h3 className="heading__3">Audio Link</h3>
@@ -86,11 +85,7 @@ class Floor extends Component {
                     <div className="exhibitions__individual-container">
                         <h2>Floor {floorInformation.floor}</h2>
                         <img className="exhibitions__coverImg" src={floorInformation.coverPic} alt='floor 1 app pic' />
-
-    
                         {this.renderEditingField()}
-
-
                     </div>
                 </div>
             )

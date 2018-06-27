@@ -43,9 +43,9 @@ module.exports = {
     },
     // put
     updateAudioLink: function(req, res) {
-        console.log('Hey are we hitting this before failing? Not sure also what is the request===', req);
+        // console.log('Hey are we hitting this before failing? Not sure also what is the request===', req);
         const floor = parseInt(req.params.floor);
-        console.log('MY REQUESTS BODY:::::::::::=======', req.body);
+        // console.log('MY REQUESTS BODY:::::::::::=======', req.body);
         db.cafam
             .updateOne({ 'floors.floor': floor},
             {$set: { 'floors.$[element].audioLink': req.body.input}},
