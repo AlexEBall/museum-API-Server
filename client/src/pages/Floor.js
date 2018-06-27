@@ -1,8 +1,15 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {fetchFloor, editingDisabled, audioLinkOnChange, audioLinkUpdating} from '../actions';
+import {
+    fetchFloor, 
+    imgEditingDisabled,
+    editingDisabled, 
+    audioLinkOnChange, 
+    audioLinkUpdating
+} from '../actions';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import ImageCard from '../components/ImageCard';
 // import {Link} from 'react-router-dom';
 
 class Floor extends Component {
@@ -77,14 +84,11 @@ class Floor extends Component {
         } else {
         return (
             <div className="exhibitions__imageCardArea">
-            {floorInfoArray.map((img, i) => {
-                return (
-                    <div className="exhibitions__imageCard">
-                    <img src={img} key={i} className="exhibitions__imgs"/>
-                    <button className="exhibitions__btn">Edit</button>
-                    </div>
-                )
-            })}
+                {floorInfoArray.map((img, i) => { 
+                    return (
+                        <ImageCard key={i} img={img} /> 
+                    )}
+                )}
             </div>
         )
         }
@@ -142,12 +146,15 @@ const mapStateToProps = state => {
         error: state.floor.error,
         floor: state.floor.floor,
         editDisabled: state.input.editDisabled,
-        audioLinkValue: state.input.audioLinkValue
+        audioLinkValue: state.input.audioLinkValue,
+        imgLinkValue: state.input.imgLinkValue,
+        imgEditDisabled: state.input.imgEditDisabled
     }
 }
 
 export default connect(mapStateToProps, { 
     fetchFloor, 
+    imgEditingDisabled,
     editingDisabled,
     audioLinkOnChange,
     audioLinkUpdating 
