@@ -12,7 +12,7 @@ export default (state = INTIAL_STATE, action) => {
         case AUDIO_LINK_UPDATE:
             return { ...state, audioLinkValue: action.payload }
         case AUDIO_LINK_SAVED:
-            return { INTIAL_STATE }
+            return { ...state }
         default:
             return state;
     }

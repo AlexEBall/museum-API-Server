@@ -11,6 +11,17 @@ class Floor extends Component {
         this.props.fetchFloor(floor);
     }
 
+    // componentDidUpdate = (prevProps) => {
+        // console.log(prevProps);
+        // console.log('2:', this.props);
+        // // Typical usage (don't forget to compare props):
+        // if (this.props.floor.audioLink !== prevProps.floor.audioLink) {
+        //     const floor = parseInt(this.props.match.params.floor);
+        //     this.props.fetchFloor(floor);
+        //     console.log('3:', this.props);
+        // }
+    // }
+
     toggleInputFields = () => {
         console.log('clicked');
         this.props.editingDisabled(true);
@@ -25,9 +36,14 @@ class Floor extends Component {
         const floor = parseInt(this.props.match.params.floor);
 
         this.props.audioLinkUpdating(this.props.audioLinkValue, floor);
+
+        if (this.props.audioLinkValue !== this.props.floor.audioLink) {
+            this.props.fetchFloor(floor);
+        }
         this.props.editingDisabled(false);
         // hacky way
-        window.location.reload();
+        // window.location.reload();
+        
     }
 
     renderEditingField = () => {
