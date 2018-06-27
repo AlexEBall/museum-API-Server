@@ -101,6 +101,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center; }
+  .exhibitions__galleryArrayImageHolder {
+    border: 1px solid purple;
+    height: 30rem; }
 
 .heading__3 {
   margin: .5rem; }

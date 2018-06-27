@@ -11,16 +11,9 @@ class Floor extends Component {
         this.props.fetchFloor(floor);
     }
 
-    // componentDidUpdate = (prevProps) => {
-        // console.log(prevProps);
-        // console.log('2:', this.props);
-        // // Typical usage (don't forget to compare props):
-        // if (this.props.floor.audioLink !== prevProps.floor.audioLink) {
-        //     const floor = parseInt(this.props.match.params.floor);
-        //     this.props.fetchFloor(floor);
-        //     console.log('3:', this.props);
-        // }
-    // }
+    componentWillUnmount = () => {
+        this.props.editingDisabled(false);
+    }
 
     toggleInputFields = () => {
         console.log('clicked');
@@ -40,15 +33,11 @@ class Floor extends Component {
         if (this.props.audioLinkValue !== this.props.floor.audioLink) {
             this.props.fetchFloor(floor);
         }
-        this.props.editingDisabled(false);
-        // hacky way
-        // window.location.reload();
-        
+        this.props.editingDisabled(false);        
     }
 
-    renderEditingField = () => {
+    renderAudioLinkEditingField = () => {
         if (this.props.editDisabled) {
-
             return (
                 <div className="exhibitions__inputBox">
                     <h3 className="heading__3">Audio Link</h3>
@@ -65,22 +54,37 @@ class Floor extends Component {
                     </button>
                 </div>
             )
-
         } else {
-            // const floor = parseInt(this.props.match.params.floor);
-            // this.props.fetchFloor(floor);
-            // window.location.reload(); 
             return (
             <div className="exhibitions__inputBox">
-                            <h3 className="heading__3">Audio Link</h3>
-                            <h3 className="heading__3">{this.props.floor.audioLink}</h3>
-                            <button 
-                                className="exhibitions__btn" 
-                                onClick={this.toggleInputFields}
-                                >Edit
-                            </button>
-                        </div>
+                <h3 className="heading__3">Audio Link</h3>
+                <h3 className="heading__3">{this.props.floor.audioLink}</h3>
+                <button 
+                    className="exhibitions__btn" 
+                    onClick={this.toggleInputFields}
+                    >Edit
+                </button>
+            </div>
             )
+        }
+    }
+
+    renderImgGallery = () => {
+        const floorInfoArray = this.props.floor.floorGallery;
+        console.log(floorInfoArray);
+        if (!floorInfoArray) {
+            return <h2>Loading</h2>
+        } else {
+        return (
+            <div>
+            <h3 className="heading__3">Image Gallery</h3>
+            {floorInfoArray.map((img, i) => {
+                return (
+                    <img src={img} key={i}/>
+                )
+            })}
+            </div>
+        )
         }
     }
 
@@ -101,7 +105,10 @@ class Floor extends Component {
                     <div className="exhibitions__individual-container">
                         <h2>Floor {floorInformation.floor}</h2>
                         <img className="exhibitions__coverImg" src={floorInformation.coverPic} alt='floor 1 app pic' />
-                        {this.renderEditingField()}
+                        {this.renderAudioLinkEditingField()}
+                        <div className="exhibitions__galleryArrayImageHolder">
+                        {this.renderImgGallery()}
+                        </div>
                     </div>
                 </div>
             )

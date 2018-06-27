@@ -31,7 +31,7 @@ class Exhibitions extends Component {
                             console.log('DOGAIUGPAIDVJAS', exhib.floor);
                             return (
                                 <Link to={'/exhibitionFloor' + exhib.floor} key={exhib.floor}>
-                                    <button className="exhibitions__btn">Floor 1</button>
+                                    <button className="exhibitions__btn">Floor {exhib.floor}</button>
                                 </Link>
                             )
                         })}
