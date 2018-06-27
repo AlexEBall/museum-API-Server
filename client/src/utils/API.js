@@ -11,6 +11,6 @@ export default {
         return axios.get('api/cafam/exhibitionFloor' + floor);
     },
     updateAudioLink: (input, floor) => {
-        return axios.put('api/cafam/exhibitionFloor' + floor);
+        return axios.put('api/cafam/exhibitionFloor' + floor, {"input": input});
     }
 };

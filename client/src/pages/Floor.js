@@ -23,7 +23,10 @@ class Floor extends Component {
 
     submitAudioLinkUpdate = event => {
         console.log('what happens here?', this.props)
+        
         const floor = parseInt(this.props.match.params.floor);
+
+
         this.props.audioLinkUpdating(this.props.audioLinkValue, floor);
         this.props.editingDisabled(false);
 

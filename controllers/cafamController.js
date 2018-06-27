@@ -45,10 +45,11 @@ module.exports = {
     updateAudioLink: function(req, res) {
         console.log('Hey are we hitting this before failing? Not sure also what is the request===', req);
         const floor = parseInt(req.params.floor);
+        console.log('MY REQUESTS BODY:::::::::::=======', req.body);
         db.cafam
-            // .findOneAndUpdate({ _id: req.params.id }, req.body)
             .updateOne({ 'floors.floor': floor},
-            {$set: { 'floors.audioLink': req.body.value}})
+            {$set: { 'floors.$[element].audioLink': req.body.input}},
+            { arrayFilters: [{ 'element.floor': floor}]})
             .then(cafamModel => res.json(cafamModel))
             .catch(err => res.status(422).json(err));
     },

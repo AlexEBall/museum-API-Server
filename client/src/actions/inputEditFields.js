@@ -16,12 +16,13 @@ export const audioLinkOnChange = (text) => {
 }
 
 export const audioLinkUpdating = (input, floor) => {
+    console.log('My input:::', input + ' and my floor:::', floor);
     return (dispatch) => {
         API
         .updateAudioLink(input, floor)
         .then((res) => {
             console.log(res);
-            // dispatch({ type: AUDIO_LINK_SAVED });
+            dispatch({ type: AUDIO_LINK_SAVED });
         }).catch(err => {
             console.log(err);
         })
