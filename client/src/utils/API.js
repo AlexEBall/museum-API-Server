@@ -10,7 +10,10 @@ export default {
     getExhibitionFloor: (floor) => {
         return axios.get('api/cafam/exhibitionFloor' + floor);
     },
-    updateAudioLink: (input, floor) => {
-        return axios.put('api/cafam/exhibitionFloor' + floor, {"input": input});
+    // updateAudioLink: (input, floor) => {
+    //     return axios.put('api/cafam/exhibitionFloor' + floor, {"input": input});
+    // },
+    updateAnImgLink: (input, position, floor) => {
+        return axios.put('api/cafam/exhibitionFloor' + floor, {"pictureInput": input, "position": position});
     }
 };

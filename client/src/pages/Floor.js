@@ -33,6 +33,7 @@ class Floor extends Component {
     }
 
     submitAudioLinkUpdate = event => {
+        event.preventDefault();
         const floor = parseInt(this.props.match.params.floor);
 
         this.props.audioLinkUpdating(this.props.audioLinkValue, floor);
@@ -77,6 +78,7 @@ class Floor extends Component {
     }
 
     renderImgGallery = () => {
+        const floor = parseInt(this.props.match.params.floor);
         const floorInfoArray = this.props.floor.floorGallery;
         console.log(floorInfoArray);
         if (!floorInfoArray) {
@@ -86,7 +88,12 @@ class Floor extends Component {
             <div className="exhibitions__imageCardArea">
                 {floorInfoArray.map((img, i) => { 
                     return (
-                        <ImageCard key={i} img={img} /> 
+                        <ImageCard 
+                            key={i} 
+                            img={img}
+                            position={i} 
+                            floor={floor}
+                        /> 
                     )}
                 )}
             </div>

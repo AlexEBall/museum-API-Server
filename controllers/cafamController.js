@@ -15,7 +15,7 @@ module.exports = {
             .catch(err => res.status(422).json(err));
     },
     findByFloor: (req, res, next) => {
-        console.log('HEYYYYYYY:::::========', typeof(req.params.floor));
+        // console.log('HEYYYYYYY:::::========', typeof(req.params.floor));
         const floor = parseInt(req.params.floor);
         db.cafam
             .aggregate([
@@ -53,6 +53,22 @@ module.exports = {
             .then(cafamModel => res.json(cafamModel))
             .catch(err => res.status(422).json(err));
     },
+    updateAnImgLink: function(req, res) {
+        console.log(req);
+        const floor = parseInt(req.params.floor);
+        const position = parseInt(req.body.position);
+        db.cafam
+            .updateOne({ 'floors.floor': floor},
+            {$set: { 'floors.$[element].floorGallery': 
+                {
+                $each: [req.body.pictureInput],
+                $position: position
+                } 
+                }},
+            { arrayFilters: [{ 'element.floor': floor }]})
+            .then(cafamModel => res.json(cafamModel))
+            .catch(err => res.status(422).json(err));
+    },
     remove: function(req, res) {
         db.cafam
             .findById({ _id: req.params.id })
@@ -65,3 +81,12 @@ module.exports = {
 // db.getCollection('cafam').updateOne({ 'floors.floor': 1},
 //             {$set: { 'floors.$[element].audioLink': 'testywoooooo' }},
 //             { arrayFilters: [{ 'element.floor': 1 }]});
+
+// db.getCollection('cafam').updateOne({ 'floors.floor': 1},
+//              {$push: { 'floors.$[element].floorGallery': 
+//                  {
+//                  $each: ['holy smokes'],
+//                  $position: 2
+//                  } 
+//                  }},
+//              { arrayFilters: [{ 'element.floor': 1 }]});

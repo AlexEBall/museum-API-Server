@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {imgEditingDisabled, imgLinkOnChange} from '../actions';
+import {imgEditingDisabled, imgLinkOnChange, imgLinkUpdating} from '../actions';
 
 class ImageCard extends Component {
     state = {
@@ -9,13 +9,19 @@ class ImageCard extends Component {
 
     toggleImgInputFields = () => {
         console.log('clicked 2');
-
         this.setState({editDisabled: true})
     }
 
     handleImgLinkUpdate = event => {
         const value = event.target.value;
         this.props.imgLinkOnChange(value)
+    }
+
+    submitImgLinkUpdate = event => {
+        event.preventDefault();
+        
+        this.props.imgLinkUpdating(this.props.imgLinkValue, this.props.position, this.props.floor);
+        this.setState({editDisabled: false});
     }
 
     render() {
@@ -32,7 +38,7 @@ class ImageCard extends Component {
                     />
                     <button 
                         className="exhibitions__btn" 
-                        onClick={this.submitAudioLinkUpdate}
+                        onClick={this.submitImgLinkUpdate}
                         >Submit
                     </button>
                 </div>
@@ -57,4 +63,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {imgEditingDisabled, imgLinkOnChange})(ImageCard);
+export default connect(mapStateToProps, {imgEditingDisabled, imgLinkOnChange, imgLinkUpdating})(ImageCard);
