@@ -13,7 +13,10 @@ export default {
     // updateAudioLink: (input, floor) => {
     //     return axios.put('api/cafam/exhibitionFloor' + floor, {"input": input});
     // },
-    updateAnImgLink: (input, position, floor) => {
-        return axios.put('api/cafam/exhibitionFloor' + floor, {"pictureInput": input, "position": position});
+    // updateAnImgLink: (input, position, floor) => {
+    //     return axios.put('api/cafam/exhibitionFloor' + floor, {"pictureInput": input, "position": position});
+    // }
+    updateLinks: (audioInput, pictureInput, position, floor) => {
+        return axios.put('api/cafam/exhibitionFloor' + floor, {"input": audioInput, "pictureInput": pictureInput, "position": position});
     }
 };

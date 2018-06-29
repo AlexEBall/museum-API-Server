@@ -5,7 +5,8 @@ import {
     imgEditingDisabled,
     editingDisabled, 
     audioLinkOnChange, 
-    audioLinkUpdating
+    // audioLinkUpdating,
+    linkUpdating
 } from '../actions';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -36,7 +37,7 @@ class Floor extends Component {
         event.preventDefault();
         const floor = parseInt(this.props.match.params.floor);
 
-        this.props.audioLinkUpdating(this.props.audioLinkValue, floor);
+        this.props.linkUpdating(this.props.audioLinkValue, null, null, floor);
 
         if (this.props.audioLinkValue !== this.props.floor.audioLink) {
             this.props.fetchFloor(floor);
@@ -122,7 +123,7 @@ class Floor extends Component {
                         <div className="exhibitions__galleryArrayImageHolder">
                             <div className="exhibitions__imageTitleArea">
                                 <h3 className="heading__3">Image Gallery</h3>
-                                <button className="btn">Add an Image</button>
+                                <button className="exhibitions__btn">Add an Image</button>
                             </div>
                             {this.renderImgGallery()}
                         </div>
@@ -164,5 +165,6 @@ export default connect(mapStateToProps, {
     imgEditingDisabled,
     editingDisabled,
     audioLinkOnChange,
-    audioLinkUpdating 
+    // audioLinkUpdating,
+    linkUpdating
 })(Floor);

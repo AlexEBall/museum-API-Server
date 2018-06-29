@@ -13,3 +13,5 @@ export const EDITING_DISABLED = 'editing_disabled';
 export const AUDIO_LINK_UPDATE = 'audio_link_update';
 export const AUDIO_LINK_SAVED = 'audio_link_saved';
 
+export const LINK_SAVED = 'link_saved';
+

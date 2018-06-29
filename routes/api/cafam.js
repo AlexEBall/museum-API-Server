@@ -5,12 +5,12 @@ const cafamController = require("../../controllers/cafamController");
 router.route("/")
     .get(cafamController.findAll)
     // should be at the route they are posting from form
-    .post(cafamController.create);
+    .post(cafamController.create)
 
 router.route("/exhibitionFloor" + ":floor")
     .get(cafamController.findByFloor)
-    // .put(cafamController.updateAudioLink)
-    .put(cafamController.updateAnImgLink)
+    .put(cafamController.updateLinks);
+    // .put(cafamController.updateAnImgLink);
 
 router.route("/:id")
     .get(cafamController.findByID)

@@ -5,7 +5,8 @@ import {
     AUDIO_LINK_SAVED, 
     IMG_EDITING_DISABLED,
     IMG_LINK_UPDATE,
-    IMG_LINK_SAVED
+    IMG_LINK_SAVED,
+    LINK_SAVED
 } from './types';
 
 export const imgEditingDisabled = (boolean) => {
@@ -26,6 +27,19 @@ export const imgLinkOnChange = (text) => {
     return {
         type: IMG_LINK_UPDATE,
         payload: text
+    }
+}
+
+export const linkUpdating = (audioInput, pictureInput, position, floor) => {
+    return (dispatch) => {
+        API
+        .updateLinks(audioInput, pictureInput, position, floor)
+        .then((res) => {
+            console.log(res);
+            dispatch({ type: LINK_SAVED });
+        }).catch(err => {
+            console.log(err);
+        })
     }
 }
 

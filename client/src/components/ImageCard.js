@@ -3,8 +3,9 @@ import {connect} from 'react-redux';
 import {
     imgEditingDisabled, 
     imgLinkOnChange, 
-    imgLinkUpdating, 
-    fetchFloor
+    // imgLinkUpdating, 
+    fetchFloor,
+    linkUpdating
 } from '../actions';
 
 class ImageCard extends Component {
@@ -18,14 +19,14 @@ class ImageCard extends Component {
     }
 
     handleImgLinkUpdate = event => {
-        const value = event.target.value;
-        this.props.imgLinkOnChange(value)
+        const link = event.target.value;
+        this.props.imgLinkOnChange(link)
     }
 
     submitImgLinkUpdate = event => {
         event.preventDefault();
         
-        this.props.imgLinkUpdating(this.props.imgLinkValue, this.props.position, this.props.floorNum);
+        this.props.linkUpdating(null, this.props.imgLinkValue, this.props.position, this.props.floorNum);
 
         if (this.props.imgLinkValue !== this.props.img) {
             this.props.fetchFloor(this.props.floorNum);
@@ -80,6 +81,7 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps, {
     imgEditingDisabled, 
     imgLinkOnChange, 
-    imgLinkUpdating,
-    fetchFloor
+    // imgLinkUpdating,
+    fetchFloor,
+    linkUpdating
 })(ImageCard);

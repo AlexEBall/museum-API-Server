@@ -4,7 +4,8 @@ import {
     AUDIO_LINK_SAVED, 
     IMG_EDITING_DISABLED,
     IMG_LINK_UPDATE,
-    IMG_LINK_SAVED
+    IMG_LINK_SAVED,
+    LINK_SAVED
 } from '../actions/types';
 
 const INTIAL_STATE = {
@@ -27,6 +28,8 @@ export default (state = INTIAL_STATE, action) => {
         case AUDIO_LINK_UPDATE:
             return { ...state, audioLinkValue: action.payload }
         case AUDIO_LINK_SAVED:
+            return { INTIAL_STATE }
+        case LINK_SAVED:
             return { INTIAL_STATE }
         default:
             return state;
