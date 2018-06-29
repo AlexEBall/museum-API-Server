@@ -92,7 +92,7 @@ class Floor extends Component {
                             key={i} 
                             img={img}
                             position={i} 
-                            floor={floor}
+                            floorNum={floor}
                         /> 
                     )}
                 )}

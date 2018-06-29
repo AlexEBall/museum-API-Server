@@ -1,6 +1,11 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {imgEditingDisabled, imgLinkOnChange, imgLinkUpdating} from '../actions';
+import {
+    imgEditingDisabled, 
+    imgLinkOnChange, 
+    imgLinkUpdating, 
+    fetchFloor
+} from '../actions';
 
 class ImageCard extends Component {
     state = {
@@ -20,7 +25,12 @@ class ImageCard extends Component {
     submitImgLinkUpdate = event => {
         event.preventDefault();
         
-        this.props.imgLinkUpdating(this.props.imgLinkValue, this.props.position, this.props.floor);
+        this.props.imgLinkUpdating(this.props.imgLinkValue, this.props.position, this.props.floorNum);
+
+        if (this.props.imgLinkValue !== this.props.img) {
+            this.props.fetchFloor(this.props.floorNum);
+        }
+
         this.setState({editDisabled: false});
     }
 
@@ -58,9 +68,18 @@ class ImageCard extends Component {
 
 const mapStateToProps = state => {
     return {
+        fetching: state.floor.fetching,
+        fetched: state.floor.fetched,
+        error: state.floor.error,
+        floor: state.floor.floor,
         imgLinkValue: state.input.imgLinkValue,
         imgEditDisabled: state.input.imgEditDisabled
     }
 }
 
-export default connect(mapStateToProps, {imgEditingDisabled, imgLinkOnChange, imgLinkUpdating})(ImageCard);
+export default connect(mapStateToProps, {
+    imgEditingDisabled, 
+    imgLinkOnChange, 
+    imgLinkUpdating,
+    fetchFloor
+})(ImageCard);
