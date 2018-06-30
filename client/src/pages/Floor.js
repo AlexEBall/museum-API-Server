@@ -151,6 +151,11 @@ class Floor extends Component {
         const floor = parseInt(this.props.match.params.floor);
 
         this.props.pushingImgsIntoGallery(this.props.imgToPushValue, floor);
+
+        this.setState({editDisabled: false});
+
+        this.props.fetchFloor(floor);
+
     }
 
     renderFloorInformation = () => {
