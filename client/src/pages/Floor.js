@@ -6,7 +6,9 @@ import {
     editingDisabled, 
     audioLinkOnChange, 
     // audioLinkUpdating,
-    linkUpdating
+    linkUpdating,
+    pushingImgsIntoGallery,
+    imgToPushOnChange
 } from '../actions';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -14,6 +16,10 @@ import ImageCard from '../components/ImageCard';
 // import {Link} from 'react-router-dom';
 
 class Floor extends Component {
+    state = {
+        editDisabled: false
+    };
+
     componentWillMount = () => {
         const floor = parseInt(this.props.match.params.floor);
         this.props.fetchFloor(floor);
@@ -31,6 +37,11 @@ class Floor extends Component {
     handleAudioLinkUpdate = event => {
         const value = event.target.value;
         this.props.audioLinkOnChange(value)
+    }
+
+    handlePushingImgLink = event => {
+        const value = event.target.value;
+        this.props.imgToPushOnChange(value);
     }
 
     submitAudioLinkUpdate = event => {
@@ -102,6 +113,46 @@ class Floor extends Component {
         }
     }
 
+    renderImgTitleArea = () => {
+        if (this.state.editDisabled) {
+            return (
+                <div className="exhibitions__imageTitleArea">
+                    <h3 className="heading__3">Image Gallery</h3>
+                    <input 
+                        value={this.props.imgToPushValue}
+                        onChange={this.handlePushingImgLink}
+                        name="pushedImgLinkValue"
+                        placeholder="Copy an AWS Link"
+                        className="exhibitinos__addImgInput"
+                    />
+                    <button 
+                        className="exhibitions__btn"
+                        onClick={this.submitImage}>Submit Image</button>
+                </div>
+            );
+        } else {
+            return (
+                <div className="exhibitions__imageTitleArea">
+                    <h3 className="heading__3">Image Gallery</h3>
+                    <button 
+                        className="exhibitions__btn"
+                        onClick={this.addImage}>Add an Image</button>
+                </div>
+            );
+        }
+    }
+
+    addImage = () => {
+        this.setState({editDisabled: true});
+    }
+
+    submitImage = event => {
+        event.preventDefault();
+        const floor = parseInt(this.props.match.params.floor);
+
+        this.props.pushingImgsIntoGallery(this.props.imgToPushValue, floor);
+    }
+
     renderFloorInformation = () => {
         const floorInformation = this.props.floor;
         if (!floorInformation) {
@@ -121,10 +172,7 @@ class Floor extends Component {
                         <img className="exhibitions__coverImg" src={floorInformation.coverPic} alt='floor 1 app pic' />
                         {this.renderAudioLinkEditingField()}
                         <div className="exhibitions__galleryArrayImageHolder">
-                            <div className="exhibitions__imageTitleArea">
-                                <h3 className="heading__3">Image Gallery</h3>
-                                <button className="exhibitions__btn">Add an Image</button>
-                            </div>
+                            {this.renderImgTitleArea()}
                             {this.renderImgGallery()}
                         </div>
                     </div>
@@ -156,7 +204,8 @@ const mapStateToProps = state => {
         editDisabled: state.input.editDisabled,
         audioLinkValue: state.input.audioLinkValue,
         imgLinkValue: state.input.imgLinkValue,
-        imgEditDisabled: state.input.imgEditDisabled
+        imgEditDisabled: state.input.imgEditDisabled,
+        imgToPushValue: state.input.imgToPushValue
     }
 }
 
@@ -166,5 +215,7 @@ export default connect(mapStateToProps, {
     editingDisabled,
     audioLinkOnChange,
     // audioLinkUpdating,
-    linkUpdating
+    linkUpdating,
+    pushingImgsIntoGallery,
+    imgToPushOnChange
 })(Floor);

@@ -18,5 +18,8 @@ export default {
     // }
     updateLinks: (audioInput, pictureInput, position, floor) => {
         return axios.put('api/cafam/exhibitionFloor' + floor, {"input": audioInput, "pictureInput": pictureInput, "position": position});
+    },
+    addImgToGallery: (pushedImg, floor) => {
+        return axios.post('api/cafam/exhibitionFloor' + floor, {"pushedImg": pushedImg});
     }
 };

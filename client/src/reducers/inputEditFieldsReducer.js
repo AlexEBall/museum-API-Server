@@ -5,14 +5,17 @@ import {
     IMG_EDITING_DISABLED,
     IMG_LINK_UPDATE,
     IMG_LINK_SAVED,
-    LINK_SAVED
+    LINK_SAVED,
+    PUSH_IMG_INTO_GALLERY,
+    IMG_TO_PUSH_INTO_GALLERY_UPDATE
 } from '../actions/types';
 
 const INTIAL_STATE = {
     audioLinkValue: '',
     editDisabled: false,
     imgLinkValue: '',
-    imgEditDisabled: false
+    imgEditDisabled: false,
+    imgToPushValue: ''
 }
 
 export default (state = INTIAL_STATE, action) => {
@@ -30,6 +33,10 @@ export default (state = INTIAL_STATE, action) => {
         case AUDIO_LINK_SAVED:
             return { INTIAL_STATE }
         case LINK_SAVED:
+            return { INTIAL_STATE }
+        case IMG_TO_PUSH_INTO_GALLERY_UPDATE:
+            return { ...state, imgToPushValue: action.payload }
+        case PUSH_IMG_INTO_GALLERY:
             return { INTIAL_STATE }
         default:
             return state;

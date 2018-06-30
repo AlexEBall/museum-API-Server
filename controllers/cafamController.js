@@ -35,34 +35,21 @@ module.exports = {
             .catch(err => res.status[422].json(err));
     },
     // post
-    create: function(req, res) {
+    addImgToGallery: (req, res) => {
+        console.log(req);
+        const floor = parseInt(req.params.floor);
+        const pushedImgString = req.body.pushedImg;
         db.cafam
-            .create(req.body)
-            .then(cafamModel => res.json(cafamModel))
-            .catch(err => res.status(422).json(err));
-    },
-    // put
-    // updateAudioLink: function(req, res) {
-    //     // console.log('Hey are we hitting this before failing? Not sure also what is the request===', req);
-    //     const floor = parseInt(req.params.floor);
-    //     // console.log('MY REQUESTS BODY:::::::::::=======', req.body);
+        .updateOne({ 'floors.floor': floor},
+             {$push: { 'floors.$[element].floorGallery': pushedImgString}},
+             { arrayFilters: [{ 'element.floor': floor }]})
+        .then(cafamModel => res.json(cafamModel))
+        .catch(err => res.status[422].json(err));
+    }, 
+
+    // create: function(req, res) {
     //     db.cafam
-    //         .updateOne({ 'floors.floor': floor},
-    //         {$set: { 'floors.$[element].audioLink': req.body.input}},
-    //         { arrayFilters: [{ 'element.floor': floor}]})
-    //         .then(cafamModel => res.json(cafamModel))
-    //         .catch(err => res.status(422).json(err));
-    // },
-    // updateAnImgLink: function(req, res) {
-    //     console.log(req);
-    //     const floor = parseInt(req.params.floor);
-    //     const position = parseInt(req.body.position);
-    //     const mongoSetNestedArrayPositionFilterString = `floors.$[element].floorGallery.${position}`;
-    //     console.log('The string=====', mongoSetNestedArrayPositionFilterString);
-    //     db.cafam
-    //         .updateOne({ 'floors.floor': floor},
-    //         {$set: { [mongoSetNestedArrayPositionFilterString]: req.body.pictureInput }},
-    //         { arrayFilters: [{ 'element.floor': floor }]})
+    //         .create(req.body)
     //         .then(cafamModel => res.json(cafamModel))
     //         .catch(err => res.status(422).json(err));
     // },
