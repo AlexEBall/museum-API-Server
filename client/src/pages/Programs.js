@@ -6,39 +6,23 @@ import Footer from '../components/Footer';
 
 class Programs extends Component {
     componentWillMount = () => {
-        this.props.Programs();
+        this.props.fetchPrograms();
     }
 
     renderContent = () => {
-        let exhibitions = this.props.programs;
-        if (!exhibitions) {
-           return <h2>Loading Exhibitions... please wait</h2>
+        let programs = this.props.programs;
+        if (!programs) {
+           return <h2>Loading Programs... please wait</h2>
         } else {
-            const Exhibition = exhibitions[0];
-            console.log('TOUR AUDIENCE', typeof(tourAudience));
-            if (!Exhibition) {
-                console.log('sorry');
-            } else {
-                console.log('THIS RENDERING TIME', Exhibition.tourAudience);
+            console.log(programs);
             return(
             <div className="exhibitions__content-box">
                 <div className="exhibitions__individual-container">
-                    <h3>{Exhibition.tourAudience}</h3>
+                    <h3>Programs</h3>
                     <img src="http://fillmurray.com/300/300" alt="coverImg"/>
-                    <div className="exhibitions__btn-container">
-                        {Exhibition.floors.map(exhib => {
-                            console.log('DOGAIUGPAIDVJAS', exhib.floor);
-                            return (
-                                <Link to={'/exhibitionFloor' + exhib.floor} key={exhib.floor}>
-                                    <button className="exhibitions__btn">Floor {exhib.floor}</button>
-                                </Link>
-                            )
-                        })}
-                    </div>
                 </div>
             </div>
            );
-            }
         }
     }
 
@@ -67,3 +51,12 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, { fetchPrograms })(Programs);
+
+// {Exhibition.floors.map(exhib => {
+//                             console.log('DOGAIUGPAIDVJAS', exhib.floor);
+//                             return (
+//                                 <Link to={'/exhibitionFloor' + exhib.floor} key={exhib.floor}>
+//                                     <button className="exhibitions__btn">Floor {exhib.floor}</button>
+//                                 </Link>
+//                             )
+//                         })}
