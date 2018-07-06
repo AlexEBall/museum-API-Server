@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 
 export default class ProgramCard extends Component {
-    addProgram = () => {
-
-    }
 
     editProgram = () => {
         // console.log('hi');
+
     }
 
     deleteProgram = () => {
@@ -39,10 +38,11 @@ export default class ProgramCard extends Component {
                     Registration Link: {this.props.program.registrationLink}
                 </div>
                 <div className="programCard programCard__Buttons">
-                    <button 
-                        className="exhibitions__btn"
-                        onClick={this.addProgram}>Add a Program
-                    </button>
+                    <Link to="/programs/toAdd">
+                        <button className="exhibitions__btn">
+                            Add a Program
+                        </button>
+                    </Link>
                     <button 
                         className="exhibitions__btn"
                         onClick={this.editProgram}>Edit a Program

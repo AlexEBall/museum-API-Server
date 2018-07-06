@@ -9,6 +9,7 @@ import Home from './pages/Home';
 import Exhibitions from './pages/Exhibitions';
 import Programs from './pages/Programs';
 import Floor from './pages/Floor';
+import ProgramToAdd from './pages/ProgramToAdd';
 
 export default class App extends Component {
   render() {
@@ -20,8 +21,9 @@ export default class App extends Component {
           <Switch>
             <Route exact path="/" component={Home}/>
             <Route exact path="/exhibitions" component={Exhibitions}/>
-            <Route exact path="/programs" component={Programs}/>
             <Route exact path="/exhibitionFloor:floor" component={Floor} />
+            <Route exact path="/programs" component={Programs}/>
+            <Route exact path="/programs/toAdd" component={ProgramToAdd}/>
           </Switch>
         </Router>
       </Provider>

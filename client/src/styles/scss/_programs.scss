@@ -46,4 +46,11 @@
         justify-content: space-around;
     }
 
+    &__formGroup {
+        display: flex;
+        flex-direction: column;
+        margin: .5rem;
+        padding: 1rem;
+    }
+
 }
