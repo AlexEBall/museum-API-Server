@@ -21,3 +21,6 @@ export const DELETE_IMG = 'delete_img';
 export const FETCHING_PROGRAMS_START = 'fetching_programs_start';
 export const FETCHING_PROGRAMS_ERROR = 'fetching_programs_error';
 export const RECIEVE_PROGRAMS = 'recieve_programs';
+
+export const TYPING_PROGRAM_INPUT_FIELDS_TO_ADD = 'typing_program_input_fields_to_add';
+export const PROGRAM_ADDED = 'program_added';

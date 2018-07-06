@@ -1,6 +1,18 @@
 import React, {Component} from 'react';
 
 export default class ProgramCard extends Component {
+    addProgram = () => {
+
+    }
+
+    editProgram = () => {
+        // console.log('hi');
+    }
+
+    deleteProgram = () => {
+
+    }
+
     render () {
         console.log('these are my props', this.props);
         return(

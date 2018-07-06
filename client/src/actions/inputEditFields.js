@@ -46,20 +46,6 @@ export const linkUpdating = (audioInput, pictureInput, imgToBeDeleted, position,
     }
 }
 
-// export const deleteImg = (itemToBeDeleted, floor) => {
-//     console.log(itemToBeDeleted);
-//     return (dispatch) => {
-//         API
-//         .deletingImg(itemToBeDeleted, floor)
-//         .then((res) => {
-//             console.log('response:', res);
-//             dispatch({ type: DELETE_IMG });
-//         }).catch(err => {
-//             console.log(err);
-//         })
-//     }
-// }
-
 export const pushingImgsIntoGallery = (pushedImg, floor) => {
     return (dispatch) => {
         API
@@ -71,21 +57,6 @@ export const pushingImgsIntoGallery = (pushedImg, floor) => {
         })
     }
 }
-
-// export const imgLinkUpdating = (input, position, floor) => {
-//     // console.log(`My ${input} and my ${position}`);
-//     return (dispatch) => {
-//         API
-//         .updateAnImgLink(input, position, floor)
-//         .then((res) => {
-//             console.log(res);
-//             dispatch({ type: IMG_LINK_SAVED });
-//         }).catch(err => {
-//             console.log(err);
-//         })
-//     }
-
-// }
 
 export const audioLinkOnChange = (text) => {
     return {
@@ -100,17 +71,3 @@ export const imgToPushOnChange = (text) => {
         payload: text
     }
 }
-
-// export const audioLinkUpdating = (input, floor) => {
-//     console.log('My input:::', input + ' and my floor:::', floor);
-//     return (dispatch) => {
-//         API
-//         .updateAudioLink(input, floor)
-//         .then((res) => {
-//             console.log(res);
-//             dispatch({ type: AUDIO_LINK_SAVED });
-//         }).catch(err => {
-//             console.log(err);
-//         })
-//     }
-// }

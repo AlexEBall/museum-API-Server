@@ -35,6 +35,7 @@ class Floor extends Component {
     }
 
     handleAudioLinkUpdate = event => {
+        // console.log(event.target.name);
         const value = event.target.value;
         this.props.audioLinkOnChange(value)
     }
