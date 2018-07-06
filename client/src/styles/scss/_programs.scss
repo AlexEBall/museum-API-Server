@@ -1,12 +1,15 @@
 .programCard {
     display: flex;
     flex-direction: column;
-    width: 50rem;
     border: black solid 1px;
     margin: 1rem 0;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 1.8rem;
 
     &__Title {
         background-color: red;
+        align-items: center;
     }
 
     &__Img {
@@ -35,6 +38,12 @@
 
     &__RegistrationLink {
         background-color: cyan;
+    }
+
+    &__Buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
     }
 
 }

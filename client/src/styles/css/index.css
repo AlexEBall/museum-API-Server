@@ -133,11 +133,14 @@ body {
 .programCard {
   display: flex;
   flex-direction: column;
-  width: 50rem;
   border: black solid 1px;
-  margin: 1rem 0; }
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 1.8rem; }
   .programCard__Title {
-    background-color: red; }
+    background-color: red;
+    align-items: center; }
   .programCard__Img {
     padding: 1rem; }
     .programCard__Img--picture {
@@ -152,3 +155,7 @@ body {
     background-color: black; }
   .programCard__RegistrationLink {
     background-color: cyan; }
+  .programCard__Buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; }
