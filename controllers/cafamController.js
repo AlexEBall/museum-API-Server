@@ -36,7 +36,7 @@ module.exports = {
     },
     // post
     addImgToGallery: (req, res) => {
-        console.log(req);
+        // console.log(req);
         const floor = parseInt(req.params.floor);
         const pushedImgString = req.body.pushedImg;
         db.cafam

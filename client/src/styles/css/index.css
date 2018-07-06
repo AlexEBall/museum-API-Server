@@ -119,8 +119,13 @@ body {
     width: 25rem; }
   .exhibitions__imgs {
     width: 100%;
-    padding: 2rem;
-    margin: 2rem; }
+    padding: 2rem; }
+  .exhibitions__imageCardButtonsArea {
+    display: flex;
+    justify-content: space-around;
+    border: solid white 1px;
+    margin: 0 2rem;
+    width: 22rem; }
 
 .heading__3 {
   margin: .5rem; }

@@ -7,7 +7,8 @@ import {
     IMG_LINK_SAVED,
     LINK_SAVED,
     PUSH_IMG_INTO_GALLERY,
-    IMG_TO_PUSH_INTO_GALLERY_UPDATE
+    IMG_TO_PUSH_INTO_GALLERY_UPDATE,
+    DELETE_IMG
 } from '../actions/types';
 
 const INTIAL_STATE = {
@@ -37,6 +38,8 @@ export default (state = INTIAL_STATE, action) => {
         case IMG_TO_PUSH_INTO_GALLERY_UPDATE:
             return { ...state, imgToPushValue: action.payload }
         case PUSH_IMG_INTO_GALLERY:
+            return { INTIAL_STATE }
+        case DELETE_IMG:
             return { INTIAL_STATE }
         default:
             return state;

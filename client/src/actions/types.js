@@ -16,4 +16,5 @@ export const AUDIO_LINK_SAVED = 'audio_link_saved';
 export const LINK_SAVED = 'link_saved';
 export const PUSH_IMG_INTO_GALLERY = 'push_img_into_gallery';
 export const IMG_TO_PUSH_INTO_GALLERY_UPDATE = 'img_to_push_into_gallery_update';
+export const DELETE_IMG = 'delete_img';
 

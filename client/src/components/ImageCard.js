@@ -23,6 +23,10 @@ class ImageCard extends Component {
         this.props.imgLinkOnChange(link)
     }
 
+    removeImg = () => {
+        
+    }
+
     submitImgLinkUpdate = event => {
         event.preventDefault();
         
@@ -58,9 +62,14 @@ class ImageCard extends Component {
             return (        
                 <div className="exhibitions__imageCard">
                     <img src={this.props.img} className="exhibitions__imgs"/>
-                    <button 
-                        className="exhibitions__btn"
-                        onClick={this.toggleImgInputFields}>Edit</button>
+                    <div className="exhibitions__imageCardButtonsArea">
+                        <button 
+                            className="exhibitions__btn"
+                            onClick={this.toggleImgInputFields}>Edit</button>
+                        <button 
+                            className="exhibitions__btn"
+                            onClick={this.removeImg}>Delete Img</button>
+                    </div>
                 </div>  
             )
         }

@@ -8,7 +8,8 @@ import {
     IMG_LINK_SAVED,
     LINK_SAVED,
     PUSH_IMG_INTO_GALLERY,
-    IMG_TO_PUSH_INTO_GALLERY_UPDATE
+    IMG_TO_PUSH_INTO_GALLERY_UPDATE,
+    DELETE_IMG
 } from './types';
 
 export const imgEditingDisabled = (boolean) => {
@@ -43,6 +44,13 @@ export const linkUpdating = (audioInput, pictureInput, position, floor) => {
             console.log(err);
         })
     }
+}
+
+export const deleteImg = () => {
+    // return (dispatch) => {
+    //     API
+    //     .
+    // }
 }
 
 export const pushingImgsIntoGallery = (pushedImg, floor) => {
