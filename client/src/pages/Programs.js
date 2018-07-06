@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {fetchPrograms} from '../actions';
 import Header from '../components/Header';
+import ProgramCard from '../components/ProgramCard';
 import Footer from '../components/Footer';
 
 class Programs extends Component {
@@ -9,7 +10,7 @@ class Programs extends Component {
         this.props.fetchPrograms();
     }
 
-    renderContent = () => {
+    renderPage = () => {
         let programs = this.props.programs;
         if (!programs) {
            return <h2>Loading Programs... please wait</h2>
@@ -19,7 +20,13 @@ class Programs extends Component {
             <div className="exhibitions__content-box">
                 <div className="exhibitions__individual-container">
                     <h3>Programs</h3>
-                    <img src="http://fillmurray.com/300/300" alt="coverImg"/>
+                    {programs.map((program, i) => {
+                        return (
+                        <ProgramCard 
+                            key={i}
+                            program={program} />
+                        )
+                    })}
                 </div>
             </div>
            );
@@ -33,7 +40,7 @@ class Programs extends Component {
                 <Header />
                 <section className="exhibitions">
                     <h1 className="exhibitions__title">These are the current programs</h1>
-                    
+                    {this.renderPage()}
                 </section>
                 <Footer />
             </div>

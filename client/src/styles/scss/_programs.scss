@@ -1,0 +1,33 @@
+.programCard {
+    display: flex;
+    flex-direction: column;
+
+    &__Title {
+        background-color: red;
+    }
+
+    &__Img {
+        background-color: green
+    }
+
+    &__Price {
+        background-color: yellow;
+    }
+
+    &__Description {
+        background-color: wheat;
+    }
+
+    &__Time {
+        background-color: lightpink;
+    }
+
+    &__MemberInfo {
+        background-color: black;
+    }
+
+    &__RegistrationLink {
+        background-color: cyan;
+    }
+
+}

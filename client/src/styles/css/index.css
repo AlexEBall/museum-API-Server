@@ -129,3 +129,21 @@ body {
 
 .heading__3 {
   margin: .5rem; }
+
+.programCard {
+  display: flex;
+  flex-direction: column; }
+  .programCard__Title {
+    background-color: red; }
+  .programCard__Img {
+    background-color: green; }
+  .programCard__Price {
+    background-color: yellow; }
+  .programCard__Description {
+    background-color: wheat; }
+  .programCard__Time {
+    background-color: lightpink; }
+  .programCard__MemberInfo {
+    background-color: black; }
+  .programCard__RegistrationLink {
+    background-color: cyan; }
