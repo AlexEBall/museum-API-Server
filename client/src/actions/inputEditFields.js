@@ -33,10 +33,10 @@ export const imgLinkOnChange = (text) => {
     }
 }
 
-export const linkUpdating = (audioInput, pictureInput, position, floor) => {
+export const linkUpdating = (audioInput, pictureInput, imgToBeDeleted, position, floor) => {
     return (dispatch) => {
         API
-        .updateLinks(audioInput, pictureInput, position, floor)
+        .updateLinks(audioInput, pictureInput, imgToBeDeleted, position, floor)
         .then((res) => {
             console.log(res);
             dispatch({ type: LINK_SAVED });
@@ -46,12 +46,19 @@ export const linkUpdating = (audioInput, pictureInput, position, floor) => {
     }
 }
 
-export const deleteImg = () => {
-    // return (dispatch) => {
-    //     API
-    //     .
-    // }
-}
+// export const deleteImg = (itemToBeDeleted, floor) => {
+//     console.log(itemToBeDeleted);
+//     return (dispatch) => {
+//         API
+//         .deletingImg(itemToBeDeleted, floor)
+//         .then((res) => {
+//             console.log('response:', res);
+//             dispatch({ type: DELETE_IMG });
+//         }).catch(err => {
+//             console.log(err);
+//         })
+//     }
+// }
 
 export const pushingImgsIntoGallery = (pushedImg, floor) => {
     return (dispatch) => {

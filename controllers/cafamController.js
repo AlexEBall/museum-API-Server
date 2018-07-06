@@ -65,6 +65,17 @@ module.exports = {
                 { arrayFilters: [{ 'element.floor': floor }]})
                 .then(cafamModel => res.json(cafamModel))
                 .catch(err => res.status(422).json(err));
+        } else if (req.body.itemToDelete) {
+            const floor = parseInt(req.params.floor);
+            console.log('the floor is :::::', floor);
+            const itemToDelete = req.body.itemToDelete;
+            console.log(req.body);
+            db.cafam
+                .updateOne({ 'floors.floor': floor },
+                {$pull: { 'floors.$[element].floorGallery': { $in: [itemToDelete] }}},
+                { arrayFilters: [{ 'element.floor': floor }]})
+                .then(cafamModel => res.json(cafamModel))
+                .catch(err => res.status(422).json(err));
         } else {
             const floor = parseInt(req.params.floor);
             // console.log('MY REQUESTS BODY:::::::::::=======', req.body);
@@ -76,7 +87,18 @@ module.exports = {
                 .catch(err => res.status(422).json(err));
         }
     },
-
+    deleteImg: (req, res) => {
+        const floor = parseInt(req.params.floor);
+        console.log('the floor is :::::', floor);
+        const itemToDelete = req.body.itemTo;
+        console.log(req.body);
+        db.cafam
+            .updateOne({ 'floors.floor': floor },
+            {$pull: { 'floors.$[element].floorGallery': { $in: [itemToDelete] }}},
+            { arrayFilters: [{ 'element.floor': floor }]})
+            .then(cafamModel => res.json(cafamModel))
+            .catch(err => res.status(422).json(err));
+    },
     remove: function(req, res) {
         db.cafam
             .findById({ _id: req.params.id })
@@ -105,3 +127,8 @@ module.exports = {
 // db.getCollection('cafam').updateOne({ 'floors.floor': 1},
 //             {$set: { 'floors.$[element].floorGallery.2': 'testywoooooo' }},
 //             { arrayFilters: [{ 'element.floor': 1 }]});
+
+// works to delete but need to pass in element string
+// db.getCollection('cafam').updateOne({ 'floors.floor': 1 },
+//              {$pull: { 'floors.$[element].floorGallery': { $in: [null] }}},
+//              { arrayFilters: [{ 'element.floor': 1 }]})

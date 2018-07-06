@@ -48,7 +48,7 @@ class Floor extends Component {
         event.preventDefault();
         const floor = parseInt(this.props.match.params.floor);
 
-        this.props.linkUpdating(this.props.audioLinkValue, null, null, floor);
+        this.props.linkUpdating(this.props.audioLinkValue, null, null, null, floor);
 
         if (this.props.audioLinkValue !== this.props.floor.audioLink) {
             this.props.fetchFloor(floor);

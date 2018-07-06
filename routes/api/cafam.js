@@ -11,7 +11,7 @@ router.route("/exhibitionFloor" + ":floor")
     .get(cafamController.findByFloor)
     .post(cafamController.addImgToGallery)
     .put(cafamController.updateLinks);
-
+    // .delete(cafamController.deleteImg);
     // .put(cafamController.updateAnImgLink);
 
 router.route("/:id")

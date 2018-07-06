@@ -5,7 +5,8 @@ import {
     imgLinkOnChange, 
     // imgLinkUpdating, 
     fetchFloor,
-    linkUpdating
+    linkUpdating,
+    // deleteImg
 } from '../actions';
 
 class ImageCard extends Component {
@@ -24,13 +25,19 @@ class ImageCard extends Component {
     }
 
     removeImg = () => {
-        
+        console.log('what do we have?');
+        const itemToBeDeleted = this.props.img;
+        console.log(itemToBeDeleted);
+        this.props.linkUpdating(null, null, itemToBeDeleted, null, this.props.floorNum);
+
+        // if (this.props)
+
     }
 
     submitImgLinkUpdate = event => {
         event.preventDefault();
         
-        this.props.linkUpdating(null, this.props.imgLinkValue, this.props.position, this.props.floorNum);
+        this.props.linkUpdating(null, this.props.imgLinkValue, null, this.props.position, this.props.floorNum);
 
         if (this.props.imgLinkValue !== this.props.img) {
             this.props.fetchFloor(this.props.floorNum);
@@ -92,5 +99,6 @@ export default connect(mapStateToProps, {
     imgLinkOnChange, 
     // imgLinkUpdating,
     fetchFloor,
-    linkUpdating
+    linkUpdating,
+    // deleteImg
 })(ImageCard);
