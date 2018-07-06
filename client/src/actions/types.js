@@ -22,5 +22,11 @@ export const FETCHING_PROGRAMS_START = 'fetching_programs_start';
 export const FETCHING_PROGRAMS_ERROR = 'fetching_programs_error';
 export const RECIEVE_PROGRAMS = 'recieve_programs';
 
-export const TYPING_PROGRAM_INPUT_FIELDS_TO_ADD = 'typing_program_input_fields_to_add';
+export const TYPING_PROGRAM_TITLE = 'typing_program_title';
+export const TYPING_PROGRAM_PICTURE = 'typing_program_picture';
+export const TYPING_PROGRAM_DESCRIPTION = 'typing_program_description';
+export const TYPING_PROGRAM_PRICE = 'typing_program_price';
+export const TYPING_PROGRAM_TIME = 'typing_program_time';
+export const TYPING_PROGRAM_MEMBER_INFO = 'typing_program_member_info';
+export const TYPING_PROGRAM_REGISTRATION_LINK = 'typing_program_registration_link';
 export const PROGRAM_ADDED = 'program_added';
