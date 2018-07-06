@@ -37,7 +37,7 @@ class ProgramToAdd extends Component {
                                 <label>Picture</label>
                                 <input
                                     value={this.props.picture}
-                                    name='title'
+                                    name='picture'
                                     onChange={this.handleInputs}
                                 />
                             </div>
@@ -45,7 +45,7 @@ class ProgramToAdd extends Component {
                                 <label>Price</label>
                                 <input
                                     value={this.props.price}
-                                    name='title'
+                                    name='price'
                                     onChange={this.handleInputs}
                                 />
                             </div>
@@ -53,7 +53,7 @@ class ProgramToAdd extends Component {
                                 <label>Description</label>
                                 <textarea
                                     value={this.props.description}
-                                    name='title'
+                                    name='description'
                                     onChange={this.handleInputs}
                                 />
                             </div>
@@ -61,7 +61,7 @@ class ProgramToAdd extends Component {
                                 <label>Time</label>
                                 <input
                                     value={this.props.time}
-                                    name='title'
+                                    name='time'
                                     onChange={this.handleInputs}
                                 />
                             </div>
@@ -69,7 +69,7 @@ class ProgramToAdd extends Component {
                                 <label>Member Information</label>
                                 <input
                                     value={this.props.memberInfo}
-                                    name='title'
+                                    name='memberInfo'
                                     onChange={this.handleInputs}
                                 />
                             </div>
@@ -77,7 +77,7 @@ class ProgramToAdd extends Component {
                                 <label>Registration Link</label>
                                 <input
                                     value={this.props.registrationLink}
-                                    name='title'
+                                    name='registrationLink'
                                     onChange={this.handleInputs}
                                 />
                             </div>
