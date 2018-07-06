@@ -1,13 +1,20 @@
 .programCard {
     display: flex;
     flex-direction: column;
+    width: 50rem;
+    border: black solid 1px;
+    margin: 1rem 0;
 
     &__Title {
         background-color: red;
     }
 
     &__Img {
-        background-color: green
+        &--picture {
+            width: 100%;
+        }
+
+        padding: 1rem;
     }
 
     &__Price {

@@ -132,11 +132,16 @@ body {
 
 .programCard {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  width: 50rem;
+  border: black solid 1px;
+  margin: 1rem 0; }
   .programCard__Title {
     background-color: red; }
   .programCard__Img {
-    background-color: green; }
+    padding: 1rem; }
+    .programCard__Img--picture {
+      width: 100%; }
   .programCard__Price {
     background-color: yellow; }
   .programCard__Description {
