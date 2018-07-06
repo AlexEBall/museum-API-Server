@@ -17,7 +17,7 @@ router.route("/exhibitionFloor" + ":floor")
 router.route("/:id")
     .get(cafamController.findByID)
     // .put(cafamController.update)
-    .delete(cafamController.remove);
+    // .delete(cafamController.remove);
 
 
 module.exports = router;

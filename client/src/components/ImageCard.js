@@ -30,8 +30,7 @@ class ImageCard extends Component {
         console.log(itemToBeDeleted);
         this.props.linkUpdating(null, null, itemToBeDeleted, null, this.props.floorNum);
 
-        // if (this.props)
-
+        this.props.fetchFloor(this.props.floorNum);
     }
 
     submitImgLinkUpdate = event => {
