@@ -87,25 +87,25 @@ module.exports = {
                 .catch(err => res.status(422).json(err));
         }
     },
-    deleteImg: (req, res) => {
-        const floor = parseInt(req.params.floor);
-        console.log('the floor is :::::', floor);
-        const itemToDelete = req.body.itemTo;
-        console.log(req.body);
-        db.cafam
-            .updateOne({ 'floors.floor': floor },
-            {$pull: { 'floors.$[element].floorGallery': { $in: [itemToDelete] }}},
-            { arrayFilters: [{ 'element.floor': floor }]})
-            .then(cafamModel => res.json(cafamModel))
-            .catch(err => res.status(422).json(err));
-    },
-    remove: function(req, res) {
-        db.cafam
-            .findById({ _id: req.params.id })
-            .then(cafamModel => cafamModel.remove())
-            .then(cafamModel => res.json(cafamModel))
-            .catch(err => res.status(422).json(err));
-    }
+    // deleteImg: (req, res) => {
+    //     const floor = parseInt(req.params.floor);
+    //     console.log('the floor is :::::', floor);
+    //     const itemToDelete = req.body.itemTo;
+    //     console.log(req.body);
+    //     db.cafam
+    //         .updateOne({ 'floors.floor': floor },
+    //         {$pull: { 'floors.$[element].floorGallery': { $in: [itemToDelete] }}},
+    //         { arrayFilters: [{ 'element.floor': floor }]})
+    //         .then(cafamModel => res.json(cafamModel))
+    //         .catch(err => res.status(422).json(err));
+    // },
+    // remove: function(req, res) {
+    //     db.cafam
+    //         .findById({ _id: req.params.id })
+    //         .then(cafamModel => cafamModel.remove())
+    //         .then(cafamModel => res.json(cafamModel))
+    //         .catch(err => res.status(422).json(err));
+    // }
 }
 // works in the shell but not on robo 3t
 // db.getCollection('cafam').updateOne({ 'floors.floor': 1},
