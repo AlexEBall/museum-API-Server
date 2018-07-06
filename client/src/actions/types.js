@@ -18,3 +18,6 @@ export const PUSH_IMG_INTO_GALLERY = 'push_img_into_gallery';
 export const IMG_TO_PUSH_INTO_GALLERY_UPDATE = 'img_to_push_into_gallery_update';
 export const DELETE_IMG = 'delete_img';
 
+export const FETCHING_PROGRAMS_START = 'fetching_programs_start';
+export const FETCHING_PROGRAMS_ERROR = 'fetching_programs_error';
+export const RECIEVE_PROGRAMS = 'recieve_programs';

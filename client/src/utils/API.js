@@ -30,4 +30,7 @@ export default {
     //     console.log('itteeeyyymm', itemToBeDeleted);
     //     return axios.put('api/cafam/exhibitionFloor' + floor, {"itemToDelete": itemToBeDeleted});
     // }
+    fetchPrograms: () => {
+        return axios.get("api/cafamPrograms");
+    }
 };
