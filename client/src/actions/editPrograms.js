@@ -10,6 +10,23 @@ import {
     TYPING_PROGRAM_REGISTRATION_LINK
 } from './types';
 
+export const addProgram = (programData) => {
+    console.log('right before my controller', programData);
+    return (dispatch) => {
+        API
+            .saveProgram(programData)
+            .then((res) => {
+                console.log('the response data', res);
+                // const programDataParsed = JSON.parse(res.config.data);
+                // console.log(typeof(programDataParsed));
+                // console.log(programDataParsed);
+                dispatch({ type: PROGRAM_ADDED })
+            }).catch(err => {
+                console.log(err);
+            })
+    }
+}
+
 export const addingProgramInputFieldOnChange = (name, text) => {
     if (name === 'title') {
         return {

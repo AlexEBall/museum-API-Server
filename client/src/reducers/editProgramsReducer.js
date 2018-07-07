@@ -35,6 +35,17 @@ export default (state = INTIAL_STATE, action) => {
             return {...state, memberInfo: action.payload }
         case TYPING_PROGRAM_REGISTRATION_LINK:
             return {...state, registrationLink: action.payload }
+        case PROGRAM_ADDED:
+            return { INTIAL_STATE }
+            // return { ...state,
+            //     title: action.payload.title,
+            //     picture: action.payload.picture,
+            //     description: action.payload.description,
+            //     price: action.payload.price,
+            //     time: action.payload.time,
+            //     memberInfo: action.payload.memberInfo,
+            //     registrationLink: action.payload.registrationLink
+            // }
         default:
             return state
     }

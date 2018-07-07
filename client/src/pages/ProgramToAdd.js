@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import { addingProgramInputFieldOnChange } from '../actions';
+import { 
+    addProgram,
+    addingProgramInputFieldOnChange
+} from '../actions';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -15,7 +18,22 @@ class ProgramToAdd extends Component {
     handleFormSubmit = (event) => {
         event.preventDefault();
         console.log('logged');
+
+        const programData = {
+            title: this.props.title,
+            picture: this.props.picture,
+            description: this.props.description,
+            price: parseInt(this.props.price),
+            time: this.props.time,
+            memberInfo: this.props.memberInfo,
+            registrationLink: this.props.registrationLink
+        }
+
+        this.props.addProgram(programData);
+
+        this.props.history.go(-1);
     }
+
     render() {
         console.log('whoaaaaa, props: ', this.props);
         return (
@@ -82,9 +100,7 @@ class ProgramToAdd extends Component {
                                 />
                             </div>
                             <div className="programCard__formGroup">
-                                <button onClick={this.handleFormSubmit}>
-                                    Submit
-                                </button>
+                                <input className='exhibitions__btn' type='submit' value='Submit'/>
                             </div>
                         </form>
                     </div>
@@ -107,4 +123,7 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { addingProgramInputFieldOnChange })(ProgramToAdd);
+export default connect(mapStateToProps, { 
+    addProgram,
+    addingProgramInputFieldOnChange 
+})(ProgramToAdd);
