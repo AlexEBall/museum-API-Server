@@ -51,7 +51,7 @@ export const pushingImgsIntoGallery = (pushedImg, floor) => {
         API
         .addImgToGallery(pushedImg, floor)
         .then((res) => {
-            dispatch({ type: PUSH_IMG_INTO_GALLERY});
+            dispatch({ type: PUSH_IMG_INTO_GALLERY });
         }).catch(err => {
             console.log(err);
         })

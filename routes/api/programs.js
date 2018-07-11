@@ -7,4 +7,9 @@ router
     .get(cafamProgramsController.findAll)
     .post(cafamProgramsController.createProgram);
 
+router
+    .route("/:id")
+    .get(cafamProgramsController.findByID);
+    
+
 module.exports = router;

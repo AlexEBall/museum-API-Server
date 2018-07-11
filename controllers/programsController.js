@@ -9,6 +9,12 @@ module.exports = {
             .then(cafamProgramsModel => res.json(cafamProgramsModel))
             .catch(err => res.status(422).json(err));
     },
+    findByID: (req, res, next) => {
+        db.programs
+            .findById(req.params.id)
+            .then(cafamModel => res.json(cafamModel))
+            .catch(err => res.status(422).json(err));
+    },
     createProgram: (req, res) => {
         console.log('hey request', req);
         db.programs

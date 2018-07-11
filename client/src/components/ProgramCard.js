@@ -43,10 +43,12 @@ export default class ProgramCard extends Component {
                             Add a Program
                         </button>
                     </Link>
-                    <button 
-                        className="exhibitions__btn"
-                        onClick={this.editProgram}>Edit a Program
-                    </button>
+                    <Link to={`/programs/${this.props.program._id}`}>
+                        <button 
+                            className="exhibitions__btn"
+                            onClick={this.editProgram}>Edit a Program
+                        </button>
+                    </Link>
                     <button 
                         className="exhibitions__btn"
                         onClick={this.deleteProgram}>Delete a Program

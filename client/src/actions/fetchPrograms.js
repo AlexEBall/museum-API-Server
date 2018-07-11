@@ -16,3 +16,19 @@ export const fetchPrograms = () => {
             })
     }
 };
+
+export const fetchProgramById = (id) => {
+    return (dispatch) => {
+        dispatch({type: FETCHING_PROGRAMS_START})
+        API
+            .getProgramsById(id)
+            .then((res) => {
+                console.log(res);
+                dispatch({type: RECIEVE_PROGRAMS, payload: res.data})
+                // console.log(res.data);
+            })
+            .catch((err) => {
+                dispatch({type: FETCHING_PROGRAMS_ERROR, payload: err})
+            })
+    }
+};

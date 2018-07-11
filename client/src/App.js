@@ -10,6 +10,7 @@ import Exhibitions from './pages/Exhibitions';
 import Programs from './pages/Programs';
 import Floor from './pages/Floor';
 import ProgramToAdd from './pages/ProgramToAdd';
+import ProgramEditAndRemoval from './pages/ProgramEditAndRemoval'
 
 export default class App extends Component {
   render() {
@@ -24,6 +25,7 @@ export default class App extends Component {
             <Route exact path="/exhibitionFloor:floor" component={Floor} />
             <Route exact path="/programs" component={Programs}/>
             <Route exact path="/programs/toAdd" component={ProgramToAdd}/>
+            <Route exact path="/progams/:id" component={ProgramEditAndRemoval}/>
           </Switch>
         </Router>
       </Provider>

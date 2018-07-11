@@ -23,6 +23,9 @@ export default {
     getPrograms: () => {
         return axios.get("api/cafamPrograms");
     },
+    getProgramsById: (id) => {
+        return axios.get('/api/cafamPrograms' + id);
+    },
     saveProgram: (programData) => {
         console.log(programData);
         return axios.post("/api/cafamPrograms", programData);
