@@ -1,13 +1,15 @@
 import {
     FETCHING_PROGRAMS_START,
     FETCHING_PROGRAMS_ERROR,
-    RECIEVE_PROGRAMS
+    RECIEVE_PROGRAMS,
+    RECIEVE_PROGRAM_BY_ID
 } from '../actions/types';
 
 const INITIAL_STATE = {
     fetching: false,
     fetched: false,
     programs: [],
+    programById: null,
     error: null
 }
 export default (state=INITIAL_STATE, action) => {
@@ -23,6 +25,12 @@ export default (state=INITIAL_STATE, action) => {
                 fetched: true, 
                 programs: action.payload 
                 }
+        case RECIEVE_PROGRAM_BY_ID:
+            return { ...state,
+                fetching: false,
+                fetched: true,
+                programById: action.payload
+            }
         default: 
             return state;
     }

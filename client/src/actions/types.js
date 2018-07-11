@@ -21,6 +21,7 @@ export const DELETE_IMG = 'delete_img';
 export const FETCHING_PROGRAMS_START = 'fetching_programs_start';
 export const FETCHING_PROGRAMS_ERROR = 'fetching_programs_error';
 export const RECIEVE_PROGRAMS = 'recieve_programs';
+export const RECIEVE_PROGRAM_BY_ID = 'recieve_program_by_id';
 
 export const TYPING_PROGRAM_TITLE = 'typing_program_title';
 export const TYPING_PROGRAM_PICTURE = 'typing_program_picture';

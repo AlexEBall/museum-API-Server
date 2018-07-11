@@ -11,15 +11,21 @@ class ProgramEditAndRemoval extends Component {
 
     render() {
         console.log('whoaaaaa, props: ', this.props);
-        return (
-            <div className="wrapper">
-                <Header/>
-                <section className="exhibitions">
-                    <h1 className="exhibitions__title">Add a Program</h1>
-                </section>
-                <Footer/>
-            </div>
-        )
+        // console.log('heyyyyaaaa', this.state.programs.programById);
+        let program = this.props.programById;
+        if (!program) {
+           return <h2>Loading Programs... please wait</h2>
+        } else {
+            return (
+                <div className="wrapper">
+                    <Header/>
+                    <section className="exhibitions">
+                        <h1 className="exhibitions__title">Add a Program</h1>
+                    </section>
+                    <Footer/>
+                </div>
+            )
+        }
     }
 }
 
@@ -28,7 +34,7 @@ const mapStateToProps = state => {
         fetching: state.programs.fetching,
         fetched: state.programs.fetched,
         error: state.programs.error,
-        program: state.programs.programs
+        programById: state.programs.programs
     }
 }
 
