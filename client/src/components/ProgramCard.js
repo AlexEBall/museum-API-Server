@@ -3,14 +3,10 @@ import {Link} from 'react-router-dom';
 
 export default class ProgramCard extends Component {
 
-    editProgram = () => {
-        // console.log('hi');
-
-    }
-
     deleteProgram = () => {
-
+        // this.props.deleteThisProgram(this.props.match.params.id);
     }
+
 
     render () {
         console.log('these are my props', this.props);
@@ -38,11 +34,6 @@ export default class ProgramCard extends Component {
                     Registration Link: {this.props.program.registrationLink}
                 </div>
                 <div className="programCard programCard__Buttons">
-                    <Link to="/programs/toAdd">
-                        <button className="exhibitions__btn">
-                            Add a Program
-                        </button>
-                    </Link>
                     <Link to={`/programs/${this.props.program._id}`}>
                         <button 
                             className="exhibitions__btn"

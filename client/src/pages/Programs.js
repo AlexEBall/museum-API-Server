@@ -4,6 +4,7 @@ import {fetchPrograms} from '../actions';
 import Header from '../components/Header';
 import ProgramCard from '../components/ProgramCard';
 import Footer from '../components/Footer';
+import {Link} from 'react-router-dom';
 
 class Programs extends Component {
     componentWillMount = () => {
@@ -40,6 +41,11 @@ class Programs extends Component {
                 <Header />
                 <section className="exhibitions">
                     <h1 className="exhibitions__title">These are the current programs</h1>
+                    <Link to="/programs/toAdd">
+                        <button className="exhibitions__btn">
+                            Add a Program
+                        </button>
+                    </Link>
                     {this.renderPage()}
                 </section>
                 <Footer />

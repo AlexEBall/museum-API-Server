@@ -43,6 +43,9 @@ class ProgramEditAndRemoval extends Component {
 
     handleDelete = () => {
         this.props.deleteThisProgram(this.props.match.params.id);
+        this.props.history.go(-1);
+
+        // this.props.deleted = false;
     }
 
     render() {
@@ -135,7 +138,7 @@ const mapStateToProps = state => {
         time: state.editingPrograms.time,
         memberInfo: state.editingPrograms.memberInfo,
         registrationLink: state.editingPrograms.registrationLink,
-        // deleted: state.de
+        deleted: state.deletingPrograms.deleted
     }
 }
 
