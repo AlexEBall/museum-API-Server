@@ -10,11 +10,11 @@ import {
     EDITING_PROGRAM_REGISTRATION_LINK
 } from './types';
 
-export const editProgram = (programData) => {
+export const editProgram = (programData, id) => {
     console.log('right before my controller', programData);
     return (dispatch) => {
         API
-            // .saveProgram(programData)
+            .updateProgram(programData, id)
             .then((res) => {
                 console.log('the response data', res);
                 dispatch({ type: PROGRAM_EDITED })

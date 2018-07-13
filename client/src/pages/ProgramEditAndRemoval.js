@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import { 
     fetchProgramByIdAndPreLoadState,
-    editingProgramInputFieldOnChange
+    editingProgramInputFieldOnChange,
+    editProgram
 } from '../actions';
 import Header from '../components/Header';
 // import ProgramCard from '../components/ProgramCard';
@@ -18,6 +19,25 @@ class ProgramEditAndRemoval extends Component {
         const name = event.target.name;
 
         this.props.editingProgramInputFieldOnChange(name, text);
+    }
+
+    handleFormSubmit = (event) => {
+        event.preventDefault();
+        console.log('logged');
+
+        const programData = {
+            title: this.props.title,
+            picture: this.props.picture,
+            description: this.props.description,
+            price: parseInt(this.props.price),
+            time: this.props.time,
+            memberInfo: this.props.memberInfo,
+            registrationLink: this.props.registrationLink
+        }
+
+        this.props.editProgram(programData, this.props.match.params.id);
+
+        this.props.history.go(-1);
     }
 
     render() {
@@ -114,5 +134,6 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps, {
     fetchProgramByIdAndPreLoadState,
-    editingProgramInputFieldOnChange
+    editingProgramInputFieldOnChange,
+    editProgram
 })(ProgramEditAndRemoval);

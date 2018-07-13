@@ -30,7 +30,7 @@ export default {
         console.log(programData);
         return axios.post("/api/cafamPrograms", programData);
     },
-    // updateProgram: (programData) => {
-    //     return axios.put()
-    // }
+    updateProgram: (programData, id) => {
+        return axios.put("/api/cafamPrograms/" + id, programData);
+    }
 };
