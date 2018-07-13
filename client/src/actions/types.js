@@ -31,3 +31,12 @@ export const TYPING_PROGRAM_TIME = 'typing_program_time';
 export const TYPING_PROGRAM_MEMBER_INFO = 'typing_program_member_info';
 export const TYPING_PROGRAM_REGISTRATION_LINK = 'typing_program_registration_link';
 export const PROGRAM_ADDED = 'program_added';
+
+export const PROGRAM_EDITED = 'program_edited';
+export const EDITING_PROGRAM_TITLE = 'editing_program_title';
+export const EDITING_PROGRAM_PICTURE = 'editing_program_picture';
+export const EDITING_PROGRAM_DESCRIPTION = 'editing_program_description';
+export const EDITING_PROGRAM_PRICE = 'editing_program_price';
+export const EDITING_PROGRAM_TIME = 'editing_program_time';
+export const EDITING_PROGRAM_MEMBER_INFO = 'editing_program_member_info';
+export const EDITING_PROGRAM_REGISTRATION_LINK = 'editing_program_registration_link';

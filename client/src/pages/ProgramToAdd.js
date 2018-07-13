@@ -113,13 +113,13 @@ class ProgramToAdd extends Component {
 
 const mapStateToProps = state => {
     return {
-        title: state.editPrograms.title,
-        picture: state.editPrograms.picture,
-        description: state.editPrograms.description,
-        price: state.editPrograms.price,
-        time: state.editPrograms.time,
-        memberInfo: state.editPrograms.memberInfo,
-        registrationLink: state.editPrograms.registrationLink
+        title: state.addingPrograms.title,
+        picture: state.addingPrograms.picture,
+        description: state.addingPrograms.description,
+        price: state.addingPrograms.price,
+        time: state.addingPrograms.time,
+        memberInfo: state.addingPrograms.memberInfo,
+        registrationLink: state.addingPrograms.registrationLink
     }
 }
 

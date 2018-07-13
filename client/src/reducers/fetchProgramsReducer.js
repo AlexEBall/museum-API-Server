@@ -9,7 +9,7 @@ const INITIAL_STATE = {
     fetching: false,
     fetched: false,
     programs: [],
-    programById: null,
+    programById: {},
     error: null
 }
 export default (state=INITIAL_STATE, action) => {

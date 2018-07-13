@@ -3,12 +3,14 @@ import FetchExhibitionsReducer from './fetchExhibitionsReducer';
 import FetchFloorReducer from './fetchFloorReducer';
 import InputEditFieldsReducer from './inputEditFieldsReducer';
 import FetchProgramsReducer from './fetchProgramsReducer';
-import EditProgramRecuder from './editProgramsReducer';
+import AddingProgramRecuder from './addingProgramsReducer';
+import EditingProgramReducer from './editingProgramsReducer';
 
 export default combineReducers({
     exhibitions: FetchExhibitionsReducer,
     floor: FetchFloorReducer,
     input: InputEditFieldsReducer,
     programs: FetchProgramsReducer,
-    editPrograms: EditProgramRecuder
+    addingPrograms: AddingProgramRecuder,
+    editingPrograms: EditingProgramReducer
 });

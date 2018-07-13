@@ -23,7 +23,7 @@ export const fetchProgramById = (id) => {
         API
             .getProgramsById(id)
             .then((res) => {
-                console.log(res);
+                // console.log(res);
                 dispatch({type: RECIEVE_PROGRAM_BY_ID, payload: res.data})
                 // console.log(res.data);
             })
