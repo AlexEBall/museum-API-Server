@@ -40,3 +40,4 @@ export const EDITING_PROGRAM_PRICE = 'editing_program_price';
 export const EDITING_PROGRAM_TIME = 'editing_program_time';
 export const EDITING_PROGRAM_MEMBER_INFO = 'editing_program_member_info';
 export const EDITING_PROGRAM_REGISTRATION_LINK = 'editing_program_registration_link';
+export const RECIEVED_PROGRAM_BY_ID_AND_PRELOAD_STATE = 'recieved_program_by_id_and_preload_state';

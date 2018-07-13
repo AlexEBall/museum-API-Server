@@ -1,27 +1,26 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {fetchProgramById} from '../actions';
+import { 
+    fetchProgramByIdAndPreLoadState,
+    editingProgramInputFieldOnChange
+} from '../actions';
 import Header from '../components/Header';
 // import ProgramCard from '../components/ProgramCard';
 import Footer from '../components/Footer';
 
 class ProgramEditAndRemoval extends Component {
     componentWillMount = () => {
-        this.props.fetchProgramById(this.props.match.params.id);
+        this.props.fetchProgramByIdAndPreLoadState(this.props.match.params.id);
     }
 
     handleInputs = (event) => {
         const text = event.target.value;
         const name = event.target.name;
+
+        this.props.editingProgramInputFieldOnChange(name, text);
     }
 
     render() {
-        let program = this.props.programById;
-        if (!program) {
-           return <h2>Loading Programs... please wait</h2>
-        } else {
-            console.log(this.props);
-            console.log('does this return progam by id', program);
             return (
                 <div className="wrapper">
                     <Header/>
@@ -32,7 +31,7 @@ class ProgramEditAndRemoval extends Component {
                             <div className="programCard__formGroup">
                                 <label>Title</label>
                                 <input
-                                    value={program.title}
+                                    value={this.props.title}
                                     name='title'
                                     onChange={this.handleInputs}
                                 />
@@ -40,7 +39,7 @@ class ProgramEditAndRemoval extends Component {
                             <div className="programCard__formGroup">
                                 <label>Picture</label>
                                 <input
-                                    value={program.picture}
+                                    value={this.props.picture}
                                     name='picture'
                                     onChange={this.handleInputs}
                                 />
@@ -48,7 +47,7 @@ class ProgramEditAndRemoval extends Component {
                             <div className="programCard__formGroup">
                                 <label>Price</label>
                                 <input
-                                    value={program.price}
+                                    value={this.props.price}
                                     name='price'
                                     onChange={this.handleInputs}
                                 />
@@ -56,7 +55,7 @@ class ProgramEditAndRemoval extends Component {
                             <div className="programCard__formGroup">
                                 <label>Description</label>
                                 <textarea
-                                    value={program.description}
+                                    value={this.props.description}
                                     name='description'
                                     onChange={this.handleInputs}
                                 />
@@ -64,7 +63,7 @@ class ProgramEditAndRemoval extends Component {
                             <div className="programCard__formGroup">
                                 <label>Time</label>
                                 <input
-                                    value={program.time}
+                                    value={this.props.time}
                                     name='time'
                                     onChange={this.handleInputs}
                                 />
@@ -72,7 +71,7 @@ class ProgramEditAndRemoval extends Component {
                             <div className="programCard__formGroup">
                                 <label>Member Information</label>
                                 <input
-                                    value={program.memberInfo}
+                                    value={this.props.memberInfo}
                                     name='memberInfo'
                                     onChange={this.handleInputs}
                                 />
@@ -80,7 +79,7 @@ class ProgramEditAndRemoval extends Component {
                             <div className="programCard__formGroup">
                                 <label>Registration Link</label>
                                 <input
-                                    value={program.registrationLink}
+                                    value={this.props.registrationLink}
                                     name='registrationLink'
                                     onChange={this.handleInputs}
                                 />
@@ -95,7 +94,7 @@ class ProgramEditAndRemoval extends Component {
                 </div>
             )
         }
-    }
+    // }
 }
 
 const mapStateToProps = state => {
@@ -103,10 +102,17 @@ const mapStateToProps = state => {
         fetching: state.programs.fetching,
         fetched: state.programs.fetched,
         error: state.programs.error,
-        programById: state.programs.programById
+        title: state.editingPrograms.title,
+        picture: state.editingPrograms.picture,
+        description: state.editingPrograms.description,
+        price: state.editingPrograms.price,
+        time: state.editingPrograms.time,
+        memberInfo: state.editingPrograms.memberInfo,
+        registrationLink: state.editingPrograms.registrationLink
     }
 }
 
 export default connect(mapStateToProps, {
-    fetchProgramById
+    fetchProgramByIdAndPreLoadState,
+    editingProgramInputFieldOnChange
 })(ProgramEditAndRemoval);

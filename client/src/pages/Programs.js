@@ -58,12 +58,3 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, { fetchPrograms })(Programs);
-
-// {Exhibition.floors.map(exhib => {
-//                             console.log('DOGAIUGPAIDVJAS', exhib.floor);
-//                             return (
-//                                 <Link to={'/exhibitionFloor' + exhib.floor} key={exhib.floor}>
-//                                     <button className="exhibitions__btn">Floor {exhib.floor}</button>
-//                                 </Link>
-//                             )
-//                         })}
