@@ -5,6 +5,7 @@ import InputEditFieldsReducer from './inputEditFieldsReducer';
 import FetchProgramsReducer from './fetchProgramsReducer';
 import AddingProgramRecuder from './addingProgramsReducer';
 import EditingProgramReducer from './editingProgramsReducer';
+import DeletingProgramReducer from './deletingProgramsReducer';
 
 export default combineReducers({
     exhibitions: FetchExhibitionsReducer,
@@ -12,5 +13,6 @@ export default combineReducers({
     input: InputEditFieldsReducer,
     programs: FetchProgramsReducer,
     addingPrograms: AddingProgramRecuder,
-    editingPrograms: EditingProgramReducer
+    editingPrograms: EditingProgramReducer,
+    deletingPrograms: DeletingProgramReducer
 });

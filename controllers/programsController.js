@@ -25,8 +25,15 @@ module.exports = {
     updateProgram: (req, res) => {
         console.log('requesssssssss', req);
         db.programs
-        .findOneAndUpdate({ _id: req.params.id }, req.body)
-        .then(dbModel => res.json(dbModel))
-        .catch(err => res.status(422).json(err));
+            .findOneAndUpdate({ _id: req.params.id }, req.body)
+            .then(cafamProgramsModel => res.json(cafamProgramsModel))
+            .catch(err => res.status(422).json(err));
+    },
+    removeProgram: (req, res) => {
+        db.programs
+            .findById({ _id: req.params.id })
+            .then(cafamProgramsModel => cafamProgramsModel.remove())
+            .then(cafamProgramsModel => res.json(cafamProgramsModel))
+            .catch(err => res.status(422).json(err));
     }
 }

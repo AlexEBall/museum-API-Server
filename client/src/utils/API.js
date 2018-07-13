@@ -32,5 +32,8 @@ export default {
     },
     updateProgram: (programData, id) => {
         return axios.put("/api/cafamPrograms/" + id, programData);
+    },
+    removeProgram: (id) => {
+        return axios.delete("/api/cafamPrograms/" + id);
     }
 };

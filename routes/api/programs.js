@@ -10,7 +10,8 @@ router
 router
     .route("/:id")
     .get(cafamProgramsController.findByID)
-    .put(cafamProgramsController.updateProgram);
+    .put(cafamProgramsController.updateProgram)
+    .delete(cafamProgramsController.removeProgram);
     
 
 module.exports = router;

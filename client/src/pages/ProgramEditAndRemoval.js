@@ -3,7 +3,8 @@ import {connect} from 'react-redux';
 import { 
     fetchProgramByIdAndPreLoadState,
     editingProgramInputFieldOnChange,
-    editProgram
+    editProgram,
+    deleteThisProgram
 } from '../actions';
 import Header from '../components/Header';
 // import ProgramCard from '../components/ProgramCard';
@@ -40,6 +41,10 @@ class ProgramEditAndRemoval extends Component {
         this.props.history.go(-1);
     }
 
+    handleDelete = () => {
+        this.props.deleteThisProgram(this.props.match.params.id);
+    }
+
     render() {
             return (
                 <div className="wrapper">
@@ -47,6 +52,7 @@ class ProgramEditAndRemoval extends Component {
                     <section className="exhibitions">
                         <h1 className="exhibitions__title">Edit this Program</h1>
                         <div className="programCard">
+                        <button className="exhibitions__btn" onClick={this.handleDelete}>Delete</button>
                         <form onSubmit={this.handleFormSubmit}>
                             <div className="programCard__formGroup">
                                 <label>Title</label>
@@ -128,12 +134,14 @@ const mapStateToProps = state => {
         price: state.editingPrograms.price,
         time: state.editingPrograms.time,
         memberInfo: state.editingPrograms.memberInfo,
-        registrationLink: state.editingPrograms.registrationLink
+        registrationLink: state.editingPrograms.registrationLink,
+        // deleted: state.de
     }
 }
 
 export default connect(mapStateToProps, {
     fetchProgramByIdAndPreLoadState,
     editingProgramInputFieldOnChange,
-    editProgram
+    editProgram,
+    deleteThisProgram
 })(ProgramEditAndRemoval);

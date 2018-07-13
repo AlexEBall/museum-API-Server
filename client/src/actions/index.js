@@ -4,3 +4,4 @@ export * from './inputEditFields';
 export * from './fetchPrograms';
 export * from './addingPrograms';
 export * from './editingPrograms';
+export * from './deletingPrograms';
