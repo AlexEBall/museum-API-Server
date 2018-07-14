@@ -61,6 +61,15 @@ body {
     &__links {
         text-decoration: none;
         margin: auto 0;
+        font-size: 2rem;
+        // transition: all 2s;
+        color: #000;
+
+        &:hover{
+            cursor: pointer;
+            // transform: translate(0, -1px)
+            color: #8B8581
+        }
     }
 }
 

@@ -10,10 +10,7 @@ export default class Header extends Component {
                 <div className="nav__links-box">
                     <ul className="nav__links-ul">
                         <li className="nav__links-li">
-                            <a className="nav__links" href="#">Something</a>
-                        </li>
-                        <li className="nav__links-li">
-                            <a className="nav__links" href="#">Something 2</a>
+                            <a className="nav__links" href="#">Log In</a>
                         </li>
                     </ul>
                 </div>

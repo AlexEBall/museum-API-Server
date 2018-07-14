@@ -42,7 +42,12 @@ html {
     flex-direction: column; }
   .nav__links {
     text-decoration: none;
-    margin: auto 0; }
+    margin: auto 0;
+    font-size: 2rem;
+    color: #000; }
+    .nav__links:hover {
+      cursor: pointer;
+      color: #8B8581; }
 
 .content {
   display: flex;
