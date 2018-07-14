@@ -11,40 +11,30 @@ class Exhibitions extends Component {
     }
 
     renderContent = () => {
-        let exhibitions = this.props.exhibitions;
+        let exhibitions = this.props.exhibitions[0];
         if (!exhibitions) {
-           return <h2>Loading Exhibitions... please wait</h2>
+            return <h2>Loading Exhibitions... please wait</h2>
         } else {
-            const Exhibition = exhibitions[0];
-            console.log('TOUR AUDIENCE', typeof(tourAudience));
-            if (!Exhibition) {
-                console.log('sorry');
-            } else {
-                console.log('THIS RENDERING TIME', Exhibition.tourAudience);
-            return(
-            <div className="exhibitions__content-box">
-                <div className="exhibitions__individual-container">
-                    <h3>{Exhibition.tourAudience}</h3>
-                    <img src="http://fillmurray.com/300/300" alt="coverImg"/>
-                    <div className="exhibitions__btn-container">
-                        {Exhibition.floors.map(exhib => {
-                            console.log('DOGAIUGPAIDVJAS', exhib.floor);
-                            return (
-                                <Link to={'/exhibitionFloor' + exhib.floor} key={exhib.floor}>
-                                    <button className="exhibitions__btn">Floor {exhib.floor}</button>
-                                </Link>
-                            )
-                        })}
+            return (
+
+                    <div className="exhibitions__individual-container">
+                        <h3>{exhibitions.tourAudience}</h3>
+                        <div className="exhibitions__btn-container">
+                            {exhibitions.floors.map(exhib => {
+                                return (
+                                    <Link to={'/exhibitionFloor' + exhib.floor} key={exhib.floor}>
+                                        <button className="exhibitions__btn">Floor {exhib.floor}</button>
+                                    </Link>
+                                )
+                            })}
+                        </div>
                     </div>
-                </div>
-            </div>
-           );
-            }
+
+            );
         }
     }
 
     render() {
-        console.log(this.props);
         return (
             <div className="wrapper">
                 <Header />
@@ -52,7 +42,6 @@ class Exhibitions extends Component {
                     <h1 className="exhibitions__title">These are the current exhibitions</h1>
                     {this.renderContent()}
                 </section>
-                <Footer />
             </div>
         );
     }

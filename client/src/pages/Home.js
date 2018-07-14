@@ -11,14 +11,14 @@ export default class Home extends Component {
                 <section className="content">
                     <h1 className="content__title">Mobile App Content Management Service</h1>
                     <div className="content__choices">
-                    <div className="content__btnContainer">
-                        <Link to="/exhibitions" className="content__btn">
-                           Exhibitions
-                        </Link>
-                        <Link to="/programs" className="content__btn">
-                            Programs
-                        </Link>
-                    </div>
+                        <div className="content__btnContainer">
+                            <Link to="/exhibitions" className="content__btn">
+                            Exhibitions
+                            </Link>
+                            <Link to="/programs" className="content__btn">
+                                Programs
+                            </Link>
+                        </div>
                     </div>
                 </section>
             </div>

@@ -19,12 +19,14 @@ body {
     padding: 3rem;
     display: flex;
     flex: 1;
-    height: 80rem;
+    height: 100vh;
+}
+
+.header {
+    display: flex;
 }
 
 .nav {
-    display: flex;
-    flex-direction: column;
 
     &__title {
         flex: 1;
@@ -108,6 +110,7 @@ body {
     &__btn {
         padding: 1rem 1.5rem;
         background-color: white;
+        color: #000;
         margin: 3rem;
         text-decoration: none;
         text-transform: uppercase;

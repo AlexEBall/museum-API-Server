@@ -1,24 +1,33 @@
 .exhibitions {
-    flex: 0 1 auto;
+    display: flex;
+    flex: 1;
     flex-direction: column;
-    background-color: aquamarine;
-    padding: 3rem 2rem;
+
     &__title {
         text-align: center;
-        margin: .5rem 0;
+        margin: .5rem 1rem;
+        display: flex;
+        justify-content: center;
+        height: 7rem;
+        align-items: center;
+        border-bottom: solid .2px;
+        font-size: 3rem;
+        font-weight: 300;
     }
 
     &__content-box {
         display: flex;
         justify-content: space-around;
-        border: solid 1px black;
         padding: 1rem;
     }
 
     &__individual-container {
         display: flex;
+        flex: 1;
         flex-direction: column;
-        border: dotted 1px peru;
+        margin: 1rem 1rem;
+        background-image: url('https://res.cloudinary.com/dawjvqyvd/image/upload/c_scale,w_1650/v1531590817/cristina-gottardi-665244-unsplash.jpg');
+        background-size: cover;
     }
 
     &__btn-container {

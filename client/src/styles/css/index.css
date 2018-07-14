@@ -13,41 +13,46 @@ html {
   padding: 3rem;
   display: flex;
   flex: 1;
-  height: 80rem; }
+  height: 100vh; }
 
-.nav {
+.header {
+  display: flex; }
+
+.nav__title {
+  flex: 1;
+  height: 7rem;
+  border-bottom: solid .2px;
+  padding: 2rem;
+  margin: .5rem 1rem; }
+
+.nav__space-box {
+  height: 5rem; }
+
+.nav__links-box {
+  display: flex;
+  flex: 1; }
+
+.nav__links-ul {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1rem; }
+
+.nav__links-li {
+  list-style: none;
+  height: 5rem;
+  border-top: solid .2px;
   display: flex;
   flex-direction: column; }
-  .nav__title {
-    flex: 1;
-    height: 7rem;
-    border-bottom: solid .2px;
-    padding: 2rem;
-    margin: .5rem 1rem; }
-  .nav__space-box {
-    height: 5rem; }
-  .nav__links-box {
-    display: flex;
-    flex: 1; }
-  .nav__links-ul {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    padding: 1rem; }
-  .nav__links-li {
-    list-style: none;
-    height: 5rem;
-    border-top: solid .2px;
-    display: flex;
-    flex-direction: column; }
-  .nav__links {
-    text-decoration: none;
-    margin: auto 0;
-    font-size: 2rem;
-    color: #000; }
-    .nav__links:hover {
-      cursor: pointer;
-      color: #8B8581; }
+
+.nav__links {
+  text-decoration: none;
+  margin: auto 0;
+  font-size: 2rem;
+  color: #000; }
+  .nav__links:hover {
+    cursor: pointer;
+    color: #8B8581; }
 
 .content {
   display: flex;
@@ -75,6 +80,7 @@ html {
   .content__btn {
     padding: 1rem 1.5rem;
     background-color: white;
+    color: #000;
     margin: 3rem;
     text-decoration: none;
     text-transform: uppercase;
@@ -93,22 +99,30 @@ html {
   background-color: darkmagenta; }
 
 .exhibitions {
-  flex: 0 1 auto;
-  flex-direction: column;
-  background-color: aquamarine;
-  padding: 3rem 2rem; }
+  display: flex;
+  flex: 1;
+  flex-direction: column; }
   .exhibitions__title {
     text-align: center;
-    margin: .5rem 0; }
+    margin: .5rem 1rem;
+    display: flex;
+    justify-content: center;
+    height: 7rem;
+    align-items: center;
+    border-bottom: solid .2px;
+    font-size: 3rem;
+    font-weight: 300; }
   .exhibitions__content-box {
     display: flex;
     justify-content: space-around;
-    border: solid 1px black;
     padding: 1rem; }
   .exhibitions__individual-container {
     display: flex;
+    flex: 1;
     flex-direction: column;
-    border: dotted 1px peru; }
+    margin: 1rem 1rem;
+    background-image: url("https://res.cloudinary.com/dawjvqyvd/image/upload/c_scale,w_1650/v1531590817/cristina-gottardi-665244-unsplash.jpg");
+    background-size: cover; }
   .exhibitions__btn-container {
     display: flex;
     padding: 2rem;
