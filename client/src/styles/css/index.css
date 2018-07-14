@@ -12,8 +12,7 @@ html {
 .wrapper {
   padding: 3rem;
   display: flex;
-  flex: 1;
-  height: 100vh; }
+  flex: 1; }
 
 .header {
   display: flex; }
@@ -73,7 +72,8 @@ html {
     flex: 1;
     margin: 1rem 1rem;
     background-image: url("https://res.cloudinary.com/dawjvqyvd/image/upload/c_scale,w_1650/v1531541657/fancycrave-224904-unsplash.jpg");
-    background-size: cover; }
+    background-size: cover;
+    height: 80vh; }
   .content__btnContainer {
     display: flex;
     align-items: flex-end; }
@@ -125,7 +125,8 @@ html {
     justify-content: space-between;
     margin: 1rem 1rem;
     background-image: url("https://res.cloudinary.com/dawjvqyvd/image/upload/c_scale,w_1650/v1531590817/cristina-gottardi-665244-unsplash.jpg");
-    background-size: cover; }
+    background-size: cover;
+    height: 80vh; }
   .exhibitions__btn-container {
     display: flex;
     padding: 2rem; }
@@ -149,7 +150,12 @@ html {
     display: flex;
     flex: 1;
     flex-direction: column;
-    justify-content: space-between; }
+    justify-content: space-between;
+    height: 100vh; }
+  .exhibitions__coverImgContainer {
+    margin: 1rem;
+    display: flex;
+    flex: 1; }
   .exhibitions__imgTitleAreaContainer {
     display: flex;
     flex: 1;
@@ -160,6 +166,8 @@ html {
     display: flex;
     flex-direction: column;
     flex: 1; }
+  .exhibitions__coverImg {
+    width: 100%; }
   .exhibitions__inputBox {
     display: flex;
     flex: 1;

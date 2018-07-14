@@ -19,7 +19,7 @@ body {
     padding: 3rem;
     display: flex;
     flex: 1;
-    height: 100vh;
+    // height: 100vh;
 }
 
 .header {
@@ -100,6 +100,7 @@ body {
         margin: 1rem 1rem;
         background-image: url('https://res.cloudinary.com/dawjvqyvd/image/upload/c_scale,w_1650/v1531541657/fancycrave-224904-unsplash.jpg');
         background-size: cover;
+        height: 80vh;
     }
 
     &__btnContainer {

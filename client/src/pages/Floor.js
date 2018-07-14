@@ -134,7 +134,7 @@ class Floor extends Component {
         } else {
             return (
                 <div className="exhibitions__imageTitleArea">
-                    <h4 className="heading__3">Image Gallery</h4>
+                    <h4 className="heading__4">Image Gallery</h4>
                     <button 
                         className="exhibitions__btn"
                         onClick={this.addImage}>Add an Image</button>
@@ -172,16 +172,8 @@ class Floor extends Component {
                 <div className="exhibitions">
                     <h2 className="exhibitions__title heading__2">Floor {floorInformation.floor}</h2>
                     <div className="exhibitions__floor-container">
-                        <div className="exhibitions__coverImgContainer" style={
-                            {
-                                display: 'flex',
-                                flex: '1',
-                                margin: '1rem',
-                                backgroundImage: `url(${floorInformation.coverPic})`,
-                                backgroundSize: 'cover'
-                            }
-                        }>
-                            
+                        <div className="exhibitions__coverImgContainer">
+                            <img className="exhibitions__coverImg" src={floorInformation.coverPic} alt='floor 1 app pic' />
                         </div>
                         <div className="exhibitions__imgTitleAreaContainer">
                             {this.renderAudioLinkEditingField()}
@@ -232,3 +224,11 @@ export default connect(mapStateToProps, {
 })(Floor);
 
 {/* <img className="exhibitions__coverImg" src={floorInformation.coverPic} alt='floor 1 app pic' /> */}
+
+// {
+//     display: 'flex',
+//     flex: '1',
+//     margin: '1rem',
+//     backgroundImage: `url(${floorInformation.coverPic})`,
+//     backgroundSize: 'cover'
+// }
