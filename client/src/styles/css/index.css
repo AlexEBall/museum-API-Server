@@ -49,11 +49,15 @@ body {
   display: flex;
   flex: 1;
   flex-direction: column;
-  background-color: aquamarine;
-  padding: 3rem 2rem; }
+  background-color: aquamarine; }
   .content__title {
     text-align: center;
-    margin: .5rem 0; }
+    margin: .5rem 0;
+    display: flex;
+    justify-content: center;
+    height: 7rem;
+    align-items: center;
+    border-bottom: solid .2px; }
   .content__choices {
     display: flex;
     margin: 3rem 1rem;
