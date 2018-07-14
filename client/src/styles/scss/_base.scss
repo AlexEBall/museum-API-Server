@@ -22,47 +22,55 @@ body {
 }
 
 .wrapper {
-    width: 90rem;
     border: solid green .1rem;
-    margin: 4rem auto;
     padding: 3rem;
     display: flex;
-    flex-direction: column;
 }
 
 .header {
-    flex: 0 1 6rem;
+    // flex: 0 1 6rem;
     background-color: pink;
 }
 
 .nav {
-    padding: 2rem;
-    border: solid 1px black;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    border: solid 1px black;
+    padding: 2rem;
+
+
+    &__title {
+        flex: 1;
+        height: 20rem;
+    }
 
     &__links-box {
-        padding: 1em;
         display: flex;
+        flex: 1;
     }
 
     &__links-ul {
         display: flex;
-        // padding: 2rem;
+        flex-direction: column;
+        flex: 1;
     }
 
     &__links-li {
-        margin-left: 1.5rem;
         list-style: none;
+        height: 5rem;
+        border-top: solid .2rem;
+        display: flex;
+        flex-direction: column;
     }
     &__links {
         text-decoration: none;
+        margin: auto 0;
     }
 }
 
 .content {
-    flex: 0 1 auto;
+    display: flex;
+    flex: 1;
     flex-direction: column;
     background-color: aquamarine;
     padding: 3rem 2rem;

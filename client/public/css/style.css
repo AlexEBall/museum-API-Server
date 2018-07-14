@@ -1,1 +1,168 @@
-*,*::before,*::after{margin:0;padding:0;box-sizing:inherit}html{box-sizing:border-box;font-size:62.5%}body{color:blue}.wrapper{width:70rem;border:solid black .1rem;margin:0 auto}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+
+body {
+  color: blue; }
+
+.wrapper {
+  border: solid green .1rem;
+  padding: 3rem;
+  display: flex; }
+
+.header {
+  background-color: pink; }
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  border: solid 1px black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .nav__links-box {
+    flex-direction: column;
+    padding: 1em;
+    display: flex; }
+  .nav__links-ul {
+    display: flex; }
+  .nav__links-li {
+    margin-left: 1.5rem;
+    list-style: none; }
+  .nav__links {
+    text-decoration: none; }
+
+.content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  background-color: aquamarine;
+  padding: 3rem 2rem; }
+  .content__title {
+    text-align: center;
+    margin: .5rem 0; }
+  .content__choices {
+    display: flex;
+    margin: 3rem 1rem;
+    justify-content: space-around; }
+  .content__btn {
+    padding: 1rem;
+    border: solid 1px azure;
+    background-color: white;
+    color: yellowgreen; }
+    .content__btn:hover {
+      cursor: pointer;
+      background-color: silver; }
+
+.footer {
+  flex: 0 1 5.5rem;
+  background-color: darkmagenta; }
+
+.exhibitions {
+  flex: 0 1 auto;
+  flex-direction: column;
+  background-color: aquamarine;
+  padding: 3rem 2rem; }
+  .exhibitions__title {
+    text-align: center;
+    margin: .5rem 0; }
+  .exhibitions__content-box {
+    display: flex;
+    justify-content: space-around;
+    border: solid 1px black;
+    padding: 1rem; }
+  .exhibitions__individual-container {
+    display: flex;
+    flex-direction: column;
+    border: dotted 1px peru; }
+  .exhibitions__btn-container {
+    display: flex;
+    padding: 2rem;
+    justify-content: space-between; }
+  .exhibitions__btn {
+    border: 1px dotted purple;
+    background-color: #fff;
+    padding: .5rem 1rem;
+    margin: .8rem; }
+    .exhibitions__btn:hover {
+      cursor: pointer;
+      background-color: purple; }
+  .exhibitions__coverImg {
+    width: 100%;
+    padding: 3rem; }
+  .exhibitions__inputBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+  .exhibitions__galleryArrayImageHolder {
+    border: 1px solid purple; }
+  .exhibitions__imageTitleArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+  .exhibitions__imageCardArea {
+    display: flex;
+    flex-wrap: wrap; }
+  .exhibitions__imageCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 1 auto;
+    width: 25rem; }
+  .exhibitions__imgs {
+    width: 100%;
+    padding: 2rem; }
+  .exhibitions__imageCardButtonsArea {
+    display: flex;
+    justify-content: space-around;
+    border: solid white 1px;
+    margin: 0 2rem;
+    width: 22rem; }
+
+.heading__3 {
+  margin: .5rem; }
+
+.programCard {
+  display: flex;
+  flex-direction: column;
+  border: black solid 1px;
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 1.8rem; }
+  .programCard__Title {
+    background-color: red;
+    align-items: center; }
+  .programCard__Img {
+    padding: 1rem; }
+    .programCard__Img--picture {
+      width: 100%; }
+  .programCard__Price {
+    background-color: yellow; }
+  .programCard__Description {
+    background-color: wheat; }
+  .programCard__Time {
+    background-color: lightpink; }
+  .programCard__MemberInfo {
+    background-color: black; }
+  .programCard__RegistrationLink {
+    background-color: cyan; }
+  .programCard__Buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; }
+  .programCard__formGroup {
+    display: flex;
+    flex-direction: column;
+    margin: .5rem;
+    padding: 1rem; }
+
+/*# sourceMappingURL=index.css.map */

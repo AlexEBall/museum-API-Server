@@ -13,36 +13,41 @@ body {
   color: blue; }
 
 .wrapper {
-  width: 90rem;
   border: solid green .1rem;
-  margin: 4rem auto;
   padding: 3rem;
-  display: flex;
-  flex-direction: column; }
+  display: flex; }
 
 .header {
-  flex: 0 1 6rem;
   background-color: pink; }
 
 .nav {
-  padding: 2rem;
-  border: solid 1px black;
   display: flex;
-  justify-content: space-between;
-  align-items: center; }
+  flex-direction: column;
+  border: solid 1px black;
+  padding: 2rem; }
+  .nav__title {
+    flex: 1;
+    height: 20rem; }
   .nav__links-box {
-    padding: 1em;
-    display: flex; }
+    display: flex;
+    flex: 1; }
   .nav__links-ul {
-    display: flex; }
+    display: flex;
+    flex-direction: column;
+    flex: 1; }
   .nav__links-li {
-    margin-left: 1.5rem;
-    list-style: none; }
+    list-style: none;
+    height: 5rem;
+    border-top: solid .2rem;
+    display: flex;
+    flex-direction: column; }
   .nav__links {
-    text-decoration: none; }
+    text-decoration: none;
+    margin: auto 0; }
 
 .content {
-  flex: 0 1 auto;
+  display: flex;
+  flex: 1;
   flex-direction: column;
   background-color: aquamarine;
   padding: 3rem 2rem; }
