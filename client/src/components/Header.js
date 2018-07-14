@@ -6,6 +6,7 @@ export default class Header extends Component {
         <header className="header">
             <nav className="nav">
                 <h2 className="nav__title">CAFAM Mobile App CMS</h2>
+                <div className="nav__space-box"></div>
                 <div className="nav__links-box">
                     <ul className="nav__links-ul">
                         <li className="nav__links-li">

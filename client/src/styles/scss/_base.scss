@@ -9,39 +9,34 @@
 html {
     box-sizing: border-box;
     font-size: 62.5%;
-    // @media only screen and (max-width: $bp-largest) {
-    //     font-size: 50%;
-    // }
 }
 
 body {
-    // font-family: $font-primary;
-    color: blue;
-    // font-weight: 300;
-    // line-height: 1.6;
+
 }
 
 .wrapper {
-    border: solid green .1rem;
     padding: 3rem;
     display: flex;
-}
-
-.header {
-    // flex: 0 1 6rem;
-    background-color: pink;
+    flex: 1;
+    height: 80rem;
 }
 
 .nav {
     display: flex;
     flex-direction: column;
-    border: solid 1px black;
-    padding: 2rem;
-
 
     &__title {
         flex: 1;
-        height: 20rem;
+        height: 7rem;
+        border-bottom: solid .2px;
+        padding: 2rem;
+        margin: .5rem 1rem;
+
+    }
+
+    &__space-box {
+        height: 5rem;
     }
 
     &__links-box {
@@ -53,12 +48,13 @@ body {
         display: flex;
         flex-direction: column;
         flex: 1;
+        padding: 1rem;
     }
 
     &__links-li {
         list-style: none;
         height: 5rem;
-        border-top: solid .2rem;
+        border-top: solid .2px;
         display: flex;
         flex-direction: column;
     }
@@ -72,29 +68,46 @@ body {
     display: flex;
     flex: 1;
     flex-direction: column;
-    background-color: aquamarine;
 
     &__title {
         text-align: center;
-        margin: .5rem 0;
+        margin: .5rem 1rem;
         display: flex;
         justify-content: center;
         height: 7rem;
         align-items: center;
         border-bottom: solid .2px;
+
+
+        font-size: 3rem;
+        font-weight: 300;
     }
 
     &__choices {
         display: flex;
-        margin: 3rem 1rem;
-        justify-content: space-around;
+        flex: 1;
+        margin: 1rem 1rem;
+        background-image: url('https://res.cloudinary.com/dawjvqyvd/image/upload/c_scale,w_1650/v1531541657/fancycrave-224904-unsplash.jpg');
+        background-size: cover;
+    }
+
+    &__btnContainer {
+        display: flex;
+        align-items: flex-end;
     }
 
     &__btn {
-        padding: 1rem;
-        border: solid 1px azure;
+        padding: 1rem 1.5rem;
         background-color: white;
-        color: yellowgreen;
+        margin: 3rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        height: 5rem;
+        width: 15rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
 
         &:hover{
             cursor: pointer;

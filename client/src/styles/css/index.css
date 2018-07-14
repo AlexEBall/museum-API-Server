@@ -9,36 +9,35 @@ html {
   box-sizing: border-box;
   font-size: 62.5%; }
 
-body {
-  color: blue; }
-
 .wrapper {
-  border: solid green .1rem;
   padding: 3rem;
-  display: flex; }
-
-.header {
-  background-color: pink; }
+  display: flex;
+  flex: 1;
+  height: 80rem; }
 
 .nav {
   display: flex;
-  flex-direction: column;
-  border: solid 1px black;
-  padding: 2rem; }
+  flex-direction: column; }
   .nav__title {
     flex: 1;
-    height: 20rem; }
+    height: 7rem;
+    border-bottom: solid .2px;
+    padding: 2rem;
+    margin: .5rem 1rem; }
+  .nav__space-box {
+    height: 5rem; }
   .nav__links-box {
     display: flex;
     flex: 1; }
   .nav__links-ul {
     display: flex;
     flex-direction: column;
-    flex: 1; }
+    flex: 1;
+    padding: 1rem; }
   .nav__links-li {
     list-style: none;
     height: 5rem;
-    border-top: solid .2rem;
+    border-top: solid .2px;
     display: flex;
     flex-direction: column; }
   .nav__links {
@@ -48,25 +47,38 @@ body {
 .content {
   display: flex;
   flex: 1;
-  flex-direction: column;
-  background-color: aquamarine; }
+  flex-direction: column; }
   .content__title {
     text-align: center;
-    margin: .5rem 0;
+    margin: .5rem 1rem;
     display: flex;
     justify-content: center;
     height: 7rem;
     align-items: center;
-    border-bottom: solid .2px; }
+    border-bottom: solid .2px;
+    font-size: 3rem;
+    font-weight: 300; }
   .content__choices {
     display: flex;
-    margin: 3rem 1rem;
-    justify-content: space-around; }
+    flex: 1;
+    margin: 1rem 1rem;
+    background-image: url("https://res.cloudinary.com/dawjvqyvd/image/upload/c_scale,w_1650/v1531541657/fancycrave-224904-unsplash.jpg");
+    background-size: cover; }
+  .content__btnContainer {
+    display: flex;
+    align-items: flex-end; }
   .content__btn {
-    padding: 1rem;
-    border: solid 1px azure;
+    padding: 1rem 1.5rem;
     background-color: white;
-    color: yellowgreen; }
+    margin: 3rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    height: 5rem;
+    width: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem; }
     .content__btn:hover {
       cursor: pointer;
       background-color: silver; }
