@@ -25,6 +25,7 @@
         display: flex;
         flex: 1;
         flex-direction: column;
+        justify-content: space-between;
         margin: 1rem 1rem;
         background-image: url('https://res.cloudinary.com/dawjvqyvd/image/upload/c_scale,w_1650/v1531590817/cristina-gottardi-665244-unsplash.jpg');
         background-size: cover;
@@ -33,24 +34,25 @@
     &__btn-container {
         display: flex;
         padding: 2rem;
-        justify-content: space-between;
     }
 
     &__btn {
-        border: 1px dotted purple;
-        background-color: #fff;
-        padding: .5rem 1rem;
-        margin: .8rem;
-
+        padding: 1rem 1.5rem;
+        background-color: white;
+        color: #000;
+        margin: 3rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        height: 5rem;
+        width: 15rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
         &:hover {
             cursor: pointer;
-            background-color: purple;
+            background-color: silver;
         }
-    }
-
-    &__coverImg {
-        width: 100%;
-        padding: 3rem;
     }
 
     &__inputBox {

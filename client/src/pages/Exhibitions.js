@@ -16,20 +16,18 @@ class Exhibitions extends Component {
             return <h2>Loading Exhibitions... please wait</h2>
         } else {
             return (
-
-                    <div className="exhibitions__individual-container">
-                        <h3>{exhibitions.tourAudience}</h3>
-                        <div className="exhibitions__btn-container">
-                            {exhibitions.floors.map(exhib => {
-                                return (
-                                    <Link to={'/exhibitionFloor' + exhib.floor} key={exhib.floor}>
-                                        <button className="exhibitions__btn">Floor {exhib.floor}</button>
-                                    </Link>
-                                )
-                            })}
-                        </div>
+                <div className="exhibitions__individual-container">
+                    <h3 className="heading__3">{exhibitions.tourAudience}</h3>
+                    <div className="exhibitions__btn-container">
+                        {exhibitions.floors.map(exhib => {
+                            return (
+                                <Link to={'/exhibitionFloor' + exhib.floor} key={exhib.floor} className="exhibitions__btn">
+                                    Floor {exhib.floor}
+                                </Link>
+                            )
+                        })}
                     </div>
-
+                </div>
             );
         }
     }
@@ -39,7 +37,7 @@ class Exhibitions extends Component {
             <div className="wrapper">
                 <Header />
                 <section className="exhibitions">
-                    <h1 className="exhibitions__title">These are the current exhibitions</h1>
+                    <h1 className="exhibitions__title">Current Exhibitions</h1>
                     {this.renderContent()}
                 </section>
             </div>
