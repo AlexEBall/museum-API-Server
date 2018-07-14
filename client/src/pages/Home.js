@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import Header from '../components/Header';
-import Footer from '../components/Footer';
 
 export default class Home extends Component {
     render() {
@@ -13,7 +12,7 @@ export default class Home extends Component {
                     <div className="content__choices">
                         <div className="content__btnContainer">
                             <Link to="/exhibitions" className="content__btn">
-                            Exhibitions
+                                Exhibitions
                             </Link>
                             <Link to="/programs" className="content__btn">
                                 Programs

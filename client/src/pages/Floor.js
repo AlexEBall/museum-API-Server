@@ -61,7 +61,7 @@ class Floor extends Component {
         if (this.props.editDisabled) {
             return (
                 <div className="exhibitions__inputBox">
-                    <h3 className="heading__3">Audio Link</h3>
+                    <h4 className="heading__4">Audio Link</h4>
                     <input 
                         value={this.props.audioLinkValue}
                         onChange={this.handleAudioLinkUpdate}
@@ -78,8 +78,8 @@ class Floor extends Component {
         } else {
             return (
             <div className="exhibitions__inputBox">
-                <h3 className="heading__3">Audio Link</h3>
-                <h3 className="heading__3">{this.props.floor.audioLink}</h3>
+                <h4 className="heading__4">Audio Link</h4>
+                <h4 className="heading__4">{this.props.floor.audioLink}</h4>
                 <button 
                     className="exhibitions__btn" 
                     onClick={this.toggleInputFields}
@@ -118,7 +118,7 @@ class Floor extends Component {
         if (this.state.editDisabled) {
             return (
                 <div className="exhibitions__imageTitleArea">
-                    <h3 className="heading__3">Image Gallery</h3>
+                    <h4 className="heading__4">Image Gallery</h4>
                     <input 
                         value={this.props.imgToPushValue}
                         onChange={this.handlePushingImgLink}
@@ -134,7 +134,7 @@ class Floor extends Component {
         } else {
             return (
                 <div className="exhibitions__imageTitleArea">
-                    <h3 className="heading__3">Image Gallery</h3>
+                    <h4 className="heading__3">Image Gallery</h4>
                     <button 
                         className="exhibitions__btn"
                         onClick={this.addImage}>Add an Image</button>
@@ -163,20 +163,29 @@ class Floor extends Component {
         const floorInformation = this.props.floor;
         if (!floorInformation) {
             return(
-                <div className="exhibitions__content-box">
-                    <div className="exhibitions__individual-container">
-                        <h2>Loading</h2>
-                    </div>
+                <div className="exhibitions">
+                    <h2 className="exhibitions__title heading__2">Loading</h2>
                 </div>
             )
         } else {
-            console.log('flllloooreiausodius', floorInformation);
             return(
-                <div className="exhibitions__content-box">
-                    <div className="exhibitions__individual-container">
-                        <h2>Floor {floorInformation.floor}</h2>
-                        <img className="exhibitions__coverImg" src={floorInformation.coverPic} alt='floor 1 app pic' />
-                        {this.renderAudioLinkEditingField()}
+                <div className="exhibitions">
+                    <h2 className="exhibitions__title heading__2">Floor {floorInformation.floor}</h2>
+                    <div className="exhibitions__floor-container">
+                        <div className="exhibitions__coverImgContainer" style={
+                            {
+                                display: 'flex',
+                                flex: '1',
+                                margin: '1rem',
+                                backgroundImage: `url(${floorInformation.coverPic})`,
+                                backgroundSize: 'cover'
+                            }
+                        }>
+                            
+                        </div>
+                        <div className="exhibitions__imgTitleAreaContainer">
+                            {this.renderAudioLinkEditingField()}
+                        </div>
                         <div className="exhibitions__galleryArrayImageHolder">
                             {this.renderImgTitleArea()}
                             {this.renderImgGallery()}
@@ -192,10 +201,7 @@ class Floor extends Component {
         return (
             <div className="wrapper">
                 <Header />
-                <section className="exhibitions">
-                    {this.renderFloorInformation()}
-                </section>
-                <Footer />
+                {this.renderFloorInformation()}
             </div>
         );
     }
@@ -220,8 +226,9 @@ export default connect(mapStateToProps, {
     imgEditingDisabled,
     editingDisabled,
     audioLinkOnChange,
-    // audioLinkUpdating,
     linkUpdating,
     pushingImgsIntoGallery,
     imgToPushOnChange
 })(Floor);
+
+{/* <img className="exhibitions__coverImg" src={floorInformation.coverPic} alt='floor 1 app pic' /> */}

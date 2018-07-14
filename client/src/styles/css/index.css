@@ -101,11 +101,14 @@ html {
 .exhibitions {
   display: flex;
   flex: 1;
-  flex-direction: column; }
+  flex-direction: column;
+  overflow: scroll;
+  border: solid 1px black; }
   .exhibitions__title {
     text-align: center;
     margin: .5rem 1rem;
     display: flex;
+    flex: 0 1 auto;
     justify-content: center;
     height: 7rem;
     align-items: center;
@@ -114,8 +117,7 @@ html {
     font-weight: 300; }
   .exhibitions__content-box {
     display: flex;
-    justify-content: space-around;
-    padding: 1rem; }
+    flex-direction: column; }
   .exhibitions__individual-container {
     display: flex;
     flex: 1;
@@ -143,12 +145,27 @@ html {
     .exhibitions__btn:hover {
       cursor: pointer;
       background-color: silver; }
-  .exhibitions__inputBox {
+  .exhibitions__floor-container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between; }
+  .exhibitions__imgTitleAreaContainer {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    border: solid green; }
+  .exhibitions__galleryArrayImageHolder {
+    border: 1px solid purple;
     display: flex;
     flex-direction: column;
-    align-items: center; }
-  .exhibitions__galleryArrayImageHolder {
-    border: 1px solid purple; }
+    flex: 1; }
+  .exhibitions__inputBox {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    border: solid green 1px; }
   .exhibitions__imageTitleArea {
     display: flex;
     flex-direction: column;

@@ -2,11 +2,14 @@
     display: flex;
     flex: 1;
     flex-direction: column;
+    overflow: scroll;
+    border: solid 1px black;
 
     &__title {
         text-align: center;
         margin: .5rem 1rem;
         display: flex;
+        flex: 0 1 auto;
         justify-content: center;
         height: 7rem;
         align-items: center;
@@ -17,8 +20,7 @@
 
     &__content-box {
         display: flex;
-        justify-content: space-around;
-        padding: 1rem;
+        flex-direction: column;
     }
 
     &__individual-container {
@@ -55,14 +57,43 @@
         }
     }
 
-    &__inputBox {
+
+
+
+
+    &__floor-container {
         display: flex;
+        flex: 1;
         flex-direction: column;
-        align-items: center;
+        justify-content: space-between; // margin: 1rem 1rem;
+    }
+
+    // &__coverImgContainer {
+    //     margin: 1rem;
+    //     display: flex;
+    //     flex: 1;
+    // }
+
+    &__imgTitleAreaContainer {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        border: solid green;
     }
 
     &__galleryArrayImageHolder {
         border: 1px solid purple;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    &__inputBox {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        align-items: center;
+        border: solid green 1px;
     }
 
     &__imageTitleArea {
