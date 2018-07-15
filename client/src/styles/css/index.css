@@ -103,8 +103,7 @@ html {
   display: flex;
   flex: 1;
   flex-direction: column;
-  overflow: scroll;
-  border: solid 1px black; }
+  overflow: scroll; }
   .exhibitions__title {
     text-align: center;
     margin: .5rem 1rem;
@@ -155,15 +154,13 @@ html {
     height: 100vh; }
   .exhibitions__coverImgContainer {
     display: flex;
-    margin: 1rem auto;
-    flex: 1 0 60%; }
+    flex: 1 0 60%;
+    margin: 1rem;
+    border-bottom: solid 1px black; }
   .exhibitions__inputBox {
     display: flex;
     flex: 1 0 auto;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: solid green 1px; }
+    padding: 2rem; }
   .exhibitions__galleryArrayImageHolder {
     border: 1px solid purple;
     display: flex;
@@ -171,7 +168,8 @@ html {
     flex: 1 0 auto; }
   .exhibitions__coverImg {
     max-width: 100%;
-    object-fit: contain; }
+    object-fit: contain;
+    margin: 1rem; }
   .exhibitions__imageTitleArea {
     display: flex; }
   .exhibitions__imageCardArea {
@@ -191,11 +189,58 @@ html {
     width: 100%;
     padding: 2rem; }
 
+.audioTextBeforeEditing {
+  display: flex;
+  margin-right: 1rem;
+  align-items: center; }
+
+.audioTextEditing {
+  display: flex;
+  margin-right: 1rem;
+  align-items: center; }
+
+.audioLinkBtn {
+  border: solid 1px black;
+  background-color: #fff;
+  color: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  height: 4rem;
+  width: 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center; }
+  .audioLinkBtn:hover {
+    cursor: pointer;
+    background-color: silver; }
+
+.audioTitle {
+  border-bottom: solid 1px black;
+  margin-left: 1rem; }
+
+.audioInput {
+  padding: 1rem;
+  border: solid 1px black;
+  width: 60rem;
+  border-radius: 2rem;
+  margin-left: 1rem;
+  font-size: 2rem;
+  outline: none; }
+  .audioInput:focus {
+    border: solid 1px green; }
+
 .heading__3 {
   font-size: 10rem;
   color: #fff;
   letter-spacing: 1.1rem;
   padding: 1rem; }
+
+.heading__4 {
+  font-size: 2rem;
+  font-weight: 300;
+  padding: .5rem; }
 
 .programCard {
   display: flex;

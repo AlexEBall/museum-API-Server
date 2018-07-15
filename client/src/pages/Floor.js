@@ -61,15 +61,19 @@ class Floor extends Component {
         if (this.props.editDisabled) {
             return (
                 <div className="exhibitions__inputBox">
-                    <h4 className="heading__4">Audio Link</h4>
-                    <input 
-                        value={this.props.audioLinkValue}
-                        onChange={this.handleAudioLinkUpdate}
-                        name="audioLinkValue"
-                        placeholder="Copy an AWS Link"
-                    />
+                    <div className="audioTextEditing">
+                        <h4 className="heading__4">Audio Link:</h4>
+                        <input 
+                            type="text"
+                            className="audioInput"
+                            value={this.props.audioLinkValue}
+                            onChange={this.handleAudioLinkUpdate}
+                            name="audioLinkValue"
+                            placeholder="Please enter a https://www.cloudinary.com/ image"
+                        />
+                    </div>
                     <button 
-                        className="exhibitions__btn" 
+                        className="audioLinkBtn" 
                         onClick={this.submitAudioLinkUpdate}
                         >Submit
                     </button>
@@ -78,10 +82,12 @@ class Floor extends Component {
         } else {
             return (
             <div className="exhibitions__inputBox">
-                <h4 className="heading__4">Audio Link</h4>
-                <h4 className="heading__4">{this.props.floor.audioLink}</h4>
+                <div className="audioTextBeforeEditing">
+                    <h4 className="heading__4">Audio Link:</h4>
+                    <h4 className="heading__4 audioTitle">{this.props.floor.audioLink}</h4>
+                </div>
                 <button 
-                    className="exhibitions__btn" 
+                    className="audioLinkBtn" 
                     onClick={this.toggleInputFields}
                     >Edit
                 </button>
