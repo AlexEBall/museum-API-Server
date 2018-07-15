@@ -170,14 +170,12 @@ class Floor extends Component {
         } else {
             return(
                 <div className="exhibitions">
-                    <h2 className="exhibitions__title heading__2">Floor {floorInformation.floor}</h2>
+                    <h2 className="exhibitions__title exhibitions__title--floorTitle heading__2">Floor {floorInformation.floor}</h2>
                     <div className="exhibitions__floor-container">
                         <div className="exhibitions__coverImgContainer">
                             <img className="exhibitions__coverImg" src={floorInformation.coverPic} alt='floor 1 app pic' />
                         </div>
-                        <div className="exhibitions__imgTitleAreaContainer">
-                            {this.renderAudioLinkEditingField()}
-                        </div>
+                        {this.renderAudioLinkEditingField()}
                         <div className="exhibitions__galleryArrayImageHolder">
                             {this.renderImgTitleArea()}
                             {this.renderImgGallery()}

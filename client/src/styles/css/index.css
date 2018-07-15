@@ -12,7 +12,8 @@ html {
 .wrapper {
   padding: 3rem;
   display: flex;
-  flex: 1; }
+  flex: 1;
+  height: 100vh; }
 
 .header {
   display: flex; }
@@ -115,6 +116,8 @@ html {
     border-bottom: solid .2px;
     font-size: 3rem;
     font-weight: 300; }
+    .exhibitions__title--floorTitle {
+      flex: 1 0 auto; }
   .exhibitions__content-box {
     display: flex;
     flex-direction: column; }
@@ -148,54 +151,45 @@ html {
       background-color: silver; }
   .exhibitions__floor-container {
     display: flex;
-    flex: 1;
     flex-direction: column;
-    justify-content: space-between;
     height: 100vh; }
   .exhibitions__coverImgContainer {
-    margin: 1rem;
     display: flex;
-    flex: 1; }
-  .exhibitions__imgTitleAreaContainer {
+    margin: 1rem auto;
+    flex: 1 0 60%; }
+  .exhibitions__inputBox {
     display: flex;
-    flex: 1;
+    flex: 1 0 auto;
     flex-direction: column;
-    border: solid green; }
+    align-items: center;
+    justify-content: center;
+    border: solid green 1px; }
   .exhibitions__galleryArrayImageHolder {
     border: 1px solid purple;
     display: flex;
     flex-direction: column;
-    flex: 1; }
+    flex: 1 0 auto; }
   .exhibitions__coverImg {
-    width: 100%; }
-  .exhibitions__inputBox {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    align-items: center;
-    border: solid green 1px; }
+    max-width: 100%;
+    object-fit: contain; }
   .exhibitions__imageTitleArea {
-    display: flex;
-    flex-direction: column;
-    align-items: center; }
+    display: flex; }
   .exhibitions__imageCardArea {
     display: flex;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    background-color: lightblue; }
   .exhibitions__imageCard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 0 1 auto;
-    width: 25rem; }
+    width: 25rem;
+    margin: 1rem;
+    border: solid black 1px; }
+    .exhibitions__imageCard-btnArea {
+      display: flex;
+      justify-content: space-around;
+      border: solid white 1px;
+      margin: 0 2rem; }
   .exhibitions__imgs {
     width: 100%;
     padding: 2rem; }
-  .exhibitions__imageCardButtonsArea {
-    display: flex;
-    justify-content: space-around;
-    border: solid white 1px;
-    margin: 0 2rem;
-    width: 22rem; }
 
 .heading__3 {
   font-size: 10rem;

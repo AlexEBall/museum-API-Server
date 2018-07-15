@@ -58,7 +58,7 @@ class ImageCard extends Component {
                         placeholder="Copy an AWS Link"
                     />
                     <button 
-                        className="exhibitions__btn" 
+                        className="exhibitions__imageCard-btn" 
                         onClick={this.submitImgLinkUpdate}
                         >Submit
                     </button>
@@ -68,12 +68,12 @@ class ImageCard extends Component {
             return (        
                 <div className="exhibitions__imageCard">
                     <img src={this.props.img} className="exhibitions__imgs"/>
-                    <div className="exhibitions__imageCardButtonsArea">
+                    <div className="exhibitions__imageCard-btnArea">
                         <button 
-                            className="exhibitions__btn"
+                            className="exhibitions__imageCard-btn"
                             onClick={this.toggleImgInputFields}>Edit</button>
                         <button 
-                            className="exhibitions__btn"
+                            className="exhibitions__imageCard-btn"
                             onClick={this.removeImg}>Delete Img</button>
                     </div>
                 </div>  
