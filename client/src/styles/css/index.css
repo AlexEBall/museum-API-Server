@@ -171,7 +171,11 @@ html {
     object-fit: contain;
     margin: 1rem; }
   .exhibitions__imageTitleArea {
-    display: flex; }
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    padding: 2rem;
+    align-items: center; }
   .exhibitions__imageCardArea {
     display: flex;
     flex-wrap: wrap;
@@ -212,6 +216,9 @@ html {
   align-items: center;
   justify-content: center;
   align-self: center; }
+  .audioLinkBtn--AddImage {
+    margin-top: 1rem;
+    width: 13rem; }
   .audioLinkBtn:hover {
     cursor: pointer;
     background-color: silver; }

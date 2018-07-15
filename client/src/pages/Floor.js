@@ -130,10 +130,10 @@ class Floor extends Component {
                         onChange={this.handlePushingImgLink}
                         name="pushedImgLinkValue"
                         placeholder="Copy an AWS Link"
-                        className="exhibitinos__addImgInput"
+                        className="audioInput"
                     />
                     <button 
-                        className="exhibitions__btn"
+                        className="audioLinkBtn audioLinkBtn--AddImage"
                         onClick={this.submitImage}>Submit Image</button>
                 </div>
             );
@@ -142,7 +142,7 @@ class Floor extends Component {
                 <div className="exhibitions__imageTitleArea">
                     <h4 className="heading__4">Image Gallery</h4>
                     <button 
-                        className="exhibitions__btn"
+                        className="audioLinkBtn audioLinkBtn--AddImage"
                         onClick={this.addImage}>Add an Image</button>
                 </div>
             );

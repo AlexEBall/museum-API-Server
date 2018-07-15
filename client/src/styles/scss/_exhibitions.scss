@@ -107,6 +107,10 @@
 
     &__imageTitleArea {
         display: flex;
+        flex: 1 0 auto;
+        flex-direction: column;
+        padding: 2rem;
+        align-items: center;
     }
 
     &__imageCardArea {
@@ -161,10 +165,17 @@
     justify-content: center;
     align-self: center;
 
+    &--AddImage {
+        margin-top: 1rem;
+        width: 13rem;
+    }
+
     &:hover {
         cursor: pointer;
         background-color: silver;
     }
+
+
 }
 
 .audioTitle {
