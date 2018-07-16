@@ -51,14 +51,15 @@ class ImageCard extends Component {
             return (
                 <div className="exhibitions__imageCard">
                     <img src={this.props.img} className="exhibitions__imgs"/>
-                    <input 
+                    <input
+                        className="audioInput audioInput--ImageEdit" 
                         value={this.props.imgLinkValue}
                         onChange={this.handleImgLinkUpdate}
                         name="imgLinkValue"
                         placeholder="Copy an AWS Link"
                     />
                     <button 
-                        className="exhibitions__imageCard-btn" 
+                        className="audioLinkBtn audioLinkBtn--SubmitImage" 
                         onClick={this.submitImgLinkUpdate}
                         >Submit
                     </button>
@@ -68,14 +69,14 @@ class ImageCard extends Component {
             return (        
                 <div className="exhibitions__imageCard">
                     <img src={this.props.img} className="exhibitions__imgs"/>
-                    <div className="exhibitions__imageCard-btnArea">
+                    
                         <button 
-                            className="exhibitions__imageCard-btn"
+                            className="audioLinkBtn audioLinkBtn--EditImage"
                             onClick={this.toggleImgInputFields}>Edit</button>
                         <button 
-                            className="exhibitions__imageCard-btn"
+                            className="audioLinkBtn audioLinkBtn--DeleteImage"
                             onClick={this.removeImg}>Delete Img</button>
-                    </div>
+                    
                 </div>  
             )
         }

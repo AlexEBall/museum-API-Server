@@ -162,10 +162,10 @@ html {
     flex: 1 0 auto;
     padding: 2rem; }
   .exhibitions__galleryArrayImageHolder {
-    border: 1px solid purple;
     display: flex;
     flex-direction: column;
-    flex: 1 0 auto; }
+    flex: 1 0 auto;
+    border-top: solid 1px black; }
   .exhibitions__coverImg {
     max-width: 100%;
     object-fit: contain;
@@ -179,11 +179,17 @@ html {
   .exhibitions__imageCardArea {
     display: flex;
     flex-wrap: wrap;
-    background-color: lightblue; }
+    border-top: solid 1px black;
+    justify-content: space-around; }
   .exhibitions__imageCard {
+    display: flex;
+    flex-direction: column;
+    position: relative;
     width: 25rem;
     margin: 1rem;
-    border: solid black 1px; }
+    border: solid black 1px;
+    background-color: #fff;
+    box-shadow: 0 4px 2px -2px grey; }
     .exhibitions__imageCard-btnArea {
       display: flex;
       justify-content: space-around;
@@ -191,7 +197,8 @@ html {
       margin: 0 2rem; }
   .exhibitions__imgs {
     width: 100%;
-    padding: 2rem; }
+    padding: 2rem;
+    object-fit: cover; }
 
 .audioTextBeforeEditing {
   display: flex;
@@ -219,6 +226,16 @@ html {
   .audioLinkBtn--AddImage {
     margin-top: 1rem;
     width: 13rem; }
+  .audioLinkBtn--EditImage {
+    margin: 0 auto 1rem auto; }
+  .audioLinkBtn--DeleteImage {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 1rem; }
+  .audioLinkBtn--SubmitImage {
+    margin-top: 1rem;
+    margin-bottom: 1rem; }
   .audioLinkBtn:hover {
     cursor: pointer;
     background-color: silver; }
@@ -235,6 +252,9 @@ html {
   margin-left: 1rem;
   font-size: 2rem;
   outline: none; }
+  .audioInput--ImageEdit {
+    width: auto;
+    margin-right: 1rem; }
   .audioInput:focus {
     border: solid 1px green; }
 
