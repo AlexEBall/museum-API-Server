@@ -31,10 +31,21 @@ body {
     &__title {
         flex: 1;
         height: 7rem;
-        border-bottom: solid .2px;
+        border-bottom: solid .2px black;
         padding: 2rem;
         margin: .5rem 1rem;
+        display: flex;
+        align-items: center;
+        font-weight: 300;
+    }
 
+    &__homePageLink {
+        text-decoration: none;
+        &:link,
+        &:visited {
+            text-decoration: none;
+            color: black;
+        }
     }
 
     &__space-box {

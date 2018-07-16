@@ -21,9 +21,18 @@ html {
 .nav__title {
   flex: 1;
   height: 7rem;
-  border-bottom: solid .2px;
+  border-bottom: solid .2px black;
   padding: 2rem;
-  margin: .5rem 1rem; }
+  margin: .5rem 1rem;
+  display: flex;
+  align-items: center;
+  font-weight: 300; }
+
+.nav__homePageLink {
+  text-decoration: none; }
+  .nav__homePageLink:link, .nav__homePageLink:visited {
+    text-decoration: none;
+    color: black; }
 
 .nav__space-box {
   height: 5rem; }
