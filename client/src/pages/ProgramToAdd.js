@@ -5,7 +5,6 @@ import {
     addingProgramInputFieldOnChange
 } from '../actions';
 import Header from '../components/Header';
-import Footer from '../components/Footer';
 
 class ProgramToAdd extends Component {
     handleInputs = (event) => {
@@ -41,71 +40,79 @@ class ProgramToAdd extends Component {
                 <Header />
                 <section className="exhibitions">
                     <h1 className="exhibitions__title">Add a Program</h1>
-                    <div className="programCard">
-                        <form onSubmit={this.handleFormSubmit}>
-                            <div className="programCard__formGroup">
-                                <label>Title</label>
+                    <div className="formCard">
+                        <form
+                            className="formCard__form" 
+                            onSubmit={this.handleFormSubmit} >
+                            <div className="formCard__formGroup">
+                                <label className="label">Title</label>
                                 <input
+                                    className="formCard__formInput"
                                     value={this.props.title}
                                     name='title'
                                     onChange={this.handleInputs}
                                 />
                             </div>
-                            <div className="programCard__formGroup">
-                                <label>Picture</label>
+                            <div className="formCard__formGroup">
+                                <label className="label">Picture</label>
                                 <input
+                                    className="formCard__formInput"
                                     value={this.props.picture}
                                     name='picture'
                                     onChange={this.handleInputs}
                                 />
                             </div>
-                            <div className="programCard__formGroup">
-                                <label>Price</label>
+                            <div className="formCard__formGroup">
+                                <label className="label">Price</label>
                                 <input
+                                    className="formCard__formInput"
                                     value={this.props.price}
                                     name='price'
                                     onChange={this.handleInputs}
                                 />
                             </div>
-                            <div className="programCard__formGroup">
-                                <label>Description</label>
+                            <div className="formCard__formGroup">
+                                <label className="label">Description</label>
                                 <textarea
+                                    className="formCard__formInput"
                                     value={this.props.description}
                                     name='description'
                                     onChange={this.handleInputs}
                                 />
                             </div>
-                            <div className="programCard__formGroup">
-                                <label>Time</label>
+                            <div className="formCard__formGroup">
+                                <label className="label">Time</label>
                                 <input
+                                    className="formCard__formInput"
                                     value={this.props.time}
                                     name='time'
                                     onChange={this.handleInputs}
                                 />
                             </div>
-                            <div className="programCard__formGroup">
-                                <label>Member Information</label>
+                            <div className="formCard__formGroup">
+                                <label className="label">Member Information</label>
                                 <input
+                                    className="formCard__formInput"
                                     value={this.props.memberInfo}
                                     name='memberInfo'
                                     onChange={this.handleInputs}
                                 />
                             </div>
-                            <div className="programCard__formGroup">
-                                <label>Registration Link</label>
+                            <div className="formCard__formGroup">
+                                <label className="label">Registration Link</label>
                                 <input
+                                    className="formCard__formInput"
                                     value={this.props.registrationLink}
                                     name='registrationLink'
                                     onChange={this.handleInputs}
                                 />
                             </div>
-                            <div className="programCard__formGroup">
-                                <input className='exhibitions__btn' type='submit' value='Submit'/>
+                            <div className="formCard__formGroup">
+                                <input className='audioLinkBtn' type='submit' value='Submit'/>
                             </div>
                         </form>
                     </div>
                 </section>
-                <Footer />
             </div>
         )
     }

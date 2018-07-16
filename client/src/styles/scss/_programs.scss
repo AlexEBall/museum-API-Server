@@ -56,6 +56,21 @@
         justify-content: space-around;
         margin: 1rem 0;
     }
+}
+
+.formCard {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: white;
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        flex: 1 0 auto;
+    }
 
     &__formGroup {
         display: flex;
@@ -64,4 +79,13 @@
         padding: 1rem;
     }
 
+    &__formInput {
+        padding: 1rem;
+        border: solid 1px black;
+        // width: 60rem;
+        border-radius: 2rem;
+        margin-left: 1rem;
+        font-size: 2rem;
+        outline: none;
+    }
 }
