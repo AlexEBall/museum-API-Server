@@ -236,6 +236,12 @@ html {
   .audioLinkBtn--SubmitImage {
     margin-top: 1rem;
     margin-bottom: 1rem; }
+  .audioLinkBtn--ProgramBtns {
+    width: 16rem; }
+  .audioLinkBtn--AddProgram {
+    text-align: center;
+    margin: 1rem auto 0 auto;
+    width: 14rem; }
   .audioLinkBtn:hover {
     cursor: pointer;
     background-color: silver; }
@@ -269,14 +275,28 @@ html {
   font-weight: 300;
   padding: .5rem; }
 
+.programText {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 2; }
+
+.programs__container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 1rem 10rem;
+  background-color: #fff; }
+
 .programCard {
   display: flex;
   flex-direction: column;
+  flex: 1 0 auto;
   border: black solid 1px;
+  box-shadow: 0 4px 2px -2px grey;
   margin: 1rem 0;
   padding: 1rem;
-  background-color: white;
-  border-radius: 1.8rem; }
+  background-color: white; }
   .programCard__Title {
     background-color: red;
     align-items: center; }
@@ -284,20 +304,11 @@ html {
     padding: 1rem; }
     .programCard__Img--picture {
       width: 100%; }
-  .programCard__Price {
-    background-color: yellow; }
-  .programCard__Description {
-    background-color: wheat; }
-  .programCard__Time {
-    background-color: lightpink; }
-  .programCard__MemberInfo {
-    background-color: black; }
-  .programCard__RegistrationLink {
-    background-color: cyan; }
   .programCard__Buttons {
     display: flex;
     flex-direction: row;
-    justify-content: space-around; }
+    justify-content: space-around;
+    margin: 1rem 0; }
   .programCard__formGroup {
     display: flex;
     flex-direction: column;

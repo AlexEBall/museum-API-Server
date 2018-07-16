@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 import {fetchPrograms} from '../actions';
 import Header from '../components/Header';
 import ProgramCard from '../components/ProgramCard';
-import Footer from '../components/Footer';
 import {Link} from 'react-router-dom';
 
 class Programs extends Component {
@@ -18,9 +17,7 @@ class Programs extends Component {
         } else {
             console.log(programs);
             return(
-            <div className="exhibitions__content-box">
-                <div className="exhibitions__individual-container">
-                    <h3>Programs</h3>
+                <div className="programs__container">
                     {programs.map((program, i) => {
                         return (
                         <ProgramCard 
@@ -29,7 +26,6 @@ class Programs extends Component {
                         )
                     })}
                 </div>
-            </div>
            );
         }
     }
@@ -40,15 +36,12 @@ class Programs extends Component {
             <div className="wrapper">
                 <Header />
                 <section className="exhibitions">
-                    <h1 className="exhibitions__title">These are the current programs</h1>
-                    <Link to="/programs/toAdd">
-                        <button className="exhibitions__btn">
+                    <h1 className="exhibitions__title">Current Programs</h1>
+                    <Link to="/programs/toAdd" className="audioLinkBtn audioLinkBtn--AddProgram">
                             Add a Program
-                        </button>
                     </Link>
                     {this.renderPage()}
                 </section>
-                <Footer />
             </div>
         );
     }

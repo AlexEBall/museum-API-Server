@@ -189,6 +189,16 @@
         margin-bottom: 1rem;
     }
 
+    &--ProgramBtns {
+        width: 16rem;
+    }
+
+    &--AddProgram {
+        text-align: center;
+        margin: 1rem auto 0 auto;
+        width: 14rem;
+    }
+
     &:hover {
         cursor: pointer;
         background-color: silver;

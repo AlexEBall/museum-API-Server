@@ -1,11 +1,21 @@
+.programs__container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 1rem 10rem;
+    background-color: #fff;
+}
+
 .programCard {
     display: flex;
     flex-direction: column;
+    flex: 1 0 auto;
     border: black solid 1px;
+    box-shadow: 0 4px 2px -2px grey;
     margin: 1rem 0;
     padding: 1rem;
     background-color: white;
-    border-radius: 1.8rem;
 
     &__Title {
         background-color: red;
@@ -21,29 +31,30 @@
     }
 
     &__Price {
-        background-color: yellow;
+        // background-color: yellow;
     }
 
     &__Description {
-        background-color: wheat;
+        // background-color: wheat;
     }
 
     &__Time {
-        background-color: lightpink;
+        
     }
 
     &__MemberInfo {
-        background-color: black;
+        // background-color: black;
     }
 
     &__RegistrationLink {
-        background-color: cyan;
+        // background-color: cyan;
     }
 
     &__Buttons {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+        margin: 1rem 0;
     }
 
     &__formGroup {
