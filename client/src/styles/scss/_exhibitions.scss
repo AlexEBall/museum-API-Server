@@ -12,7 +12,7 @@
         display: flex;
         flex: 0 1 auto;
         justify-content: center;
-        height: 7rem;
+        height: 6.5rem;
         align-items: center;
         border-bottom: solid .2px;
         font-size: 3rem;
@@ -252,4 +252,10 @@
 .articleInputBox {
     display: flex;
     margin-top: 1rem;
+}
+
+.delete__icon {
+    height: 4rem;
+    width: 4rem;
+    fill: red;
 }

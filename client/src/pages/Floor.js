@@ -133,6 +133,7 @@ class Floor extends Component {
         } else {
             return (
             <div className="exhibitions__learnMoreSection">
+                <h4 className="heading__4 heading__LearnMore">Learn More Page</h4>
                 <div className="articlePictureBox">
                     <img 
                         className="articlePicture"
