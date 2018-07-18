@@ -175,6 +175,12 @@ html {
     flex-direction: column;
     flex: 1 0 auto;
     border-top: solid 1px black; }
+  .exhibitions__learnMoreSection {
+    display: flex;
+    flex: 1 0 auto;
+    padding: 2rem;
+    flex-direction: column;
+    border: solid black 1px; }
   .exhibitions__coverImg {
     max-width: 100%;
     object-fit: contain;
@@ -272,6 +278,17 @@ html {
     margin-right: 1rem; }
   .audioInput:focus {
     border: solid 1px green; }
+
+.articlePicture {
+  width: 100%; }
+
+.articlePictureBox {
+  width: 40rem;
+  margin: 0 auto; }
+
+.articleInputBox {
+  display: flex;
+  margin-top: 1rem; }
 
 .heading__3 {
   font-size: 10rem;

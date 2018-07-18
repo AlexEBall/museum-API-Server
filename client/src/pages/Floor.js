@@ -34,6 +34,10 @@ class Floor extends Component {
         this.props.editingDisabled(true);
     }
 
+    toggleConnectInputFields = () => {
+        console.log('heya');
+    }
+
     handleAudioLinkUpdate = event => {
         // console.log(event.target.name);
         const value = event.target.value;
@@ -120,6 +124,68 @@ class Floor extends Component {
         }
     }
 
+    renderArtistConnect = () => {
+        const artistInfo = this.props.floor.artistConnect;
+        console.log('fllloooooorrr', artistInfo);
+
+        if (!artistInfo) {
+            return <h2>Loading</h2>
+        } else {
+            return (
+            <div className="exhibitions__learnMoreSection">
+                <div className="articlePictureBox">
+                    <img 
+                        className="articlePicture"
+                        src={artistInfo.picture}/>
+                </div>
+                <div className="articleInputBox">
+                    <h4 className="heading__4">
+                        Article Title: {artistInfo.articleTitle}
+                    </h4>
+                    <button 
+                    className="audioLinkBtn" 
+                    onClick={this.toggleConnectInputFields}
+                    >Edit
+                </button>
+                </div>
+                <div className="articleInputBox">
+                    <h4 className="heading__4">
+                        Article Description: 
+                    </h4>
+                    <h4 className="heading__4">
+                        {artistInfo.articleDescription}
+                    </h4>
+                    <button 
+                    className="audioLinkBtn" 
+                    onClick={this.toggleConnectInputFields}
+                    >Edit
+                </button>
+                </div>
+                <div className="articleInputBox">
+                    <h4 className="heading__4">
+                        Article Link: {artistInfo.articleLink}
+                    </h4>
+                    <button 
+                    className="audioLinkBtn" 
+                    onClick={this.toggleConnectInputFields}
+                    >Edit
+                </button>
+                </div>
+                <div className="articleInputBox">
+                    <h4 className="heading__4">
+                        Social Media Link: {artistInfo.socialLink}
+                    </h4>
+                    <button 
+                    className="audioLinkBtn" 
+                    onClick={this.toggleConnectInputFields}
+                    >Edit
+                </button>
+                </div>
+            </div>
+        );
+        }
+    }
+
     renderImgTitleArea = () => {
         if (this.state.editDisabled) {
             return (
@@ -186,6 +252,7 @@ class Floor extends Component {
                             {this.renderImgTitleArea()}
                             {this.renderImgGallery()}
                         </div>
+                        {this.renderArtistConnect()}
                     </div>
                 </div>
             )
