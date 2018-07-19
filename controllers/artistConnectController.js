@@ -16,5 +16,13 @@ module.exports = {
             .findById(req.params.id)
             .then(artistConnectModel => res.json(artistConnectModel))
             .catch(err => res.status(422).json(err));
+    },
+    findByFloor: (req, res, next) => {
+        const floor = parseInt(req.params.floor);
+        db
+            .artistConnect
+            .find( { "floor": floor})
+            .then(artistConnectModel => res.json(artistConnectModel))
+            .catch(err => res.status(422).json(err));
     }
 }

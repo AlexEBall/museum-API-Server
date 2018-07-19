@@ -2,14 +2,14 @@ import {
     FETCHING_ARTIST_CONNECT_START,
     FETCHING_ARTIST_CONNECT_ERROR,
     RECIEVE_ARTIST_CONNECT,
-    RECIEVE_ARTIST_CONNECT_BY_ID
+    RECIEVE_ARTIST_CONNECT_BY_FLOOR
 } from '../actions/types';
 
 const INITIAL_STATE = {
     fetching: false,
     fetched: false,
     artistConnect: [],
-    artistConnectById: {},
+    artistConnectByFloor: {},
     error: null
 }
 export default (state=INITIAL_STATE, action) => {
@@ -25,11 +25,11 @@ export default (state=INITIAL_STATE, action) => {
                 fetched: true, 
                 artistConnect: action.payload 
                 }
-        case RECIEVE_ARTIST_CONNECT_BY_ID:
+        case RECIEVE_ARTIST_CONNECT_BY_FLOOR:
             return { ...state,
                 fetching: false,
                 fetched: true,
-                artistConnectById: action.payload
+                artistConnect: action.payload
             }
         default: 
             return state;

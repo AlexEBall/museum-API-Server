@@ -47,5 +47,5 @@ export const DELETING_PROGRAM = 'deleting_program';
 export const FETCHING_ARTIST_CONNECT_START = 'fetching_artist_connect_start';
 export const FETCHING_ARTIST_CONNECT_ERROR = 'fetching_artist_connect_error';
 export const RECIEVE_ARTIST_CONNECT = 'recieve_artist_connect';
-export const RECIEVE_ARTIST_CONNECT_BY_ID = 'recieve_artist_connect_by_id';
+export const RECIEVE_ARTIST_CONNECT_BY_FLOOR = 'recieve_artist_connect_by_floor';
 export const RECIEVED_ARTIST_CONNECT_BY_ID_AND_PRELOAD_STATE = 'recieved_artist_connect_by_id_and_preload_state';

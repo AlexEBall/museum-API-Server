@@ -3,7 +3,7 @@ import {
     FETCHING_ARTIST_CONNECT_START, 
     FETCHING_ARTIST_CONNECT_ERROR, 
     RECIEVE_ARTIST_CONNECT, 
-    RECIEVE_ARTIST_CONNECT_BY_ID, 
+    RECIEVE_ARTIST_CONNECT_BY_FLOOR, 
     RECIEVED_ARTIST_CONNECT_BY_ID_AND_PRELOAD_STATE
 } from './types';
 
@@ -23,21 +23,21 @@ export const fetchArtistConnect = () => {
     }
 };
 
-// export const fetchProgramById = (id) => {
-//     return (dispatch) => {
-//         dispatch({type: FETCHING_PROGRAMS_START})
-//         API
-//             .getProgramsById(id)
-//             .then((res) => {
-//                 console.log(res);
-//                 dispatch({type: RECIEVE_PROGRAM_BY_ID, payload: res.data})
-//                 // console.log(res.data);
-//             })
-//             .catch((err) => {
-//                 dispatch({type: FETCHING_PROGRAMS_ERROR, payload: err})
-//             })
-//     }
-// };
+export const fetchArtistConnectByFloor = (floor) => {
+    return (dispatch) => {
+        dispatch({type: FETCHING_ARTIST_CONNECT_START})
+        API
+            .getArtistConnectFloor(floor)
+            .then((res) => {
+                console.log(res);
+                dispatch({type: RECIEVE_ARTIST_CONNECT_BY_FLOOR, payload: res.data})
+                // console.log(res.data);
+            })
+            .catch((err) => {
+                dispatch({type: FETCHING_ARTIST_CONNECT_ERROR, payload: err})
+            })
+    }
+};
 
 export const fetchArtistConnectByIdAndPreLoadState = (id) => {
     return (dispatch) => {
