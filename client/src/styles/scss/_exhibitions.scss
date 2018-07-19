@@ -12,7 +12,7 @@
         display: flex;
         flex: 0 1 auto;
         justify-content: center;
-        height: 6.5rem;
+        height: 7rem;
         align-items: center;
         border-bottom: solid .2px;
         font-size: 3rem;
@@ -20,6 +20,7 @@
 
         &--floorTitle {
             flex: 1 0 auto;
+            height: 6.5rem;
         }
     }
 

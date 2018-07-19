@@ -13,11 +13,16 @@ import {
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ImageCard from '../components/ImageCard';
-// import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 class Floor extends Component {
     state = {
-        editDisabled: false
+        editDisabled: false,
+        artistPictureDisabled: false,
+        articleTitleDisabled: false,
+        articleDescriptionDisabled: false,
+        articleLinkDisabled: false,
+        socialLinkDisabbled: false
     };
 
     componentWillMount = () => {
@@ -34,8 +39,26 @@ class Floor extends Component {
         this.props.editingDisabled(true);
     }
 
-    toggleConnectInputFields = () => {
+    toggleConnectPictureInputField = () => {
         console.log('heya');
+        this.state.artistPictureDisabled = true;
+    }
+
+    toggleConnectArticleTitleInputField = () => {
+        this.state.articleTitleDisabled = true;
+        console.log(this.state);
+    }
+
+    toggleConnectArticleDescriptionInputField = () => {
+        this.state.articleDescriptionDisabled = true;
+    }
+
+    toggleConnectArticleLinkInputField = () => {
+        this.state.articleLinkDisabled = true;
+    }
+
+    toggleConnectSocialLinkInputField = () => {
+        this.state.socialLinkDisabled = true;
     }
 
     handleAudioLinkUpdate = event => {
@@ -139,16 +162,7 @@ class Floor extends Component {
                         className="articlePicture"
                         src={artistInfo.picture}/>
                 </div>
-                <div className="articleInputBox">
-                    <h4 className="heading__4">
-                        Article Title: {artistInfo.articleTitle}
-                    </h4>
-                    <button 
-                    className="audioLinkBtn" 
-                    onClick={this.toggleConnectInputFields}
-                    >Edit
-                </button>
-                </div>
+                {this.renderArtistConnenctTitleInputField()}
                 <div className="articleInputBox">
                     <h4 className="heading__4">
                         Article Description: 
@@ -158,7 +172,7 @@ class Floor extends Component {
                     </h4>
                     <button 
                     className="audioLinkBtn" 
-                    onClick={this.toggleConnectInputFields}
+                    onClick={this.toggleConnectArticleDescriptionInputField}
                     >Edit
                 </button>
                 </div>
@@ -168,7 +182,7 @@ class Floor extends Component {
                     </h4>
                     <button 
                     className="audioLinkBtn" 
-                    onClick={this.toggleConnectInputFields}
+                    onClick={this.toggleConnectArticleLinkInputField}
                     >Edit
                 </button>
                 </div>
@@ -178,13 +192,56 @@ class Floor extends Component {
                     </h4>
                     <button 
                     className="audioLinkBtn" 
-                    onClick={this.toggleConnectInputFields}
+                    onClick={this.toggleConnectSocialLinkInputField}
                     >Edit
                 </button>
                 </div>
             </div>
         );
         }
+    }
+
+    renderArtistConnenctTitleInputField = () => {
+        const artistInfo = this.props.floor.artistConnect
+
+        console.log('?????', this.state)
+
+        if (!this.state.articleTitleDisabled) {
+            return (
+                <div className="articleInputBox">
+                    <h4 className="heading__4">
+                        Article TUUUUUitle: {artistInfo.articleTitle}
+                    </h4>
+                    <button 
+                    className="audioLinkBtn" 
+                    onClick={this.toggleConnectArticleTitleInputField}
+                    >Edit
+                    </button>
+                </div>
+            );
+        } else {
+            return (
+                <div className="articleInputBox">
+                    <div className="audioTextEditing">
+                        <h4 className="heading__4">Aurticle Link:</h4>
+                        <input 
+                            type="text"
+                            className="audioInput"
+                            value={this.props.audioLinkValue}
+                            onChange={this.handleAudioLinkUpdate}
+                            name="audioLinkValue"
+                            placeholder="Please enter a https://www.cloudinary.com/ image"
+                        />
+                    </div>
+                    <button 
+                        className="audioLinkBtn" 
+                        onClick={this.submitAudioLinkUpdate}
+                        >Submit
+                    </button>
+                </div>
+            )
+        }
+
     }
 
     renderImgTitleArea = () => {

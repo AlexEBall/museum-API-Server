@@ -11,6 +11,7 @@ import Programs from './pages/Programs';
 import Floor from './pages/Floor';
 import ProgramToAdd from './pages/ProgramToAdd';
 import ProgramEditAndRemoval from './pages/ProgramEditAndRemoval'
+import LearnMore from './pages/LearnMore';
 
 export default class App extends Component {
   render() {
@@ -26,9 +27,12 @@ export default class App extends Component {
             <Route exact path="/programs" component={Programs}/>
             <Route exact path="/programs/toAdd" component={ProgramToAdd}/>
             <Route exact path="/programs/:id" component={ProgramEditAndRemoval}/>
+            
           </Switch>
         </Router>
       </Provider>
     );
   }
 }
+
+// <Route exact path="/exhibitionFloor:floor/learnMore" component={LearnMore}/>

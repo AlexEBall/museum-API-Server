@@ -5,8 +5,8 @@ const floorSchema = new Schema({
     floor: Number,
     coverPic: String,
     floorGallery: [String],
-    audioLink: String,
-    floorText: String
+    audioTitle: String,
+    audioLink: String
 });
 
 const cafamSchema = new Schema({

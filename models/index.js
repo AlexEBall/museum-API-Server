@@ -1,4 +1,5 @@
 module.exports = {
     cafam: require("./cafam"),
-    programs: require("./programs")
+    programs: require("./programs"),
+    artistConnect: require("./artistConnect")
 };
