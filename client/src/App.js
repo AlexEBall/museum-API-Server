@@ -12,6 +12,7 @@ import Floor from './pages/Floor';
 import ProgramToAdd from './pages/ProgramToAdd';
 import ProgramEditAndRemoval from './pages/ProgramEditAndRemoval'
 import LearnMore from './pages/LearnMore';
+import LearnMoreEdit from './pages/LearnMoreEdit';
 
 export default class App extends Component {
   render() {
@@ -28,6 +29,7 @@ export default class App extends Component {
             <Route exact path="/programs/toAdd" component={ProgramToAdd}/>
             <Route exact path="/programs/:id" component={ProgramEditAndRemoval}/>
             <Route exact path="/exhibitionFloor:floor/learnMore" component={LearnMore}/>
+            <Route exact path="/exhibitionFloor:floor/learnMore/:id" component={LearnMoreEdit}/>
           </Switch>
         </Router>
       </Provider>

@@ -192,7 +192,7 @@ class Floor extends Component {
                         <div className="exhibitions__learnMoreSection">
                             <h4 className="heading__4 heading__LearnMore">Learn More Page</h4>
                             <Link to={'/exhibitionFloor' + this.props.match.params.floor + '/learnMore'} className="audioLinkBtn">
-                                Edit Connect with the Artist
+                                View Connect with the Artist
                             </Link>
                         </div>
                     </div>

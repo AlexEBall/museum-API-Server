@@ -248,6 +248,8 @@
 .articlePictureBox {
     width: 40rem;
     margin: 0 auto;
+    display: flex;
+    flex: 1;
 }
 
 .articleInputBox {

@@ -1,94 +1,59 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {
-    fetchArtistConnectByFloorAndPreLoadState,
+    // fetchArtistConnectByFloorAndPreLoadState,
     fetchArtistConnectByFloor,
-    editingArtistConnectInputFieldOnChange
+    // editingArtistConnectInputFieldOnChange
 } from '../actions';
 import Header from '../components/Header';
+import {Link} from 'react-router-dom';
 
 class LearnMore extends Component {
 
     componentWillMount() {
         console.log(this.props);
         this.props.fetchArtistConnectByFloor(this.props.match.params.floor);
-        this.props.fetchArtistConnectByFloorAndPreLoadState(this.props.match.params.floor);
+        // this.props.fetchArtistConnectByFloorAndPreLoadState(this.props.match.params.floor);
     }
 
-    handleInputs = (event) => {
-        const text = event.target.value;
-        const name = event.target.name;
+    // handleInputs = (event) => {
+    //     const text = event.target.value;
+    //     const name = event.target.name;
 
-        this.props.editingArtistConnectInputFieldOnChange(name, text);
-    }
+    //     this.props.editingArtistConnectInputFieldOnChange(name, text);
+    // }
 
     render() {
-        // console.log('number 2', this.props);
-
-        if (!this.props.artistConnect) {
+        if(!this.props.artistConnect) {
             return <h2>Loading</h2>
         } else {
+            console.log('checking', this.props.artistConnect)
             return (
                 <div className="wrapper">
-                        <Header/>
-                        <section className="exhibitions">
-                            <h1 className="exhibitions__title">Edit the Connect with Artist Page</h1>
-                            <div className="formCard">
-                            <form 
-                                className="formCard__form"
-                                onSubmit={this.handleFormSubmit}>
-                                <div className="formCard__formGroup">
-                                    <label className="label">Article Title:</label>
-                                    <input
-                                        className="formCard__formInput"
-                                        value={this.props.artistConnect.articleTitle}
-                                        name='article title'
-                                        onChange={this.handleInputs}
-                                    />
-                                </div>
-                                <div className="formCard__formGroup">
-                                    <label className="label">Picture:</label>
-                                    <input
-                                        className="formCard__formInput"
-                                        value={this.props.artistConnect.picture}
-                                        name='article picture'
-                                        onChange={this.handleInputs}
-                                    />
-                                </div>
-                                <div className="formCard__formGroup">
-                                    <label className="label">Article Description:</label>
-                                    <textarea
-                                        className="formCard__formInput"
-                                        value={this.props.artistConnect.articleDescription}
-                                        name='article description'
-                                        onChange={this.handleInputs}
-                                    />
-                                </div>
-                                <div className="formCard__formGroup">
-                                    <label className="label">Article Link:</label>
-                                    <input
-                                        className="formCard__formInput"
-                                        value={this.props.artistConnect.articleLink}
-                                        name='article link'
-                                        onChange={this.handleInputs}
-                                    />
-                                </div>
-                                <div className="formCard__formGroup">
-                                    <label className="label">Social Link:</label>
-                                    <input
-                                        className="formCard__formInput"
-                                        value={this.props.artistConnect.socialLink}
-                                        name='social link'
-                                        onChange={this.handleInputs}
-                                    />
-                                </div>
-                                <div className="formCard__formGroup">
-                                    <input className='audioLinkBtn' type='submit' value='Submit'/>
-                                </div>
-                            </form>
+                    <Header/>
+                    <section className="exhibitions">
+                        <h1 className="exhibitions__title">Connect with Artist</h1>
+                        <div className="articlePictureBox">
+                            <img className="articlePicture" src={this.props.artistConnect.picture}/>
                         </div>
-                        </section>
-                    </div>
+                        <div className="articleInputBox">
+                            <h4 className='heading__4'>Article Title: {this.props.artistConnect.articleTitle}</h4>
+                        </div>
+                        <div className="articleInputBox">
+                            <h4 className='heading__4'>Article Description: {this.props.artistConnect.articleDescription}</h4>
+                        </div>
+                        <div className="articleInputBox">
+                            <h4 className='heading__4'>Article Link: {this.props.artistConnect.articleLink}</h4>
+                        </div>
+                        <div className="articleInputBox">
+                            <h4 className='heading__4'>Social Link: {this.props.artistConnect.socialLink}</h4>
+                        </div>
+                        <Link 
+                            to={'/exhibitionFloor' + this.props.match.params.floor + '/learnMore/' + this.props.artistConnect._id} 
+                            className="audioLinkBtn">Edit
+                        </Link>
+                    </section>
+                </div>
             );
         }
     }
@@ -99,18 +64,10 @@ const mapStateToProps = state => {
         fetching: state.artistConnect.fetching,
         fetched: state.artistConnect.fetched,
         error: state.artistConnect.error,
-        artistConnect: state.artistConnect.artistConnect[0],
-        articleTitle: state.editingArtistConnect.articleTitle,
-        picture: state.editingArtistConnect.picture,
-        articleDescription: state.editingArtistConnect.articleDescription,
-        articleLink: state.editingArtistConnect.articleLink,
-        socialLink: state.editingArtistConnect.socialLink,
-        floor: state.editingArtistConnect.floor,
+        artistConnect: state.artistConnect.artistConnect[0]
     }
 }
 
 export default connect(mapStateToProps, { 
-    fetchArtistConnectByFloorAndPreLoadState,
-    fetchArtistConnectByFloor,
-    editingArtistConnectInputFieldOnChange
+    fetchArtistConnectByFloor
 })(LearnMore);
