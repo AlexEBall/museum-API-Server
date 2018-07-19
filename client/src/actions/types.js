@@ -48,4 +48,11 @@ export const FETCHING_ARTIST_CONNECT_START = 'fetching_artist_connect_start';
 export const FETCHING_ARTIST_CONNECT_ERROR = 'fetching_artist_connect_error';
 export const RECIEVE_ARTIST_CONNECT = 'recieve_artist_connect';
 export const RECIEVE_ARTIST_CONNECT_BY_FLOOR = 'recieve_artist_connect_by_floor';
-export const RECIEVED_ARTIST_CONNECT_BY_ID_AND_PRELOAD_STATE = 'recieved_artist_connect_by_id_and_preload_state';
+export const RECIEVED_ARTIST_CONNECT_BY_FLOOR_AND_PRELOAD_STATE = 'recieved_artist_connect_by_floor_and_preload_state';
+
+export const EDITING_ARTIST_CONNECT_TITLE = 'editing_artist_connect_title';
+export const EDITING_ARTIST_CONNECT_PICTURE = 'editing_artist_connect_picture';
+export const EDITING_ARTIST_CONNECT_DESCRIPTION = 'editing_artist_connect_description';
+export const EDITING_ARTIST_CONNECT_ARTICLE_LINK = 'editing_artist_connect_article_link';
+export const EDITING_ARTIST_CONNECT_SOCIAL_LINK = 'editing_artist_connect_social_link';
+export const ARTIST_CONNECT_EDITED = 'artist_connect_edited';

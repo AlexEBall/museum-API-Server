@@ -18,11 +18,6 @@ import {Link} from 'react-router-dom';
 class Floor extends Component {
     state = {
         editDisabled: false,
-        artistPictureDisabled: false,
-        articleTitleDisabled: false,
-        articleDescriptionDisabled: false,
-        articleLinkDisabled: false,
-        socialLinkDisabbled: false
     };
 
     componentWillMount = () => {
@@ -37,28 +32,6 @@ class Floor extends Component {
     toggleInputFields = () => {
         console.log('clicked');
         this.props.editingDisabled(true);
-    }
-
-    toggleConnectPictureInputField = () => {
-        console.log('heya');
-        this.state.artistPictureDisabled = true;
-    }
-
-    toggleConnectArticleTitleInputField = () => {
-        this.state.articleTitleDisabled = true;
-        console.log(this.state);
-    }
-
-    toggleConnectArticleDescriptionInputField = () => {
-        this.state.articleDescriptionDisabled = true;
-    }
-
-    toggleConnectArticleLinkInputField = () => {
-        this.state.articleLinkDisabled = true;
-    }
-
-    toggleConnectSocialLinkInputField = () => {
-        this.state.socialLinkDisabled = true;
     }
 
     handleAudioLinkUpdate = event => {
@@ -145,103 +118,6 @@ class Floor extends Component {
             </div>
         )
         }
-    }
-
-    renderArtistConnect = () => {
-        const artistInfo = this.props.floor.artistConnect;
-        console.log('fllloooooorrr', artistInfo);
-
-        if (!artistInfo) {
-            return <h2>Loading</h2>
-        } else {
-            return (
-            <div className="exhibitions__learnMoreSection">
-                <h4 className="heading__4 heading__LearnMore">Learn More Page</h4>
-                <div className="articlePictureBox">
-                    <img 
-                        className="articlePicture"
-                        src={artistInfo.picture}/>
-                </div>
-                {this.renderArtistConnenctTitleInputField()}
-                <div className="articleInputBox">
-                    <h4 className="heading__4">
-                        Article Description: 
-                    </h4>
-                    <h4 className="heading__4">
-                        {artistInfo.articleDescription}
-                    </h4>
-                    <button 
-                    className="audioLinkBtn" 
-                    onClick={this.toggleConnectArticleDescriptionInputField}
-                    >Edit
-                </button>
-                </div>
-                <div className="articleInputBox">
-                    <h4 className="heading__4">
-                        Article Link: {artistInfo.articleLink}
-                    </h4>
-                    <button 
-                    className="audioLinkBtn" 
-                    onClick={this.toggleConnectArticleLinkInputField}
-                    >Edit
-                </button>
-                </div>
-                <div className="articleInputBox">
-                    <h4 className="heading__4">
-                        Social Media Link: {artistInfo.socialLink}
-                    </h4>
-                    <button 
-                    className="audioLinkBtn" 
-                    onClick={this.toggleConnectSocialLinkInputField}
-                    >Edit
-                </button>
-                </div>
-            </div>
-        );
-        }
-    }
-
-    renderArtistConnenctTitleInputField = () => {
-        const artistInfo = this.props.floor.artistConnect
-
-        console.log('?????', this.state)
-
-        if (!this.state.articleTitleDisabled) {
-            return (
-                <div className="articleInputBox">
-                    <h4 className="heading__4">
-                        Article TUUUUUitle: {artistInfo.articleTitle}
-                    </h4>
-                    <button 
-                    className="audioLinkBtn" 
-                    onClick={this.toggleConnectArticleTitleInputField}
-                    >Edit
-                    </button>
-                </div>
-            );
-        } else {
-            return (
-                <div className="articleInputBox">
-                    <div className="audioTextEditing">
-                        <h4 className="heading__4">Aurticle Link:</h4>
-                        <input 
-                            type="text"
-                            className="audioInput"
-                            value={this.props.audioLinkValue}
-                            onChange={this.handleAudioLinkUpdate}
-                            name="audioLinkValue"
-                            placeholder="Please enter a https://www.cloudinary.com/ image"
-                        />
-                    </div>
-                    <button 
-                        className="audioLinkBtn" 
-                        onClick={this.submitAudioLinkUpdate}
-                        >Submit
-                    </button>
-                </div>
-            )
-        }
-
     }
 
     renderImgTitleArea = () => {

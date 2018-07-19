@@ -42,4 +42,7 @@ export default {
     getArtistConnectFloor: (floor) => {
         return axios.get('/api/cafamArtistConnect/' + floor);
     },
+    getArtistConnectByFloor: (floor) => {
+        return axios.get('/api/cafamArtistConnect/' + floor);
+    },
 };

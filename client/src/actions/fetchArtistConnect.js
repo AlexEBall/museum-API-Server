@@ -4,7 +4,7 @@ import {
     FETCHING_ARTIST_CONNECT_ERROR, 
     RECIEVE_ARTIST_CONNECT, 
     RECIEVE_ARTIST_CONNECT_BY_FLOOR, 
-    RECIEVED_ARTIST_CONNECT_BY_ID_AND_PRELOAD_STATE
+    RECIEVED_ARTIST_CONNECT_BY_FLOOR_AND_PRELOAD_STATE
 } from './types';
 
 export const fetchArtistConnect = () => {
@@ -39,14 +39,14 @@ export const fetchArtistConnectByFloor = (floor) => {
     }
 };
 
-export const fetchArtistConnectByIdAndPreLoadState = (id) => {
+export const fetchArtistConnectByFloorAndPreLoadState = (floor) => {
     return (dispatch) => {
         dispatch({type: FETCHING_ARTIST_CONNECT_START})
         API
-            .getProgramsById(id)
+            .getArtistConnectByFloor(floor)
             .then((res) => {
                 console.log(res);
-                dispatch({type: RECIEVED_ARTIST_CONNECT_BY_ID_AND_PRELOAD_STATE, payload: res.data})
+                dispatch({type: RECIEVED_ARTIST_CONNECT_BY_FLOOR_AND_PRELOAD_STATE, payload: res.data})
                 // console.log(res.data);
             })
             .catch((err) => {
