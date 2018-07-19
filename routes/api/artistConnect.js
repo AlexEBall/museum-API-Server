@@ -1,7 +1,7 @@
 const router = require("express").Router();
-const artistConnectController = require("../../controllers/artistConnectControllerr");
+const artistConnectController = require('../../controllers/artistConnectController');
 
-// Matches with "/api/cafamPrograms"
+// Matches with "/api/cafamArtistConnect"
 router
     .route("/")
     .get(artistConnectController.findAll);

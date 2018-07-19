@@ -27,7 +27,7 @@ export default class App extends Component {
             <Route exact path="/programs" component={Programs}/>
             <Route exact path="/programs/toAdd" component={ProgramToAdd}/>
             <Route exact path="/programs/:id" component={ProgramEditAndRemoval}/>
-            
+            <Route exact path="/exhibitionFloor:floor/learnMore" component={LearnMore}/>
           </Switch>
         </Router>
       </Provider>

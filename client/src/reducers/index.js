@@ -6,6 +6,7 @@ import FetchProgramsReducer from './fetchProgramsReducer';
 import AddingProgramRecuder from './addingProgramsReducer';
 import EditingProgramReducer from './editingProgramsReducer';
 import DeletingProgramReducer from './deletingProgramsReducer';
+import FetchArtistConnectReducer from './fetchArtistConnectReducer';
 
 export default combineReducers({
     exhibitions: FetchExhibitionsReducer,
@@ -14,5 +15,6 @@ export default combineReducers({
     programs: FetchProgramsReducer,
     addingPrograms: AddingProgramRecuder,
     editingPrograms: EditingProgramReducer,
-    deletingPrograms: DeletingProgramReducer
+    deletingPrograms: DeletingProgramReducer,
+    artistConnect: FetchArtistConnectReducer
 });

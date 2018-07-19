@@ -43,3 +43,9 @@ export const EDITING_PROGRAM_REGISTRATION_LINK = 'editing_program_registration_l
 export const RECIEVED_PROGRAM_BY_ID_AND_PRELOAD_STATE = 'recieved_program_by_id_and_preload_state';
 
 export const DELETING_PROGRAM = 'deleting_program';
+
+export const FETCHING_ARTIST_CONNECT_START = 'fetching_artist_connect_start';
+export const FETCHING_ARTIST_CONNECT_ERROR = 'fetching_artist_connect_error';
+export const RECIEVE_ARTIST_CONNECT = 'recieve_artist_connect';
+export const RECIEVE_ARTIST_CONNECT_BY_ID = 'recieve_artist_connect_by_id';
+export const RECIEVED_ARTIST_CONNECT_BY_ID_AND_PRELOAD_STATE = 'recieved_artist_connect_by_id_and_preload_state';

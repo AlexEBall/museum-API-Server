@@ -35,5 +35,8 @@ export default {
     },
     removeProgram: (id) => {
         return axios.delete("/api/cafamPrograms/" + id);
+    },
+    getArtistConnect: () => {
+        return axios.get('/api/cafamArtistConnect');
     }
 };
