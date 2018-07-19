@@ -283,10 +283,13 @@ class Floor extends Component {
 
         this.props.pushingImgsIntoGallery(this.props.imgToPushValue, floor);
 
+        
+
+        if (this.state.editDisabled === true) {
+            this.props.fetchFloor(floor);
+        }
+
         this.setState({editDisabled: false});
-
-        this.props.fetchFloor(floor);
-
     }
 
     renderFloorInformation = () => {
