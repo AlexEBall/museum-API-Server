@@ -8,11 +8,11 @@ import {
     ARTIST_CONNECT_EDITED
 } from './types';
 
-export const editArtistConnect = (programData, id) => {
-    console.log('right before my controller', programData);
+export const editArtistConnect = (data, id) => {
+    console.log('right before my controller', data);
     return (dispatch) => {
         API
-            .updateProgram(programData, id)
+            .updateArtistConnect(data, id)
             .then((res) => {
                 console.log('the response data', res);
                 dispatch({ type: ARTIST_CONNECT_EDITED })

@@ -11,7 +11,7 @@ import {Link} from 'react-router-dom';
 class LearnMore extends Component {
 
     componentWillMount() {
-        console.log(this.props);
+        // console.log(this.props);
         this.props.fetchArtistConnectByFloor(this.props.match.params.floor);
         // this.props.fetchArtistConnectByFloorAndPreLoadState(this.props.match.params.floor);
     }
@@ -27,7 +27,7 @@ class LearnMore extends Component {
         if(!this.props.artistConnect) {
             return <h2>Loading</h2>
         } else {
-            console.log('checking', this.props.artistConnect)
+            // console.log('checking', this.props.artistConnect)
             return (
                 <div className="wrapper">
                     <Header/>

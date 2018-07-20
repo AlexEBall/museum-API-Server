@@ -40,9 +40,12 @@ export default {
         return axios.get('/api/cafamArtistConnect');
     },
     getArtistConnectFloor: (floor) => {
-        return axios.get('/api/cafamArtistConnect/' + floor);
+        return axios.get('/api/cafamArtistConnect/floor/' + floor);
     },
     getArtistConnectByFloor: (floor) => {
-        return axios.get('/api/cafamArtistConnect/' + floor);
+        return axios.get('/api/cafamArtistConnect/floor/' + floor);
     },
+    updateArtistConnect: (data, id) => {
+        return axios.put("/api/cafamArtistConnect/" + id, data);
+    }
 };

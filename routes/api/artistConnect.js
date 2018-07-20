@@ -7,14 +7,15 @@ router
     .get(artistConnectController.findAll);
     // .post(artistConnectController.createProgram);
 
-// router
-//     .route("/:id")
-//     .get(artistConnectController.findByID);
+router
+    .route("/:id")
+    .get(artistConnectController.findByID)
+    .put(artistConnectController.updateArtistConnect);
     // .put(artistConnectController.updateProgram)
     // .delete(artistConnectController.removeProgram);
 
 router
-    .route('/:floor')
+    .route('/floor/:floor')
     .get(artistConnectController.findByFloor);
 
 module.exports = router;

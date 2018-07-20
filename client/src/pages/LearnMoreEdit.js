@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {
     fetchArtistConnectByFloorAndPreLoadState,
+    editArtistConnect,
     editingArtistConnectInputFieldOnChange
 } from '../actions';
 import Header from '../components/Header';
@@ -9,8 +10,7 @@ import Header from '../components/Header';
 class LearnMoreEdit extends Component {
 
     componentWillMount() {
-        console.log(this.props);
-        // this.props.fetchArtistConnectByFloor(this.props.match.params.floor);
+        // console.log(this.props);
         this.props.fetchArtistConnectByFloorAndPreLoadState(this.props.match.params.floor);
     }
 
@@ -21,12 +21,30 @@ class LearnMoreEdit extends Component {
         this.props.editingArtistConnectInputFieldOnChange(name, text);
     }
 
+    handleFormSubmit = (event) => {
+        event.preventDefault();
+        console.log('logged');
+
+        const data = {
+            articleTitle: this.props.articleTitle,
+            picture: this.props.picture,
+            articleDescription: this.props.articleDescription,
+            articleLink: this.props.articleLink,
+            socialLink: this.props.socialLink,
+            floor: parseFloat(this.props.match.params.floor)
+        }
+
+        this.props.editArtistConnect(data, this.props.match.params.id);
+
+        this.props.history.go(-1);
+    }
+
     render() {
-        console.log(this.props);
+        // console.log(this.props);
         if (!this.props.articleTitle) {
             return <h2>Loading</h2>
         } else {
-            console.log('checking', this.props);
+            // console.log('checking', this.props);
             return (
                 <div className="wrapper">
                     <Header/>
@@ -106,5 +124,6 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps, {
     fetchArtistConnectByFloorAndPreLoadState,
+    editArtistConnect,
     editingArtistConnectInputFieldOnChange
 })(LearnMoreEdit);
