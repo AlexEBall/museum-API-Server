@@ -8,7 +8,8 @@ import {
     LINK_SAVED,
     PUSH_IMG_INTO_GALLERY,
     IMG_TO_PUSH_INTO_GALLERY_UPDATE,
-    DELETE_IMG
+    DELETE_IMG,
+    COVER_IMG_UPDATE
 } from '../actions/types';
 
 const INTIAL_STATE = {
@@ -16,7 +17,8 @@ const INTIAL_STATE = {
     editDisabled: false,
     imgLinkValue: '',
     imgEditDisabled: false,
-    imgToPushValue: ''
+    imgToPushValue: '',
+    coverImgValue: ''
 }
 
 export default (state = INTIAL_STATE, action) => {
@@ -41,6 +43,8 @@ export default (state = INTIAL_STATE, action) => {
             return { INTIAL_STATE }
         case DELETE_IMG:
             return { INTIAL_STATE }
+        case COVER_IMG_UPDATE:
+            return { ...state, coverImgValue: action.payload }
         default:
             return state;
     }

@@ -9,7 +9,8 @@ import {
     LINK_SAVED,
     PUSH_IMG_INTO_GALLERY,
     IMG_TO_PUSH_INTO_GALLERY_UPDATE,
-    DELETE_IMG
+    DELETE_IMG,
+    COVER_IMG_UPDATE
 } from './types';
 
 export const imgEditingDisabled = (boolean) => {
@@ -33,10 +34,10 @@ export const imgLinkOnChange = (text) => {
     }
 }
 
-export const linkUpdating = (audioInput, pictureInput, imgToBeDeleted, position, floor) => {
+export const linkUpdating = (audioInput, pictureInput, imgToBeDeleted, coverImg, position, floor) => {
     return (dispatch) => {
         API
-        .updateLinks(audioInput, pictureInput, imgToBeDeleted, position, floor)
+        .updateLinks(audioInput, pictureInput, imgToBeDeleted, coverImg, position, floor)
         .then((res) => {
             console.log(res);
             dispatch({ type: LINK_SAVED });
@@ -68,6 +69,13 @@ export const audioLinkOnChange = (text) => {
 export const imgToPushOnChange = (text) => {
     return {
         type: IMG_TO_PUSH_INTO_GALLERY_UPDATE,
+        payload: text
+    }
+}
+
+export const coverImgOnChange = (text) => {
+    return {
+        type: COVER_IMG_UPDATE,
         payload: text
     }
 }

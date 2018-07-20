@@ -15,7 +15,6 @@ module.exports = {
             .catch(err => res.status(422).json(err));
     },
     findByFloor: (req, res, next) => {
-        // console.log('HEYYYYYYY:::::========', typeof(req.params.floor));
         const floor = parseInt(req.params.floor);
         db.cafam
             .aggregate([
@@ -36,7 +35,6 @@ module.exports = {
     },
     // post
     addImgToGallery: (req, res) => {
-        // console.log(req);
         const floor = parseInt(req.params.floor);
         const pushedImgString = req.body.pushedImg;
         db.cafam
@@ -46,13 +44,6 @@ module.exports = {
         .then(cafamModel => res.json(cafamModel))
         .catch(err => res.status[422].json(err));
     }, 
-
-    // create: function(req, res) {
-    //     db.cafam
-    //         .create(req.body)
-    //         .then(cafamModel => res.json(cafamModel))
-    //         .catch(err => res.status(422).json(err));
-    // },
     updateLinks: function(req, res) {
         if (req.body.pictureInput) {
             const floor = parseInt(req.params.floor);
@@ -73,6 +64,15 @@ module.exports = {
             db.cafam
                 .updateOne({ 'floors.floor': floor },
                 {$pull: { 'floors.$[element].floorGallery': { $in: [itemToDelete] }}},
+                { arrayFilters: [{ 'element.floor': floor }]})
+                .then(cafamModel => res.json(cafamModel))
+                .catch(err => res.status(422).json(err));
+        } else if (req.body.coverImg) {
+            console.log(req);
+            const floor = parseInt(req.params.floor);
+            db.cafam
+                .updateOne({ 'floors.floor': floor },
+                {$set: { 'floors.$[element].coverPic': req.body.coverImg }},
                 { arrayFilters: [{ 'element.floor': floor }]})
                 .then(cafamModel => res.json(cafamModel))
                 .catch(err => res.status(422).json(err));

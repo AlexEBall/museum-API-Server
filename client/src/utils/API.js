@@ -10,12 +10,13 @@ export default {
     getExhibitionFloor: (floor) => {
         return axios.get('api/cafam/exhibitionFloor' + floor);
     },
-    updateLinks: (audioInput, pictureInput, itemToDelete, position, floor) => {
+    updateLinks: (audioInput, pictureInput, itemToDelete, coverImg, position, floor) => {
         return axios.put('api/cafam/exhibitionFloor' + floor, 
         {"input": audioInput,
         "pictureInput": pictureInput,
         "itemToDelete": itemToDelete,
-        "position": position});
+        "position": position,
+        "coverImg": coverImg});
     },
     addImgToGallery: (pushedImg, floor) => {
         return axios.post('api/cafam/exhibitionFloor' + floor, {"pushedImg": pushedImg});

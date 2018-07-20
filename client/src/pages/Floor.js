@@ -8,7 +8,8 @@ import {
     // audioLinkUpdating,
     linkUpdating,
     pushingImgsIntoGallery,
-    imgToPushOnChange
+    imgToPushOnChange,
+    coverImgOnChange
 } from '../actions';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -18,6 +19,7 @@ import {Link} from 'react-router-dom';
 class Floor extends Component {
     state = {
         editDisabled: false,
+        imgEditDisabled: false
     };
 
     componentWillMount = () => {
@@ -34,6 +36,10 @@ class Floor extends Component {
         this.props.editingDisabled(true);
     }
 
+    toggleImgFlag = () => {
+        this.setState({ imgEditDisabled: true });
+    }
+
     handleAudioLinkUpdate = event => {
         // console.log(event.target.name);
         const value = event.target.value;
@@ -45,16 +51,51 @@ class Floor extends Component {
         this.props.imgToPushOnChange(value);
     }
 
+    handleConverImgUpdate = event => {
+        const text = event.target.value;
+        this.props.coverImgOnChange(text);
+    }
+
+    submitCoverImgUpdate = event => {
+        event.preventDefault();
+        const floor = parseInt(this.props.match.params.floor);
+        this.props.linkUpdating(null, null, null, this.props.coverImgValue, null, floor);
+
+        if (this.state.imgEditDisabled) {
+            this.props.fetchFloor(floor);
+            this.setState({ imgEditDisabled: false });
+        }
+    }
+
     submitAudioLinkUpdate = event => {
         event.preventDefault();
         const floor = parseInt(this.props.match.params.floor);
 
-        this.props.linkUpdating(this.props.audioLinkValue, null, null, null, floor);
+        this.props.linkUpdating(this.props.audioLinkValue, null, null, null, null, floor);
 
         if (this.props.audioLinkValue !== this.props.floor.audioLink) {
             this.props.fetchFloor(floor);
         }
         this.props.editingDisabled(false);        
+    }
+
+    renderCoverImgEditField = () => {
+        if (!this.state.imgEditDisabled) {
+            return <button className="audioLinkBtn" onClick={this.toggleImgFlag}>Edit</button>
+        } else {
+            return (
+                <div className="formCard__formGroup">
+                    <label className="label">Insert New Cover Image URL</label>
+                    <input
+                        className="formCard__formInput"
+                        value={this.props.coverImgValue}
+                        name='title'
+                        onChange={this.handleConverImgUpdate}
+                    />
+                    <button className="audioLinkBtn" onClick={this.submitCoverImgUpdate}>Submit</button>
+                </div>
+            );
+        }
     }
 
     renderAudioLinkEditingField = () => {
@@ -183,6 +224,7 @@ class Floor extends Component {
                     <div className="exhibitions__floor-container">
                         <div className="exhibitions__coverImgContainer">
                             <img className="exhibitions__coverImg" src={floorInformation.coverPic} alt='floor 1 app pic' />
+                            {this.renderCoverImgEditField()}
                         </div>
                         {this.renderAudioLinkEditingField()}
                         <div className="exhibitions__galleryArrayImageHolder">
@@ -222,7 +264,8 @@ const mapStateToProps = state => {
         audioLinkValue: state.input.audioLinkValue,
         imgLinkValue: state.input.imgLinkValue,
         imgEditDisabled: state.input.imgEditDisabled,
-        imgToPushValue: state.input.imgToPushValue
+        imgToPushValue: state.input.imgToPushValue,
+        coverImgValue: state.input.coverImgValue
     }
 }
 
@@ -233,7 +276,8 @@ export default connect(mapStateToProps, {
     audioLinkOnChange,
     linkUpdating,
     pushingImgsIntoGallery,
-    imgToPushOnChange
+    imgToPushOnChange,
+    coverImgOnChange
 })(Floor);
 
 {/* <img className="exhibitions__coverImg" src={floorInformation.coverPic} alt='floor 1 app pic' /> */}

@@ -12,6 +12,8 @@ export const IMG_LINK_SAVED = 'img_link_saved';
 export const EDITING_DISABLED = 'editing_disabled';
 export const AUDIO_LINK_UPDATE = 'audio_link_update';
 export const AUDIO_LINK_SAVED = 'audio_link_saved';
+export const COVER_IMG_UPDATE = 'cover_img_update';
+export const COVER_IMG_SAVED = 'cover_img_saved';
 
 export const LINK_SAVED = 'link_saved';
 export const PUSH_IMG_INTO_GALLERY = 'push_img_into_gallery';

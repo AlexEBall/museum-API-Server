@@ -10,7 +10,6 @@ import Header from '../components/Header';
 class LearnMoreEdit extends Component {
 
     componentWillMount() {
-        // console.log(this.props);
         this.props.fetchArtistConnectByFloorAndPreLoadState(this.props.match.params.floor);
     }
 
@@ -40,11 +39,9 @@ class LearnMoreEdit extends Component {
     }
 
     render() {
-        // console.log(this.props);
         if (!this.props.articleTitle) {
             return <h2>Loading</h2>
         } else {
-            // console.log('checking', this.props);
             return (
                 <div className="wrapper">
                     <Header/>
