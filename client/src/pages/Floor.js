@@ -200,13 +200,11 @@ class Floor extends Component {
 
         this.props.pushingImgsIntoGallery(this.props.imgToPushValue, floor);
 
-        
-
-        if (this.state.editDisabled === true) {
+        if (this.state.editDisabled) {
+            console.log('hit');
             this.props.fetchFloor(floor);
+            this.setState({editDisabled: false});
         }
-
-        this.setState({editDisabled: false});
     }
 
     renderFloorInformation = () => {
@@ -279,13 +277,3 @@ export default connect(mapStateToProps, {
     imgToPushOnChange,
     coverImgOnChange
 })(Floor);
-
-{/* <img className="exhibitions__coverImg" src={floorInformation.coverPic} alt='floor 1 app pic' /> */}
-
-// {
-//     display: 'flex',
-//     flex: '1',
-//     margin: '1rem',
-//     backgroundImage: `url(${floorInformation.coverPic})`,
-//     backgroundSize: 'cover'
-// }
