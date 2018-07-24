@@ -77,6 +77,12 @@
         flex-direction: column;
         margin: .5rem;
         padding: 1rem;
+
+        &--coverImg {
+            flex: 1 0 auto;
+            justify-content: center;
+            // align-items: center;
+        }
     }
 
     &__formInput {
@@ -87,5 +93,9 @@
         margin-left: 1rem;
         font-size: 2rem;
         outline: none;
+
+        // &--coverImg {
+        //     width: 12rem;
+        // }
     }
 }

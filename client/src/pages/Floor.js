@@ -84,15 +84,15 @@ class Floor extends Component {
             return <button className="audioLinkBtn" onClick={this.toggleImgFlag}>Edit</button>
         } else {
             return (
-                <div className="formCard__formGroup">
+                <div className="formCard__formGroup formCard__formGroup--coverImg">
                     <label className="label">Insert New Cover Image URL</label>
                     <input
-                        className="formCard__formInput"
+                        className="formCard__formInput formCard__formInput--coverImg"
                         value={this.props.coverImgValue}
                         name='title'
                         onChange={this.handleConverImgUpdate}
                     />
-                    <button className="audioLinkBtn" onClick={this.submitCoverImgUpdate}>Submit</button>
+                    <button className="audioLinkBtn audioLinkBtn--coverImg" onClick={this.submitCoverImgUpdate}>Submit</button>
                 </div>
             );
         }

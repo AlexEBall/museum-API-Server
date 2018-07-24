@@ -73,13 +73,11 @@ class ImageCard extends Component {
                         <button 
                             className="audioLinkBtn audioLinkBtn--EditImage"
                             onClick={this.toggleImgInputFields}>Edit</button>
-                        <button 
-                            className="audioLinkBtn audioLinkBtn--DeleteImage"
-                            onClick={this.removeImg}>
-                            <svg className="delete__icon">
+                        
+                            <svg className="delete__icon" onClick={this.removeImg}>
                                 <use xlinkHref="images/sprite.svg#icon-close"></use>
                             </svg>
-                        </button>
+                        
             
                 </div>  
             )
