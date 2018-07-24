@@ -41,7 +41,6 @@ class Floor extends Component {
     }
 
     handleAudioLinkUpdate = event => {
-        // console.log(event.target.name);
         const value = event.target.value;
         this.props.audioLinkOnChange(value)
     }
@@ -59,7 +58,12 @@ class Floor extends Component {
     submitCoverImgUpdate = event => {
         event.preventDefault();
         const floor = parseInt(this.props.match.params.floor);
-        this.props.linkUpdating(null, null, null, this.props.coverImgValue, null, floor);
+
+        if (!this.props.coverImgValue || !this.props.coverImgValue.startsWith('https')) {
+            return;
+        } else {
+            this.props.linkUpdating(null, null, null, this.props.coverImgValue, null, floor);
+        }
 
         if (this.state.imgEditDisabled) {
             this.props.fetchFloor(floor);
@@ -71,7 +75,11 @@ class Floor extends Component {
         event.preventDefault();
         const floor = parseInt(this.props.match.params.floor);
 
-        this.props.linkUpdating(this.props.audioLinkValue, null, null, null, null, floor);
+        if (!this.props.audioLinkValue || !this.props.audioLinkValue.startsWith('https')) {
+            return;
+        } else {
+            this.props.linkUpdating(this.props.audioLinkValue, null, null, null, null, floor);
+        }
 
         if (this.props.audioLinkValue !== this.props.floor.audioLink) {
             this.props.fetchFloor(floor);
@@ -198,10 +206,13 @@ class Floor extends Component {
         event.preventDefault();
         const floor = parseInt(this.props.match.params.floor);
 
-        this.props.pushingImgsIntoGallery(this.props.imgToPushValue, floor);
+        if(!this.props.imgToPushValue || !this.props.imgToPushValue.startsWith('https')) {
+            return;
+        } else {
+            this.props.pushingImgsIntoGallery(this.props.imgToPushValue, floor);
+        }
 
         if (this.state.editDisabled) {
-            console.log('hit');
             this.props.fetchFloor(floor);
             this.setState({editDisabled: false});
         }

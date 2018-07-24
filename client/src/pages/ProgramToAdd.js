@@ -28,7 +28,17 @@ class ProgramToAdd extends Component {
             registrationLink: this.props.registrationLink
         }
 
-        this.props.addProgram(programData);
+        if(!this.props.title && 
+            (!this.props.picture || !this.props.picture.startsWith('https')) && 
+            !this.props.description &&
+            !this.props.price &&
+            !this.props.time &&
+            !this.props.memberInfo &&
+            (!this.props.registrationLink || !this.props.registrationLink.startsWith('https'))) {
+            return;
+        } else {
+            this.props.addProgram(programData);
+        }
 
         this.props.history.go(-1);
     }
