@@ -231,7 +231,7 @@ class Floor extends Component {
                         </div>
                         <div className="exhibitions__learnMoreSection">
                             <h4 className="heading__4 heading__LearnMore">Learn More Page</h4>
-                            <Link to={'/exhibitionFloor' + this.props.match.params.floor + '/learnMore'} className="audioLinkBtn">
+                            <Link to={'/exhibitionFloor' + this.props.match.params.floor + '/learnMore'} className="audioLinkBtn audioLinkBtn--connect">
                                 View Connect with the Artist
                             </Link>
                         </div>

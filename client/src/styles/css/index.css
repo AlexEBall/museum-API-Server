@@ -180,8 +180,7 @@ html {
     display: flex;
     flex: 1 0 auto;
     padding: 2rem;
-    flex-direction: column;
-    border: solid black 1px; }
+    flex-direction: column; }
   .exhibitions__coverImg {
     max-width: 100%;
     object-fit: contain;
@@ -239,6 +238,8 @@ html {
   align-items: center;
   justify-content: center;
   align-self: center; }
+  .audioLinkBtn--connect {
+    width: 28rem; }
   .audioLinkBtn--AddImage {
     margin-top: 1rem;
     width: 13rem; }
@@ -383,5 +384,3 @@ html {
     margin-left: 1rem;
     font-size: 2rem;
     outline: none; }
-
-/*# sourceMappingURL=index.css.map */

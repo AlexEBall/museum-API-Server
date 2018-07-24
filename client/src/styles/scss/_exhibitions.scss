@@ -100,7 +100,7 @@
         flex: 1 0 auto;
         padding: 2rem;
         flex-direction: column;
-        border: solid black 1px;
+        // border: solid black 1px;
     }
 
 // Floor Gallery Img Styling 
@@ -176,6 +176,10 @@
     align-items: center;
     justify-content: center;
     align-self: center;
+
+    &--connect {
+        width: 28rem;
+    }
 
     &--AddImage {
         margin-top: 1rem;
