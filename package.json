@@ -26,11 +26,18 @@
   "homepage": "https://stormy-shelf-62092.herokuapp.com",
   "dependencies": {
     "axios": "^0.18.0",
+    "bcrypt-nodejs": "^0.0.3",
     "body-parser": "^1.18.2",
     "concurrently": "^3.5.1",
+    "cors": "^2.8.4",
     "express": "^4.16.3",
+    "jwt-simple": "^0.5.1",
     "mongoose": "^5.0.15",
     "morgan": "^1.9.0",
-    "nodemon": "^1.17.3"
+    "nodemon": "^1.17.3",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "redux-form": "^7.4.2"
   }
 }

@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import Header from '../components/Header';
+import requireAuth from '../components/requireAuth';
 
-export default class Home extends Component {
+class Home extends Component {
     render() {
         return(
             <div className="wrapper">
@@ -23,5 +24,6 @@ export default class Home extends Component {
             </div>
         );
     }
-
 };
+
+export default requireAuth(Home);

@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {fetchExhibitions} from '../actions';
 import {Link} from 'react-router-dom';
 import Header from '../components/Header';
+import requireAuth from '../components/requireAuth';
 
 class Exhibitions extends Component {
     componentWillMount = () => {
@@ -53,4 +54,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { fetchExhibitions })(Exhibitions);
+export default requireAuth(connect(mapStateToProps, { fetchExhibitions })(Exhibitions));

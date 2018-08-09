@@ -4,6 +4,7 @@ import {fetchPrograms} from '../actions';
 import Header from '../components/Header';
 import ProgramCard from '../components/ProgramCard';
 import {Link} from 'react-router-dom';
+import requireAuth from '../components/requireAuth';
 
 class Programs extends Component {
     componentWillMount = () => {
@@ -56,4 +57,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { fetchPrograms })(Programs);
+export default requireAuth(connect(mapStateToProps, { fetchPrograms })(Programs));

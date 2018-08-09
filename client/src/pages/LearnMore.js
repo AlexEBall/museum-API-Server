@@ -7,6 +7,7 @@ import {
 } from '../actions';
 import Header from '../components/Header';
 import {Link} from 'react-router-dom';
+import requireAuth from '../components/requireAuth';
 
 class LearnMore extends Component {
 
@@ -68,6 +69,6 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { 
+export default requireAuth(connect(mapStateToProps, { 
     fetchArtistConnectByFloor
-})(LearnMore);
+})(LearnMore));

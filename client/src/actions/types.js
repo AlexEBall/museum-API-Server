@@ -58,3 +58,6 @@ export const EDITING_ARTIST_CONNECT_DESCRIPTION = 'editing_artist_connect_descri
 export const EDITING_ARTIST_CONNECT_ARTICLE_LINK = 'editing_artist_connect_article_link';
 export const EDITING_ARTIST_CONNECT_SOCIAL_LINK = 'editing_artist_connect_social_link';
 export const ARTIST_CONNECT_EDITED = 'artist_connect_edited';
+
+export const AUTH_USER = 'auth_user';
+export const AUTH_ERROR = 'auth_error';

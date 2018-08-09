@@ -15,6 +15,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ImageCard from '../components/ImageCard';
 import {Link} from 'react-router-dom';
+import requireAuth from '../components/requireAuth';
 
 class Floor extends Component {
     state = {
@@ -278,7 +279,7 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { 
+export default requireAuth(connect(mapStateToProps, { 
     fetchFloor, 
     imgEditingDisabled,
     editingDisabled,
@@ -287,4 +288,4 @@ export default connect(mapStateToProps, {
     pushingImgsIntoGallery,
     imgToPushOnChange,
     coverImgOnChange
-})(Floor);
+})(Floor));

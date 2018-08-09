@@ -140,6 +140,19 @@ body {
     }
 }
 
+.center {
+    justify-content: center;
+    align-items: center;
+}
+
+.errorMessage {
+    font-size: 4rem;
+    color: red;
+    text-shadow: .1rem .1rem .2rem black;
+    background-color: white;
+    // padding: 1rem;
+}
+
 .footer {
     flex: 0 1 5.5rem;
     background-color: darkmagenta;

@@ -8,6 +8,8 @@ import EditingProgramReducer from './editingProgramsReducer';
 import DeletingProgramReducer from './deletingProgramsReducer';
 import FetchArtistConnectReducer from './fetchArtistConnectReducer';
 import EditingArtistConnectReducer from './editingArtistConnectReducer';
+import AuthReducer from './auth';
+import {reducer as formReducer} from 'redux-form';
 
 export default combineReducers({
     exhibitions: FetchExhibitionsReducer,
@@ -18,5 +20,7 @@ export default combineReducers({
     editingPrograms: EditingProgramReducer,
     deletingPrograms: DeletingProgramReducer,
     artistConnect: FetchArtistConnectReducer,
-    editingArtistConnect: EditingArtistConnectReducer
+    editingArtistConnect: EditingArtistConnectReducer,
+    auth: AuthReducer,
+    form : formReducer
 });

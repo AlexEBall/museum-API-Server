@@ -7,6 +7,7 @@ import {
     deleteThisProgram
 } from '../actions';
 import Header from '../components/Header';
+import requireAuth from '../components/requireAuth';
 
 class ProgramEditAndRemoval extends Component {
     componentWillMount = () => {
@@ -148,9 +149,9 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {
+export default requireAuth(connect(mapStateToProps, {
     fetchProgramByIdAndPreLoadState,
     editingProgramInputFieldOnChange,
     editProgram,
     deleteThisProgram
-})(ProgramEditAndRemoval);
+})(ProgramEditAndRemoval));

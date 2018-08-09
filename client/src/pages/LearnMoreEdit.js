@@ -6,6 +6,7 @@ import {
     editingArtistConnectInputFieldOnChange
 } from '../actions';
 import Header from '../components/Header';
+import requireAuth from '../components/requireAuth';
 
 class LearnMoreEdit extends Component {
 
@@ -119,8 +120,8 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {
+export default requireAuth(connect(mapStateToProps, {
     fetchArtistConnectByFloorAndPreLoadState,
     editArtistConnect,
     editingArtistConnectInputFieldOnChange
-})(LearnMoreEdit);
+})(LearnMoreEdit));

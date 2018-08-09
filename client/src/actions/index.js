@@ -7,3 +7,4 @@ export * from './editingPrograms';
 export * from './deletingPrograms';
 export * from './fetchArtistConnect';
 export * from './editingArtistConnect';
+export * from './auth';

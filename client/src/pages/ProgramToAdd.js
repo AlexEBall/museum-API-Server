@@ -5,6 +5,7 @@ import {
     addingProgramInputFieldOnChange
 } from '../actions';
 import Header from '../components/Header';
+import requireAuth from '../components/requireAuth';
 
 class ProgramToAdd extends Component {
     handleInputs = (event) => {
@@ -140,7 +141,7 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { 
+export default requireAuth(connect(mapStateToProps, { 
     addProgram,
     addingProgramInputFieldOnChange 
-})(ProgramToAdd);
+})(ProgramToAdd));
