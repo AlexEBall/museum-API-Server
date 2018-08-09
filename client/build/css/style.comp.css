@@ -104,6 +104,16 @@ html {
       cursor: pointer;
       background-color: silver; }
 
+.center {
+  justify-content: center;
+  align-items: center; }
+
+.errorMessage {
+  font-size: 4rem;
+  color: red;
+  text-shadow: .1rem .1rem .2rem black;
+  background-color: white; }
+
 .footer {
   flex: 0 1 5.5rem;
   background-color: darkmagenta; }
@@ -164,8 +174,9 @@ html {
     height: 100vh; }
   .exhibitions__coverImgContainer {
     display: flex;
-    flex: 1 0 60%;
-    margin: 1rem;
+    flex: 1 0 auto;
+    flex-direction: column;
+    margin: 1rem 0 2rem 0;
     border-bottom: solid 1px black; }
   .exhibitions__inputBox {
     display: flex;
@@ -181,7 +192,7 @@ html {
     flex: 1 0 auto;
     padding: 2rem;
     flex-direction: column;
-    border: solid black 1px; }
+    border-top: solid 1px black; }
   .exhibitions__coverImg {
     max-width: 100%;
     object-fit: contain;
@@ -202,7 +213,7 @@ html {
     flex-direction: column;
     position: relative;
     width: 25rem;
-    margin: 1rem;
+    margin: 1rem 0 2rem 0;
     border: solid black 1px;
     background-color: #fff;
     box-shadow: 0 4px 2px -2px grey; }
@@ -239,6 +250,10 @@ html {
   align-items: center;
   justify-content: center;
   align-self: center; }
+  .audioLinkBtn--connect {
+    width: 28rem; }
+  .audioLinkBtn--coverImg {
+    margin-top: 1rem; }
   .audioLinkBtn--AddImage {
     margin-top: 1rem;
     width: 13rem; }
@@ -294,9 +309,20 @@ html {
   margin-top: 1rem; }
 
 .delete__icon {
-  height: 4rem;
-  width: 4rem;
-  fill: red; }
+  cursor: pointer;
+  height: 5rem;
+  width: 5rem;
+  fill: red;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center; }
+  .delete__icon:hover {
+    fill: darkred; }
 
 .heading__2 {
   text-align: center;
@@ -328,7 +354,15 @@ html {
   font-weight: 200;
   line-height: 1.5;
   letter-spacing: 1.2;
-  margin-left: 2rem; }
+  margin-left: 2rem;
+  text-align: center; }
+  .label--auth {
+    font-size: 2.1rem;
+    margin: 0;
+    line-height: 1.5;
+    letter-spacing: .6rem;
+    text-align: center;
+    color: #fff; }
 
 .programs__container {
   display: flex;
@@ -376,6 +410,16 @@ html {
     flex-direction: column;
     margin: .5rem;
     padding: 1rem; }
+    .formCard__formGroup--coverImg {
+      flex: 1 0 auto;
+      justify-content: center; }
+    .formCard__formGroup--auth {
+      display: flex;
+      flex-direction: column;
+      background-color: transparent;
+      width: 50rem;
+      margin: 2rem 0;
+      border: none; }
   .formCard__formInput {
     padding: 1rem;
     border: solid 1px black;
@@ -383,3 +427,14 @@ html {
     margin-left: 1rem;
     font-size: 2rem;
     outline: none; }
+    .formCard__formInput--auth {
+      padding: 1rem;
+      border: solid 1px black;
+      border-radius: 2rem;
+      font-size: 2rem;
+      outline: none;
+      width: 100%; }
+  .formCard__auth {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
