@@ -7,7 +7,7 @@ import { AUTH_USER, AUTH_ERROR } from './types';
 export const signup = (formProps, callback) => async dispatch => {
     try {
         // this is where we are posting to the backend api
-        const response = await axios.post('https://stormy-shelf-62092.herokuapp.com/signup', formProps);
+        const response = await axios.post('https://stormy-shelf-62092.herokuapp.com/api/cafamAuth/signup', formProps);
 
         dispatch({ type: AUTH_USER, payload: response.data.token });
         
@@ -35,7 +35,7 @@ export const signout = () => {
 export const signin = (formProps, callback) => async dispatch => {
     try {
         // this is where we are posting to the backend api
-        const response = await axios.post('https://stormy-shelf-62092.herokuapp.com/signin', formProps);
+        const response = await axios.post('https://stormy-shelf-62092.herokuapp.com/api/cafamAuth/signin', formProps);
 
         dispatch({ type: AUTH_USER, payload: response.data.token });
         
