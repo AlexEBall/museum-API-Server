@@ -5,7 +5,7 @@ const routes = require("./routes");
 const morgan = require("morgan");
 const app = express();
 const cors = require('cors');
-const PORT = process.env.PORT || 3003;
+const PORT = process.env.PORT || 300;
 
 // Configure body parser for AJAX requests
 app.use(morgan('combined'));
