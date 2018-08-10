@@ -34,9 +34,9 @@ export default ChildComponent => {
 ```
 Thanks to [Stephen Grider's](https://github.com/StephenGrider) Advanced React and Redux course for providing easy to understand code required for authentication
 
-<video src="https://res.cloudinary.com/dawjvqyvd/video/upload/v1533860824/Aug-09-2018_17-05-25.mp4" width="320" height="200" controls preload></video>
+<video src="https://res.cloudinary.com/dawjvqyvd/video/upload/v1533860824/Aug-09-2018_17-05-25.mp4" width="320" height="200" autoplay loop></video>
 
-<video src="https://res.cloudinary.com/dawjvqyvd/video/upload/v1533860824/Aug-09-2018_17-08-52.mp4" width="320" height="200" controls preload></video>
+<video src="https://res.cloudinary.com/dawjvqyvd/video/upload/v1533860824/Aug-09-2018_17-08-52.mp4" width="320" height="200" autoplay loop></video>
 
 ## Built With
 + [React](https://reactjs.org/)
