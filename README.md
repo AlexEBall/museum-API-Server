@@ -34,9 +34,11 @@ export default ChildComponent => {
 ```
 Thanks to [Stephen Grider's](https://github.com/StephenGrider) Advanced React and Redux course for providing easy to understand code required for authentication
 
-<video src="https://res.cloudinary.com/dawjvqyvd/video/upload/v1533860824/Aug-09-2018_17-05-25.mp4" width="320" height="200" autoplay loop></video>
+<img src="https://user-images.githubusercontent.com/29084524/43933236-5abd01b8-9bfd-11e8-9790-0e4c449942d1.gif" width="425"/> 
+<img src="https://user-images.githubusercontent.com/29084524/43933125-bcde24f4-9bfc-11e8-82f6-1ad6fc79a8c3.gif" width="425"/>
 
-<video src="https://res.cloudinary.com/dawjvqyvd/video/upload/v1533860824/Aug-09-2018_17-08-52.mp4" width="320" height="200" autoplay loop></video>
+<img src="https://user-images.githubusercontent.com/29084524/43933124-bcc6b878-9bfc-11e8-899b-c34cb294aa72.gif" width="425"/> 
+<img src="https://user-images.githubusercontent.com/29084524/43932461-1b362e1a-9bf9-11e8-81f8-e19476a6913b.gif" width="425"/>
 
 ## Built With
 + [React](https://reactjs.org/)
