@@ -5,14 +5,12 @@ import {
     imgEditingDisabled,
     editingDisabled, 
     audioLinkOnChange, 
-    // audioLinkUpdating,
     linkUpdating,
     pushingImgsIntoGallery,
     imgToPushOnChange,
     coverImgOnChange
 } from '../actions';
 import Header from '../components/Header';
-import Footer from '../components/Footer';
 import ImageCard from '../components/ImageCard';
 import {Link} from 'react-router-dom';
 import requireAuth from '../components/requireAuth';
@@ -20,20 +18,18 @@ import requireAuth from '../components/requireAuth';
 class Floor extends Component {
     state = {
         editDisabled: false,
-        imgEditDisabled: false
+        imgEditDisabled: false,
+        audioLinkError: false,
+        coverImgError: false
     };
 
-    componentWillMount = () => {
+    componentDidMount = () => {
         const floor = parseInt(this.props.match.params.floor);
         this.props.fetchFloor(floor);
-    }
-
-    componentWillUnmount = () => {
         this.props.editingDisabled(false);
     }
 
     toggleInputFields = () => {
-        console.log('clicked');
         this.props.editingDisabled(true);
     }
 
@@ -61,8 +57,10 @@ class Floor extends Component {
         const floor = parseInt(this.props.match.params.floor);
 
         if (!this.props.coverImgValue || !this.props.coverImgValue.startsWith('https')) {
+            this.setState({ coverImgError: true });
             return;
         } else {
+            this.setState({ coverImgError: false });
             this.props.linkUpdating(null, null, null, this.props.coverImgValue, null, floor);
         }
 
@@ -77,8 +75,10 @@ class Floor extends Component {
         const floor = parseInt(this.props.match.params.floor);
 
         if (!this.props.audioLinkValue || !this.props.audioLinkValue.startsWith('https')) {
+            this.setState({ audioLinkError: true });
             return;
         } else {
+            this.setState({ audioLinkError: false });
             this.props.linkUpdating(this.props.audioLinkValue, null, null, null, null, floor);
         }
 
@@ -96,11 +96,12 @@ class Floor extends Component {
                 <div className="formCard__formGroup formCard__formGroup--coverImg">
                     <label className="label">Insert New Cover Image URL</label>
                     <input
-                        className="formCard__formInput formCard__formInput--coverImg"
+                        className={!this.state.coverImgError ? 'formCard__formInput formCard__formInput--coverImg' : 'formCard__error'}
                         value={this.props.coverImgValue}
                         name='title'
                         onChange={this.handleConverImgUpdate}
                     />
+                    <div className={this.state.coverImgError ? 'formCard__error--msg' : 'formCard__hidden' }>Please enter a cloudinary link beginning with 'https'</div>
                     <button className="audioLinkBtn audioLinkBtn--coverImg" onClick={this.submitCoverImgUpdate}>Submit</button>
                 </div>
             );
@@ -115,12 +116,13 @@ class Floor extends Component {
                         <h4 className="heading__4">Audio Link:</h4>
                         <input 
                             type="text"
-                            className="audioInput"
+                            className={!this.state.audioLinkError ? 'audioInput' : 'audioInput__error'}
                             value={this.props.audioLinkValue}
                             onChange={this.handleAudioLinkUpdate}
                             name="audioLinkValue"
                             placeholder="Please enter a https://www.cloudinary.com/ image"
                         />
+                        <div className={this.state.audioLinkError ? 'audioInput__error--msg' : 'audioInput__hidden'}>Please enter a cloudinary link beginning with 'https'</div>
                     </div>
                     <button 
                         className="audioLinkBtn" 
@@ -254,7 +256,6 @@ class Floor extends Component {
     }
 
     render() {
-        console.log('is this working?', this.props);
         return (
             <div className="wrapper">
                 <Header />

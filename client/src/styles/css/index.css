@@ -180,6 +180,7 @@ html {
     border-bottom: solid 1px black; }
   .exhibitions__inputBox {
     display: flex;
+    flex-direction: column;
     flex: 1 0 auto;
     padding: 2rem; }
   .exhibitions__galleryArrayImageHolder {
@@ -229,12 +230,14 @@ html {
 
 .audioTextBeforeEditing {
   display: flex;
+  flex-direction: column;
   margin-right: 1rem;
   align-items: center; }
 
 .audioTextEditing {
   display: flex;
-  margin-right: 1rem;
+  flex-direction: column;
+  margin-bottom: 2rem;
   align-items: center; }
 
 .audioLinkBtn {
@@ -279,7 +282,7 @@ html {
 
 .audioTitle {
   border-bottom: solid 1px black;
-  margin-left: 1rem; }
+  margin-bottom: 2rem; }
 
 .audioInput {
   padding: 1rem;
@@ -289,9 +292,27 @@ html {
   margin-left: 1rem;
   font-size: 2rem;
   outline: none; }
+  .audioInput__error {
+    padding: 1rem;
+    border: solid 2px red;
+    width: 60rem;
+    border-radius: 2rem;
+    margin-left: 1rem;
+    font-size: 2rem;
+    outline: none; }
+    .audioInput__error--msg {
+      display: flex;
+      font-size: 2rem;
+      justify-content: center;
+      color: red; }
+  .audioInput__hidden {
+    display: none; }
   .audioInput--ImageEdit {
     width: auto;
     margin-right: 1rem; }
+    .audioInput--ImageEdit--error {
+      margin-left: 0;
+      width: auto; }
   .audioInput:focus {
     border: solid 1px green; }
 
