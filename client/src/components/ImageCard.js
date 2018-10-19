@@ -11,11 +11,11 @@ import {
 
 class ImageCard extends Component {
     state = {
-        editDisabled: false
+        editDisabled: false,
+        imgError: false
     };
 
     toggleImgInputFields = () => {
-        console.log('clicked 2');
         this.setState({editDisabled: true})
     }
 
@@ -25,7 +25,6 @@ class ImageCard extends Component {
     }
 
     removeImg = () => {
-        console.log('what do we have?');
         const itemToBeDeleted = this.props.img;
         console.log(itemToBeDeleted);
         this.props.linkUpdating(null, null, itemToBeDeleted, null, null, this.props.floorNum);
@@ -35,8 +34,14 @@ class ImageCard extends Component {
 
     submitImgLinkUpdate = event => {
         event.preventDefault();
-        
-        this.props.linkUpdating(null, this.props.imgLinkValue, null, null, this.props.position, this.props.floorNum);
+
+        if (!this.props.imgLinkValue || !this.props.imgLinkValue.startsWith('https')) {
+            this.setState({ imgError: true });
+            return
+        } else {
+            this.setState({ imgError: false });
+            this.props.linkUpdating(null, this.props.imgLinkValue, null, null, this.props.position, this.props.floorNum);
+        }
 
         if (this.props.imgLinkValue !== this.props.img) {
             this.props.fetchFloor(this.props.floorNum);
@@ -46,18 +51,18 @@ class ImageCard extends Component {
     }
 
     render() {
-        console.log('heeeyyyy, props::', this.props);
         if (this.state.editDisabled) {
             return (
                 <div className="exhibitions__imageCard">
                     <img src={this.props.img} className="exhibitions__imgs"/>
                     <input
-                        className="audioInput audioInput--ImageEdit" 
+                        className={!this.state.imgError ? 'audioInput audioInput--ImageEdit' : 'audioInput__error audioInput--ImageEdit--error'}
                         value={this.props.imgLinkValue}
                         onChange={this.handleImgLinkUpdate}
                         name="imgLinkValue"
-                        placeholder="Copy an AWS Link"
+                        placeholder="Copy a 'https' cloudinary link"
                     />
+                    <div className={this.state.imgError ? 'audioInput__error--msg' : 'audioInput__hidden'}>Please enter a cloudinary link beginning with 'https'</div>
                     <button 
                         className="audioLinkBtn audioLinkBtn--SubmitImage" 
                         onClick={this.submitImgLinkUpdate}

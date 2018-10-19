@@ -6,7 +6,7 @@ import Header from '../components/Header';
 import requireAuth from '../components/requireAuth';
 
 class Exhibitions extends Component {
-    componentWillMount = () => {
+    componentDidMount = () => {
         this.props.fetchExhibitions();
     }
 

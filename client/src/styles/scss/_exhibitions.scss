@@ -85,6 +85,7 @@
 
     &__inputBox {
         display: flex;
+        flex-direction: column;
         flex: 1 0 auto;
         padding: 2rem;
     }
@@ -155,13 +156,15 @@
 
 .audioTextBeforeEditing {
     display: flex;
+    flex-direction: column;
     margin-right: 1rem;
     align-items: center;
 }
 
 .audioTextEditing {
     display: flex;
-    margin-right: 1rem;
+    flex-direction: column;
+    margin-bottom: 2rem;
     align-items: center;
 }
 
@@ -227,9 +230,8 @@
 }
 
 .audioTitle {
-    // width: 100%;
     border-bottom: solid 1px black;
-    margin-left: 1rem;
+    margin-bottom: 2rem;
 }
 
 .audioInput {
@@ -241,9 +243,35 @@
     font-size: 2rem;
     outline: none;
 
+    &__error {
+        padding: 1rem;
+        border: solid 2px red;
+        width: 60rem;
+        border-radius: 2rem;
+        margin-left: 1rem;
+        font-size: 2rem;
+        outline: none;
+
+        &--msg {
+            display: flex;
+            font-size: 2rem;
+            justify-content: center;
+            color: red;
+        }
+    }
+
+    &__hidden {
+        display: none;
+    }
+
     &--ImageEdit {
         width: auto;
         margin-right: 1rem;
+
+        &--error {
+            margin-left: 0;
+            width: auto;
+        }
     }
 
     &:focus {
