@@ -438,3 +438,17 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center; }
+  .formCard__error {
+    padding: 1rem;
+    border: solid 2px red;
+    border-radius: 2rem;
+    margin-left: 1rem;
+    font-size: 2rem;
+    outline: none; }
+    .formCard__error--msg {
+      display: flex;
+      font-size: 2rem;
+      justify-content: center;
+      color: red; }
+  .formCard__hidden {
+    display: none; }

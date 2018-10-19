@@ -1,5 +1,9 @@
 import axios from 'axios';
 import { AUTH_USER, AUTH_ERROR } from './types';
+const devSignIn = 'http://localhost:3003/api/cafamAuth/signin';
+const devSignUp = 'http://localhost:3003/api/cafamAuth/signup';
+const prodSignIn = 'https://stormy-shelf-62092.herokuapp.com/api/cafamAuth/signin';
+const prodSignUp = 'https://stormy-shelf-62092.herokuapp.com/api/cafamAuth/signup';
 
 // by passing in formProps and not deconstructing
 // we can just pass in the object to axios 2nd arg
@@ -7,7 +11,7 @@ import { AUTH_USER, AUTH_ERROR } from './types';
 export const signup = (formProps, callback) => async dispatch => {
     try {
         // this is where we are posting to the backend api
-        const response = await axios.post('https://stormy-shelf-62092.herokuapp.com/api/cafamAuth/signup', formProps);
+        const response = await axios.post(devSignUp, formProps);
 
         dispatch({ type: AUTH_USER, payload: response.data.token });
         
@@ -35,7 +39,7 @@ export const signout = () => {
 export const signin = (formProps, callback) => async dispatch => {
     try {
         // this is where we are posting to the backend api
-        const response = await axios.post('https://stormy-shelf-62092.herokuapp.com/api/cafamAuth/signin', formProps);
+        const response = await axios.post(devSignIn, formProps);
 
         dispatch({ type: AUTH_USER, payload: response.data.token });
         

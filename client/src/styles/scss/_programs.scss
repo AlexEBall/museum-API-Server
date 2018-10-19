@@ -119,4 +119,24 @@
         flex-direction: column;
         align-items: center;
     }
+
+    &__error {
+        padding: 1rem;
+        border: solid 2px red; // width: 60rem;
+        border-radius: 2rem;
+        margin-left: 1rem;
+        font-size: 2rem;
+        outline: none;
+
+        &--msg {
+            display: flex;
+            font-size: 2rem;
+            justify-content: center;
+            color: red;
+        }
+    }
+
+    &__hidden {
+        display: none;
+    }
 }
