@@ -3,6 +3,10 @@ node_js: node
 cache:
   directories:
     - node_modules
+script:
+  - npm test
+env:
+  - CI=true
 deploy:
   provider: heroku
   app: https://stormy-shelf-62092.herokuapp.com
