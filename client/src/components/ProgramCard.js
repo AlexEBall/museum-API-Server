@@ -2,12 +2,6 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
 export default class ProgramCard extends Component {
-
-    // deleteProgram = () => {
-    //     this.props.deleteThisProgram(this.props.program._id);
-        // this.props.history.go(-1);
-    // }
-
     render () {
         return(
             <div className="programCard">

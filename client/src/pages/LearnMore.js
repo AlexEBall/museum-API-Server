@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {
-    // fetchArtistConnectByFloorAndPreLoadState,
-    fetchArtistConnectByFloor,
-    // editingArtistConnectInputFieldOnChange
+    fetchArtistConnectByFloor
 } from '../actions';
 import Header from '../components/Header';
 import {Link} from 'react-router-dom';

@@ -9,6 +9,13 @@ import Header from '../components/Header';
 import requireAuth from '../components/requireAuth';
 
 class LearnMoreEdit extends Component {
+    state = {
+        articleTitleError: false,
+        pictureError: false,
+        articleDescriptionError: false,
+        articleLinkError: false,
+        socialLinkError: false
+    }
 
     componentDidMount() {
         this.props.fetchArtistConnectByFloorAndPreLoadState(this.props.match.params.floor);
@@ -33,8 +40,38 @@ class LearnMoreEdit extends Component {
             floor: parseFloat(this.props.match.params.floor)
         }
 
-        this.props.editArtistConnect(data, this.props.match.params.id);
+        if (!this.props.articleTitle) {
+            this.setState({ articleTitleError: true });
+            return
+        } else {
+            this.setState({ articleTitleError: false });
+        }
+        if (!this.props.picture || !this.props.picture.startsWith('https')) {
+            this.setState({ pictureError: true });
+            return
+        }else {
+            this.setState({ pictureError: false });
+        }
+        if (!this.props.articleDescription) {
+            this.setState({ articleDescriptionError: true });
+            return
+        } else {
+            this.setState({ articleDescriptionError: false });
+        }
+        if (!this.props.articleLink || !this.props.articleLink.startsWith('https')) {
+            this.setState({ articleLinkError: true });
+            return
+        }else {
+            this.setState({ articleLinkError: false });
+        }
+        if (!this.props.socialLink || !this.props.socialLink.startsWith('https')) {
+            this.setState({ socialLinkError: true });
+            return
+        }else {
+            this.setState({ socialLinkError: false });
+        }
 
+        this.props.editArtistConnect(data, this.props.match.params.id);
         this.props.history.go(-1);
     }
 
@@ -54,47 +91,52 @@ class LearnMoreEdit extends Component {
                             <div className="formCard__formGroup">
                                 <label className="label">Article Title:</label>
                                 <input
-                                    className="formCard__formInput"
+                                    className={!this.state.articleTitleError ? 'formCard__formInput' : 'formCard__error'}
                                     value={this.props.articleTitle}
                                     name='article title'
                                     onChange={this.handleInputs}
                                 />
+                                <div className={this.state.articleTitleError ? 'formCard__error--msg' : 'formCard__hidden' }>Please enter a title</div>
                             </div>
                             <div className="formCard__formGroup">
                                 <label className="label">Picture:</label>
                                 <input
-                                    className="formCard__formInput"
-                                    value={this.props.articleDescription}
+                                    className={!this.state.pictureError ? 'formCard__formInput' : 'formCard__error'}
+                                    value={this.props.picture}
                                     name='article picture'
                                     onChange={this.handleInputs}
                                 />
+                                <div className={this.state.pictureError ? 'formCard__error--msg' : 'formCard__hidden' }>Please enter a cloudinary link starting with 'https'</div>
                             </div>
                             <div className="formCard__formGroup">
                                 <label className="label">Article Description:</label>
                                 <textarea
-                                    className="formCard__formInput"
+                                    className={!this.state.articleDescriptionError ? 'formCard__formInput' : 'formCard__error'}
                                     value={this.props.articleDescription}
                                     name='article description'
                                     onChange={this.handleInputs}
                                 />
+                                <div className={this.state.articleDescriptionError ? 'formCard__error--msg' : 'formCard__hidden' }>Please enter a description</div>
                             </div>
                             <div className="formCard__formGroup">
                                 <label className="label">Article Link:</label>
                                 <input
-                                    className="formCard__formInput"
+                                    className={!this.state.articleLinkError ? 'formCard__formInput' : 'formCard__error'}
                                     value={this.props.articleLink}
                                     name='article link'
                                     onChange={this.handleInputs}
                                 />
+                                <div className={this.state.articleLinkError ? 'formCard__error--msg' : 'formCard__hidden' }>Please enter a cloudinary link starting with 'https'</div>
                             </div>
                             <div className="formCard__formGroup">
                                 <label className="label">Social Link:</label>
                                 <input
-                                    className="formCard__formInput"
+                                    className={!this.state.socialLinkError ? 'formCard__formInput' : 'formCard__error'}
                                     value={this.props.socialLink}
                                     name='social link'
                                     onChange={this.handleInputs}
                                 />
+                                <div className={this.state.articleLinkError ? 'formCard__error--msg' : 'formCard__hidden' }>Please enter a cloudinary link starting with 'https'</div>
                             </div>
                             <div className="formCard__formGroup">
                                 <input className='audioLinkBtn' type='submit' value='Submit'/>

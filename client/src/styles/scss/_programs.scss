@@ -47,7 +47,7 @@
     }
 
     &__RegistrationLink {
-        // background-color: cyan;
+        
     }
 
     &__Buttons {
@@ -139,4 +139,9 @@
     &__hidden {
         display: none;
     }
+}
+
+.flexBtnsBox {
+    display: flex;
+    justify-content: space-around;
 }

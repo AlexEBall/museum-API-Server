@@ -86,7 +86,6 @@ class ProgramToAdd extends Component {
     }
 
     render() {
-        console.log('whoaaaaa, props: ', this.props);
         return (
             <div className="wrapper">
                 <Header />

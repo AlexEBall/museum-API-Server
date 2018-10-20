@@ -474,3 +474,7 @@ html {
       color: red; }
   .formCard__hidden {
     display: none; }
+
+.flexBtnsBox {
+  display: flex;
+  justify-content: space-around; }
