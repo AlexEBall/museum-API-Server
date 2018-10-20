@@ -1,8 +1,13 @@
+language: node_js
+node_js: node
+cache:
+  directories:
+    - node_modules
 deploy:
   provider: heroku
+  app: https://stormy-shelf-62092.herokuapp.com
   api_key:
     secure: $HEROKU_AUTH_TOKEN
   strategy: git
   on: 
     branch: master
-    condition: node
