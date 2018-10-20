@@ -1,6 +1,13 @@
+sudo: required
+services:
+  - docker
+
+script: 
+  - docker run alexeball/cafamReact-test npm run test -- --coverage
+
 deploy:
   provider: heroku
   api_key:
-    secure: 
+    secure: $HEROKU_AUTH_TOKEN
   on: 
     branch: master
