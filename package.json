@@ -23,7 +23,7 @@
   "bugs": {
     "url": "https://github.com/AlexEBall/museum-API-Server/issues"
   },
-  "homepage": "https://stormy-shelf-62092.herokuapp.com",
+  "homepage": "https://young-savannah-71265.herokuapp.com/",
   "dependencies": {
     "axios": "^0.18.0",
     "bcrypt-nodejs": "^0.0.3",
