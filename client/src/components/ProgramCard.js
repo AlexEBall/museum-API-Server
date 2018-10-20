@@ -3,13 +3,12 @@ import {Link} from 'react-router-dom';
 
 export default class ProgramCard extends Component {
 
-    deleteProgram = () => {
-        // this.props.deleteThisProgram(this.props.match.params.id);
-    }
-
+    // deleteProgram = () => {
+    //     this.props.deleteThisProgram(this.props.program._id);
+        // this.props.history.go(-1);
+    // }
 
     render () {
-        console.log('these are my props', this.props);
         return(
             <div className="programCard">
                 <div className="programCard programCard__Title programText">
@@ -37,10 +36,6 @@ export default class ProgramCard extends Component {
                     <Link to={`/programs/${this.props.program._id}`} className="audioLinkBtn audioLinkBtn--ProgramBtns">
                         Edit this Program
                     </Link>
-                    <button 
-                        className="audioLinkBtn audioLinkBtn--ProgramBtns"
-                        onClick={this.deleteProgram}>Delete this Program
-                    </button>
                 </div>
             </div>
         )

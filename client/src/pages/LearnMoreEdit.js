@@ -10,7 +10,7 @@ import requireAuth from '../components/requireAuth';
 
 class LearnMoreEdit extends Component {
 
-    componentWillMount() {
+    componentDidMount() {
         this.props.fetchArtistConnectByFloorAndPreLoadState(this.props.match.params.floor);
     }
 
@@ -23,7 +23,6 @@ class LearnMoreEdit extends Component {
 
     handleFormSubmit = (event) => {
         event.preventDefault();
-        console.log('logged');
 
         const data = {
             articleTitle: this.props.articleTitle,

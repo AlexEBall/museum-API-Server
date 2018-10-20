@@ -20,7 +20,8 @@ class Floor extends Component {
         editDisabled: false,
         imgEditDisabled: false,
         audioLinkError: false,
-        coverImgError: false
+        coverImgError: false,
+        addImageError: false
     };
 
     componentDidMount = () => {
@@ -181,9 +182,10 @@ class Floor extends Component {
                         value={this.props.imgToPushValue}
                         onChange={this.handlePushingImgLink}
                         name="pushedImgLinkValue"
-                        placeholder="Copy an AWS Link"
-                        className="audioInput"
+                        placeholder="Copy a cloudinary link beginning with 'https'"
+                        className={!this.state.addImageError ? 'audioInput' : 'audioInput__error'}
                     />
+                    <div className={this.state.addImageError ? 'audioInput__error--msg' : 'audioInput__hidden'}>Please enter a cloudinary link beginning with 'https'</div>
                     <button 
                         className="audioLinkBtn audioLinkBtn--AddImage"
                         onClick={this.submitImage}>Submit Image</button>
@@ -210,8 +212,10 @@ class Floor extends Component {
         const floor = parseInt(this.props.match.params.floor);
 
         if(!this.props.imgToPushValue || !this.props.imgToPushValue.startsWith('https')) {
+            this.setState({ addImageError: true })
             return;
         } else {
+            this.setState({ addImageError: false });
             this.props.pushingImgsIntoGallery(this.props.imgToPushValue, floor);
         }
 

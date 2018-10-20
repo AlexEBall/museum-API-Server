@@ -11,24 +11,14 @@ import requireAuth from '../components/requireAuth';
 
 class LearnMore extends Component {
 
-    componentWillMount() {
-        // console.log(this.props);
+    componentDidMount() {
         this.props.fetchArtistConnectByFloor(this.props.match.params.floor);
-        // this.props.fetchArtistConnectByFloorAndPreLoadState(this.props.match.params.floor);
     }
-
-    // handleInputs = (event) => {
-    //     const text = event.target.value;
-    //     const name = event.target.name;
-
-    //     this.props.editingArtistConnectInputFieldOnChange(name, text);
-    // }
 
     render() {
         if(!this.props.artistConnect) {
             return <h2>Loading</h2>
         } else {
-            // console.log('checking', this.props.artistConnect)
             return (
                 <div className="wrapper">
                     <Header/>

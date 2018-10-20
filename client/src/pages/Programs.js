@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom';
 import requireAuth from '../components/requireAuth';
 
 class Programs extends Component {
-    componentWillMount = () => {
+    componentDidMount = () => {
         this.props.fetchPrograms();
     }
 

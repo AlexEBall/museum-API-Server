@@ -10,7 +10,7 @@ import Header from '../components/Header';
 import requireAuth from '../components/requireAuth';
 
 class ProgramEditAndRemoval extends Component {
-    componentWillMount = () => {
+    componentDidMount = () => {
         this.props.fetchProgramByIdAndPreLoadState(this.props.match.params.id);
     }
 
@@ -43,8 +43,6 @@ class ProgramEditAndRemoval extends Component {
     handleDelete = () => {
         this.props.deleteThisProgram(this.props.match.params.id);
         this.props.history.go(-1);
-
-        // this.props.deleted = false;
     }
 
     render() {
@@ -54,7 +52,7 @@ class ProgramEditAndRemoval extends Component {
                     <section className="exhibitions">
                         <h1 className="exhibitions__title">Edit this Program</h1>
                         <div className="formCard">
-                        <button className="exhibitions__btn" onClick={this.handleDelete}>Delete</button>
+                        <button className="audioLinkBtn audioLinkBtn--ProgramBtns" onClick={this.handleDelete}>Delete</button>
                         <form 
                             className="formCard__form"
                             onSubmit={this.handleFormSubmit}>
