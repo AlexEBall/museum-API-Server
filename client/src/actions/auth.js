@@ -2,14 +2,16 @@ import axios from 'axios';
 import { AUTH_USER, AUTH_ERROR } from './types';
 // const devSignIn = 'http://localhost:3003/api/cafamAuth/signin';
 // const devSignUp = 'http://localhost:3003/api/cafamAuth/signup';
-
+const prodSignUp = 'https://young-savannah-71265.herokuapp.com/api/cafamAuth/signup';
+const prodSignIn = 'https://young-savannah-71265.herokuapp.com/api/cafamAuth/signin'
+;
 // by passing in formProps and not deconstructing
 // we can just pass in the object to axios 2nd arg
 
 export const signup = (formProps, callback) => async dispatch => {
     try {
         // this is where we are posting to the backend api
-        const response = await axios.post(process.env.PROD_AUTH_SIGNUP || 'http://localhost:3003/api/cafamAuth/signup', formProps);
+        const response = await axios.post(prodSignUp, formProps);
 
         dispatch({ type: AUTH_USER, payload: response.data.token });
         
@@ -37,7 +39,7 @@ export const signout = () => {
 export const signin = (formProps, callback) => async dispatch => {
     try {
         // this is where we are posting to the backend api
-        const response = await axios.post(process.env.PROD_AUTH_SIGNIN || 'http://localhost:3003/api/cafamAuth/signin', formProps);
+        const response = await axios.post(prodSignIn, formProps);
 
         dispatch({ type: AUTH_USER, payload: response.data.token });
         
