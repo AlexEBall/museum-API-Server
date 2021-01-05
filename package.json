@@ -25,7 +25,7 @@
   },
   "homepage": "https://young-savannah-71265.herokuapp.com/",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "bcrypt-nodejs": "^0.0.3",
     "body-parser": "^1.18.2",
     "concurrently": "^3.5.1",
